@@ -18,17 +18,17 @@ export default function Hero() {
             </div>
           </div>
           {/* <div className="absolute max-w-[40vw] right-0 bottom-0 z-10 pr-10 pb-5 flex flex-col justify-center items-right pt-20 text-right ">
-            <h1 className="text-5xl 2xl:text-3xl mt-5 2xl:mt-10 max-sm:text-3xl font-bold leading-tight mb-2 font-VulturaRegular max-sm:mt-16 ">
-              Shikha Gautam
-            </h1>
-            <p className="text-xl 2xl:text-3xl font-extralight max-sm:text-lg text-gray-100 mb-4 font-CooperHevitt  tracking-wider ">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
-              velit laborum. Nobis quod, fuga quae harum, non recusandae
-              voluptates animi aliquam eveniet, dignissimos molestiae cum
-              fugiat! voluptates atque consequuntur eligendi dolor consequatur
-              debitis qui ut, architecto quibusdam ad non.
-            </p>
-          </div> */}
+              <h1 className="text-5xl 2xl:text-3xl mt-5 2xl:mt-10 max-sm:text-3xl font-bold leading-tight mb-2 font-VulturaRegular max-sm:mt-16 ">
+                Shikha Gautam
+              </h1>
+              <p className="text-xl 2xl:text-3xl font-extralight max-sm:text-lg text-gray-100 mb-4 font-CooperHevitt  tracking-wider ">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
+                velit laborum. Nobis quod, fuga quae harum, non recusandae
+                voluptates animi aliquam eveniet, dignissimos molestiae cum
+                fugiat! voluptates atque consequuntur eligendi dolor consequatur
+                debitis qui ut, architecto quibusdam ad non.
+              </p>
+            </div> */}
         </div>
       </div>
       <div></div>
