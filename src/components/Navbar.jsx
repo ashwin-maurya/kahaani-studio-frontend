@@ -64,7 +64,7 @@ const Navbar = () => {
         >
           <Link
             to="/"
-            className="text-white z-50 cursor-pointer mix-blend-difference text-3xl  font-Authorfont"
+            className="text-white italic z-50 cursor-pointer mix-blend-difference text-3xl  font-Authorfont"
           >
             Kahaani Studio
           </Link>
@@ -73,7 +73,7 @@ const Navbar = () => {
               {navLinks.map((item) => (
                 <li
                   key={item.label}
-                  className={`relative px-2 font-CooperHevitt uppercase font-thin text-lg cursor-pointer`}
+                  className={`relative px-2 font-CooperHevitt uppercase font-normal text-lg cursor-pointer`}
                 >
                   <Link to={item.href}>{item.label}</Link>
                 </li>
