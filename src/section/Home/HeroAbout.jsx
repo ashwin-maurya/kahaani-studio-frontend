@@ -5,9 +5,9 @@ export default function Hero() {
     <>
       <div className="relative h-screen max-h-[800px]  text-white overflow-hidden bg-black">
         <div
-          className="bg-bottom bg-cover bg-no-repeat place-items-center h-full w-full opacity-90 absolute top-0 left-0"
+          className="bg-top bg-cover bg-no-repeat place-items-center h-full w-full opacity-90 absolute top-0 left-0"
           style={{
-            backgroundImage: `url("https://c1.wallpaperflare.com/preview/913/472/869/valley-person-standing-edge.jpg")`,
+            backgroundImage: `url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
           }}
         >
           <div className="relative max-w-[12vw] h-full z-10 pr-10 pt-0 flex flex-col justify-center items-center text-center ">
