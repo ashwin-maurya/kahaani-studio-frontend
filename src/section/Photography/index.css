@@ -1,0 +1,25 @@
+@keyframes top-animation {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+.zoom-wrapper__image {
+  -webkit-animation-name: top-animation;
+  animation-name: top-animation;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+.cell {
+  box-flex: 1;
+  flex: 1 1 auto;
+}
+
+.zoom-image {
+  max-height: 100%;
+}
