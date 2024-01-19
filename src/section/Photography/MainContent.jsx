@@ -65,7 +65,7 @@ export default function MainContent() {
       <h1 className="pt-40 text-center uppercase font-CooperHevitt font-thin text-4xl">
         Photo Gallery
       </h1>
-      <div className="block w-full max-w-[1200px] columns-3 max-lg:columns-2 max-md:columns-1 gap-0 break-inside-avoid mx-10 mt-10 max-sm:mx-0 ">
+      <div className="block w-screen columns-3 max-lg:columns-2 max-md:columns-2 gap-0 break-inside-avoid px-10 mt-10 max-md:px-0">
         {imageData.map((image, index) => (
           <div
             className="group m-2 bg-black relative overflow-hidden "
