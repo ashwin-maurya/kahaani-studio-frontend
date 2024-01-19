@@ -68,11 +68,11 @@ export default function StoryContent() {
   };
   return (
     <>
-      <div className="max-w-screen-xl p-5 mx-auto relative mt-20">
-        <div className="flex gap-5 overflow-hidden mx-10">
+      <div className="max-w-screen-xl p-5 max-sm:px-0 mx-auto relative mt-20">
+        <div className="flex gap-5 overflow-hidden mx-10 max-md:mx-0">
           <button
             onClick={() => handleScroll(-400)}
-            className="absolute left-0  text-2xl top-0 bottom-0 ml-2 text-black px-2 py-1 focus:outline-none z-50 bg-white hover:bg-stone-100 rounded-md my-5"
+            className="absolute left-0  text-2xl top-0 bottom-0 ml-2 max-md:hidden text-black px-2 py-1 focus:outline-none z-50 bg-white hover:bg-stone-100 rounded-md my-5"
           >
             <FaChevronLeft />
           </button>
@@ -132,7 +132,7 @@ export default function StoryContent() {
 
           <button
             onClick={() => handleScroll(400)}
-            className="absolute right-0 text-2xl top-0 bottom-0 mr-2 text-black px-2 py-1 focus:outline-none hover:bg-stone-100 rounded-md my-5"
+            className="absolute right-0 text-2xl max-md:hidden top-0 bottom-0 mr-2 text-black px-2 py-1 focus:outline-none hover:bg-stone-100 rounded-md my-5"
           >
             <FaChevronRight />
           </button>

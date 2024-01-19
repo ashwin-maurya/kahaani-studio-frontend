@@ -10,9 +10,9 @@ export default function SideNav(props) {
     <>
       <div
         id="mySidenav"
-        className="backdrop-blur-sm fixed select-none w-screen sidenav bg-Opacitywhite h-[100vh] overflow-hidden  z-[99] transition-all ease-in-out delay-75 duration-200"
+        className="backdrop-blur-sm fixed select-none w-screen sidenav bg-Opacitywhite h-[100vh] overflow-hidden  z-[99] transition-all ease-in-out delay-75 duration-200 bg-[#ffffff7e]"
       >
-        <div className="w-full flex justify-start  items-center select-none h-full bg-white shadow-lg overflow-hidden dark:bg-darkBgMain flex-col">
+        <div className="w-full flex justify-start  items-center select-none h-full shadow-lg overflow-hidden dark:bg-darkBgMain flex-col">
           <div className="flex w-auto mt-24">
             <ul className="flex-1 flex flex-col items-center gap-8">
               {navLinks.map((item) => (

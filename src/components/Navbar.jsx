@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { navLinks } from "./constants";
 import SideNav from "./SideNav";
-
+import { FaBars } from "react-icons/fa";
 const Navbar = () => {
   const location = useLocation();
   const [showNav, setNav] = useState(false);
@@ -17,7 +17,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight - 100) {
+      if (window.scrollY > window.innerHeight - 200) {
         setIsScrolled(false);
       } else {
         setIsScrolled(true);
@@ -56,15 +56,15 @@ const Navbar = () => {
           isScrolled &&
           (location.pathname === "/" || location.pathname === "/home")
             ? "mix-blend-difference"
-            : "bg-stone-50"
+            : "bg-stone-100"
         }`}
       >
         <nav
-          className={`text-white flex flex-row justify-end px-10 max-md:px-0 top-0 max-md:flex-row max-md:justify-between  items-center w-full py-5`}
+          className={`text-white flex flex-row justify-end px-10 max-md:px-0 top-0 max-md:flex-row max-md:justify-between  items-center w-full py-5 max-md:py-2`}
         >
           <Link
             to="/"
-            className="text-white italic z-50 cursor-pointer mix-blend-difference text-3xl  font-Authorfont"
+            className="text-white max-md:ml-5 italic z-50 cursor-pointer mix-blend-difference text-3xl  font-Authorfont"
           >
             Kahaani Studio
           </Link>
@@ -79,14 +79,11 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <div
-              className="hidden max-md:block outline-none"
-              onClick={NavStatus}
-            >
-              <div className="relative group outline-none hover:bg-transparent">
-                <div className="relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all duration-200 ">
-                  Menu
-                </div>
+          </div>
+          <div className="hidden max-md:block outline-none" onClick={NavStatus}>
+            <div className="relative group outline-none hover:bg-transparent">
+              <div className="relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all duration-200 text-2xl  mix-blend-difference ">
+                <FaBars />
               </div>
             </div>
           </div>

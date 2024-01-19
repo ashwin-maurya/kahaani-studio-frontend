@@ -5,12 +5,12 @@ export default function Newsletter() {
     <>
       <div class="container my-24 mx-auto md:px-6">
         <section class="mb-32 text-center lg:text-left">
-          <div class="py-12 md:px-6 lg:my-12">
+          <div class="py-12 max-md:px-5 md:px-6 lg:my-12">
             <div class="container mx-auto xl:px-32">
               <div class="grid items-center gap-12 lg:grid-cols-2">
                 <div class="md:mt-12 lg:mt-0">
-                  <h1 class="mb-12 text-4xl font-bold font-Oswald tracking-tight md:text-5xl xl:text-6xl">
-                    Are you ready <br />
+                  <h1 class="mb-12 max-md:mb-6 text-4xl font-bold font-Oswald tracking-tight md:text-5xl xl:text-6xl">
+                    Are you ready <br className="max-md:hidden" />
                     <span class="text-primary blogstext-primary-400">
                       for an adventure?
                     </span>

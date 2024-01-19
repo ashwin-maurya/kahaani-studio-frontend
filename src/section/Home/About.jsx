@@ -6,14 +6,14 @@ export default function About() {
       <div className="flex mt-10 py-20 w-full h-full max-md:flex-col justify-center items-center  flex-row-reverse  background">
         <div className="relative cursor-pointer rounded-md">
           <img
-            className="w-[500px] max-sm:w-[300px] h-[400px] m-2 shadow-md bg-cover bg-center bg-white"
+            className="w-[500px] max-sm:w-[350px] h-[400px] m-2 shadow-md bg-cover bg-center bg-white"
             style={{
               backgroundImage: `url(https://content.presspage.com/uploads/2338/1920_selfie-auf-der-reise-copypeopleimages.com-adobestock-493554509.jpeg?10000)`,
             }}
           ></img>
         </div>
-        <div className="max-w-[400px] mr-28">
-          <h1 className="pb-5 max-sm:pb-2 font-semibold font-VulturaRegular text-5xl relative font-Oswald capitalize">
+        <div className="max-w-[400px] max-md:max-w-full flex flex-col max-md:mt-10 w-full mr-28 max-md:mr-0 max-md:px-5">
+          <h1 className="pb-5 max-sm:pb-2 font-semibold text-5xl relative font-Oswald capitalize">
             Shikha Gautam
           </h1>
           <p className="pb-5 text-lg font-CooperHevitt">
