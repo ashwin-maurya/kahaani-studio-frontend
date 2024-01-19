@@ -15,7 +15,7 @@ export default function HeroAbout() {
 
   return (
     <>
-      <div className="relative h-[700px] text-white overflow-hidden bg-black">
+      <div className="relative h-screen max-h-[800px] text-white overflow-hidden bg-black">
         <div
           className="bg-top transition-all ease-in-out duration-500 bg-cover bg-no-repeat place-items-center h-full w-full opacity-100 bg-fixed"
           style={{
