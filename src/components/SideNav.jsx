@@ -18,57 +18,9 @@ export default function SideNav(props) {
               {navLinks.map((item) => (
                 <li
                   key={item.label}
-                  className={`relative px-2 ${
-                    (location.pathname === "/" && item.href === "/home") ||
-                    location.pathname === item.href
-                      ? "border-b-[1px] border-b-gray-600 "
-                      : ""
-                  }           
-                             
-                          ${showoption && item.label == "Work" && "ml-[84px]"}
-                          `}
-                  onClick={() => {
-                    if (item.label === "Work") {
-                      setshowoption(true);
-                    }
-                    if (item.label !== "Work") {
-                      // setshowoption(true);
-                      navigate(item.href);
-                      setshowoption(false);
-                    }
-                  }}
+                  className={`relative px-2 font-CooperHevitt uppercase font-normal text-lg cursor-pointer`}
                 >
-                  {/* <Link
-                    to={item.href}
-                   
-                  > */}
-                  <div className="font-CooperHevitt  text-lg max-sm:text-xl text-slate-gray ">
-                    {item.label}
-                    {showoption && item.label === "Work" && (
-                      <div
-                        className={` mt-4  text-[21px] space-y-3 py-0 flex top-[0px] w-32   flex-col   `}
-                      >
-                        <div
-                          onClick={() => {
-                            navigate("/Work/Non-Fiction");
-                            setshowoption(false);
-                          }}
-                        >
-                          Non-Fiction
-                        </div>
-                        <div
-                          onClick={() => {
-                            navigate("/Work/Fiction");
-                            setshowoption(false);
-                          }}
-                        >
-                          {" "}
-                          Fiction
-                        </div>
-                      </div>
-                    )}
-                    {/* </Link> */}
-                  </div>
+                  <Link to={item.href}>{item.label}</Link>
                 </li>
               ))}
             </ul>
