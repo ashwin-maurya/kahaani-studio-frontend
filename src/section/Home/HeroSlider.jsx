@@ -84,43 +84,39 @@ export default function HeroSlider({ onSliderClick }) {
   return (
     <>
       <div
-        className="p-5 mx-auto relative mt-20"
+        className="p-5 max-md:p-0 max-md:py-5 mx-auto relative mt-20 max-md:w-full"
         onScroll={handleContainerScroll}
       >
         {" "}
-        <div className="flex gap-5 overflow-hidden mx-5">
-          <button
-            onClick={() => handleScroll(-250)}
-            className="absolute left-0 text-2xl top-0 bottom-0 mr-2 text-white px-2 py-1 focus:outline-none z-50 "
-          >
-            <FaChevronLeft />
-          </button>
-
-          <div
-            className="flex items-end justify-start flex-shrink-0 gap-2 w-[400px] text-left bg-center bg-cover h-[150px] overflow-x-auto scroll-smooth overflow-y-hidden transition-all ease-in-out duration-300"
-            ref={scrollContainerRef}
-          >
-            {stories.map((story, index) => (
-              <div
-                key={index}
-                className="relative flex min-w-[250px] items-end justify-start w-full text-left bg-center bg-cover h-[150px] bg-gray-500 rounded-md cursor-pointer"
-                style={{
-                  backgroundImage: `url("${story.imageUrl}")`,
-                }}
-                onClick={() => handleSliderClick(story.imageUrl, story.place)}
-              >
-                <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-[#00000090] to-[#00000057] rounded-md"></div>
-              </div>
-            ))}
-          </div>
-
-          <button
-            onClick={() => handleScroll(250)}
-            className="absolute right-0 text-2xl top-0 bottom-0 ml-2 text-white px-2 py-1 focus:outline-none"
-          >
-            <FaChevronRight />
-          </button>
+        <button
+          onClick={() => handleScroll(-250)}
+          className="absolute left-0 text-2xl top-0 bottom-0 mr-2 text-white px-2 py-1 focus:outline-none z-50 "
+        >
+          <FaChevronLeft />
+        </button>
+        <div
+          className="flex items-end justify-start flex-shrink-0 gap-2 w-[400px]  max-md:w-full text-left bg-center bg-cover h-[150px] overflow-x-auto scroll-smooth overflow-y-hidden transition-all ease-in-out duration-300 mx-5 max-md:mx-0"
+          ref={scrollContainerRef}
+        >
+          {stories.map((story, index) => (
+            <div
+              key={index}
+              className="relative flex min-w-[250px] items-end justify-start w-full text-left bg-center bg-cover h-[150px] bg-gray-500 rounded-md cursor-pointer"
+              style={{
+                backgroundImage: `url("${story.imageUrl}")`,
+              }}
+              onClick={() => handleSliderClick(story.imageUrl, story.place)}
+            >
+              <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-[#00000090] to-[#00000057] rounded-md"></div>
+            </div>
+          ))}
         </div>
+        <button
+          onClick={() => handleScroll(250)}
+          className="absolute right-0 text-2xl top-0 bottom-0 ml-2 text-white px-2 py-1 focus:outline-none"
+        >
+          <FaChevronRight />
+        </button>
       </div>
     </>
   );

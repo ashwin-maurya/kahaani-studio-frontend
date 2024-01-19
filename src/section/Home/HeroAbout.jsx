@@ -22,19 +22,19 @@ export default function HeroAbout() {
             backgroundImage: `url("${backgroundImage}")`,
           }}
         >
-          <div className="relative max-w-[12vw] h-full z-10 pr-10 pt-0 flex flex-col justify-center items-center text-center ">
+          <div className="relative max-w-[12vw] h-full z-10 pr-10 max-md:hidden pt-0 flex flex-col justify-center items-center text-center ">
             <div className="rotate-90">
-              <div className="text-[8rem] font-bold opacity-60 rotate-180">
+              <div className="text-[8rem]  font-bold opacity-60 rotate-180">
                 EXPLORE
               </div>
             </div>
           </div>
-          <div className="absolute bottom-0 left-1/2 transform  pb-10 -translate-x-1/2 transition-all ease-in-out duration-500 ">
-            <h1 className="font-CooperHevitt text-4xl drop-shadow-2xl  p-2">
+          <div className="absolute max-md:w-full bottom-0 left-1/2 transform  pb-10 -translate-x-1/2 transition-all ease-in-out duration-500 ">
+            <h1 className="font-Oswald text-4xl drop-shadow-2xl max-md:mb-40 p-2">
               {place}
             </h1>
           </div>
-          <div className="absolute right-0 bottom-0">
+          <div className="absolute max-md:w-full right-0 bottom-0 ">
             <HeroSlider onSliderClick={handleSliderClick} />
           </div>
         </div>
