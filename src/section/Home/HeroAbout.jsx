@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import HeroSlider from "./HeroSlider";
+
 export default function Hero() {
+  const [backgroundImage, setBackgroundImage] = useState(
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  );
+
+  const handleSliderClick = (imageUrl) => {
+    setBackgroundImage(imageUrl);
+    // Do something with the selected image URL, such as changing the background
+    console.log("Selected Image:", imageUrl);
+  };
+
   return (
     <>
-      <div className="relative h-screen max-h-[800px]  text-white overflow-hidden bg-black">
+      <div className="relative h-screen max-h-[800px] text-white overflow-hidden bg-black">
         <div
           className="bg-top bg-cover bg-no-repeat place-items-center h-full w-full opacity-90 absolute top-0 left-0"
           style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+            backgroundImage: `url("${backgroundImage}")`,
           }}
         >
           <div className="relative max-w-[12vw] h-full z-10 pr-10 pt-0 flex flex-col justify-center items-center text-center ">
@@ -17,18 +29,9 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          {/* <div className="absolute max-w-[40vw] right-0 bottom-0 z-10 pr-10 pb-5 flex flex-col justify-center items-right pt-20 text-right ">
-              <h1 className="text-5xl 2xl:text-3xl mt-5 2xl:mt-10 max-sm:text-3xl font-bold leading-tight mb-2 font-VulturaRegular max-sm:mt-16 ">
-                Shikha Gautam
-              </h1>
-              <p className="text-xl 2xl:text-3xl font-extralight max-sm:text-lg text-gray-100 mb-4 font-CooperHevitt  tracking-wider ">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
-                velit laborum. Nobis quod, fuga quae harum, non recusandae
-                voluptates animi aliquam eveniet, dignissimos molestiae cum
-                fugiat! voluptates atque consequuntur eligendi dolor consequatur
-                debitis qui ut, architecto quibusdam ad non.
-              </p>
-            </div> */}
+          <div className="absolute right-0 bottom-0">
+            <HeroSlider onSliderClick={handleSliderClick} />
+          </div>
         </div>
       </div>
       <div></div>
