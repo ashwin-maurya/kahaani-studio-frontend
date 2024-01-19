@@ -17,7 +17,7 @@ export default function Hero() {
     <>
       <div className="relative h-screen max-h-[800px] text-white overflow-hidden bg-black">
         <div
-          className="bg-top bg-cover bg-no-repeat place-items-center h-full w-full opacity-90 absolute top-0 left-0"
+          className="bg-top transition-all ease-in-out duration-500 bg-cover bg-no-repeat place-items-center h-full w-full opacity-90 absolute top-0 left-0 bg-fixed"
           style={{
             backgroundImage: `url("${backgroundImage}")`,
           }}
