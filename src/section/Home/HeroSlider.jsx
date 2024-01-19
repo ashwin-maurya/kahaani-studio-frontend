@@ -95,7 +95,7 @@ export default function HeroSlider({ onSliderClick }) {
           <FaChevronLeft />
         </button>
         <div
-          className="flex items-end justify-start flex-shrink-0 gap-2 w-[400px]  max-md:w-full text-left bg-center bg-cover h-[150px] overflow-x-auto scroll-smooth overflow-y-hidden transition-all ease-in-out duration-300 mx-5 max-md:mx-0"
+          className="flex items-end justify-start flex-shrink-0 gap-2 w-[400px]  max-md:w-full text-left bg-center bg-cover h-[150px] overflow-x-auto scroll-smooth overflow-y-hidden transition-all ease-in-out duration-300 mx-5 max-md:mx-0 max-md:px-2"
           ref={scrollContainerRef}
         >
           {stories.map((story, index) => (
