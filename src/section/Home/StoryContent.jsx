@@ -72,7 +72,7 @@ export default function StoryContent() {
         <div className="flex gap-5 overflow-hidden mx-10">
           <button
             onClick={() => handleScroll(-200)}
-            className="absolute left-0  text-2xl top-0 bottom-0 ml-2 text-black rounded-full px-2 py-1 focus:outline-none z-50 bg-white"
+            className="absolute left-0  text-2xl top-0 bottom-0 ml-2 text-black px-2 py-1 focus:outline-none z-50 bg-white hover:bg-stone-100 rounded-md my-5"
           >
             <FaChevronLeft />
           </button>
@@ -96,7 +96,7 @@ export default function StoryContent() {
                 }}
               >
                 <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-gray-900 to-gray-900"></div>
-                <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
+                <div className="absolute top-0 left-0 right-0 flex items-center justify-between">
                   <a
                     rel="noopener noreferrer"
                     href="#"
@@ -104,7 +104,7 @@ export default function StoryContent() {
                   >
                     {story.category}
                   </a>
-                  <div className="flex flex-col justify-start text-center text-gray-100">
+                  <div className="flex flex-col justify-start text-center mr-5 mt-3 text-gray-100">
                     <span className="text-3xl font-semibold leadi tracki">
                       {story.date.day}
                     </span>
@@ -115,7 +115,7 @@ export default function StoryContent() {
                   <a
                     rel="noopener noreferrer"
                     href="#"
-                    className="font-medium text-md group-hover:underline text-gray-100"
+                    className="font-medium font-montserrat text-md group-hover:underline text-gray-100"
                   >
                     {story.title}
                   </a>
@@ -132,7 +132,7 @@ export default function StoryContent() {
 
           <button
             onClick={() => handleScroll(200)}
-            className="absolute right-0 text-2xl top-0 bottom-0 mr-2 text-black rounded-full px-2 py-1 focus:outline-none"
+            className="absolute right-0 text-2xl top-0 bottom-0 mr-2 text-black px-2 py-1 focus:outline-none hover:bg-stone-100 rounded-md my-5"
           >
             <FaChevronRight />
           </button>

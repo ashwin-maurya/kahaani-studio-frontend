@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <>
-      <div className="flex py-20 w-full h-full max-md:flex-col justify-center items-center  flex-row-reverse  background">
+      <div className="flex mt-10 py-20 w-full h-full max-md:flex-col justify-center items-center  flex-row-reverse  background">
         <div className="relative cursor-pointer rounded-md">
           <img
             className="w-[500px] max-sm:w-[300px] h-[400px] m-2 shadow-md bg-cover bg-center bg-white"
@@ -13,7 +13,7 @@ export default function About() {
           ></img>
         </div>
         <div className="max-w-[400px] mr-28">
-          <h1 className="pb-5 max-sm:pb-2 font-semibold font-VulturaRegular text-5xl relative font-PlayfairDisplay capitalize">
+          <h1 className="pb-5 max-sm:pb-2 font-semibold font-VulturaRegular text-5xl relative font-Oswald capitalize">
             Shikha Gautam
           </h1>
           <p className="pb-5 text-lg font-CooperHevitt">
