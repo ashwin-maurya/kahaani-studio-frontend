@@ -56,7 +56,7 @@ const Navbar = () => {
           isScrolled &&
           (location.pathname === "/" || location.pathname === "/home")
             ? "mix-blend-difference"
-            : "bg-stone-100"
+            : "bg-stone-50"
         }`}
       >
         <nav

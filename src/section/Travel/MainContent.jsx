@@ -3,7 +3,7 @@ import "./index.css";
 export default function MainContent() {
   return (
     <>
-      <div id="parallax-world-of-ugg" className="mt-20">
+      <div id="parallax-world-of-ugg" className="pt-20">
         <section>
           <div className="title">
             <h3>Places I've Been to</h3>

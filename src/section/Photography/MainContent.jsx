@@ -62,7 +62,7 @@ export default function MainContent() {
 
   return (
     <>
-      <h1 className="mt-40 text-center uppercase font-CooperHevitt font-thin text-4xl">
+      <h1 className="pt-40 text-center uppercase font-CooperHevitt font-thin text-4xl">
         Photo Gallery
       </h1>
       <div className="block w-full max-w-[1200px] columns-3 max-lg:columns-2 max-md:columns-1 gap-0 break-inside-avoid mx-10 mt-10 max-sm:mx-0 ">
