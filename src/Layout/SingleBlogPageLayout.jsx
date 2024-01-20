@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "../section/SingleBlogPage/hero";
+import Hero from "../section/SingleBlogPage/Hero";
 import MainContent from "../section/SingleBlogPage/MainContent";
 export default function SingleBlogPageLayout() {
   return (
