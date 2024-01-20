@@ -14,12 +14,3 @@
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
 }
-
-.cell {
-  box-flex: 1;
-  flex: 1 1 auto;
-}
-
-.zoom-image {
-  max-height: 100%;
-}

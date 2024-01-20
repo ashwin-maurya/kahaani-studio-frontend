@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
-
+import PhotoModal from "./PhotoModal";
 const imageData = [
   {
     id: "img1",
@@ -90,25 +90,7 @@ export default function MainContent() {
       </div>
 
       {selectedImage && (
-        <div
-          className="fixed left-0 top-0 bottom-0 w-full overflow-hidden   z-[999999999] backdrop-blur-sm "
-          id={selectedImage.id}
-        >
-          <div className="zoom-wrapper__image relative h-full m-auto flex justify-center items-center">
-            <img
-              alt={selectedImage.alt}
-              className=" max-h-[95vh]"
-              src={selectedImage.src}
-            />
-          </div>
-          <a
-            className="text-5xl pr-10 absolute top-0 right-0 text-black"
-            href="#"
-            onClick={closeImage}
-          >
-            ×
-          </a>
-        </div>
+        <PhotoModal selectedImage={selectedImage} closeImage={closeImage} />
       )}
     </>
   );
