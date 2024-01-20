@@ -64,7 +64,7 @@ const Navbar = () => {
         >
           <Link
             to="/"
-            className="text-white max-md:ml-5 italic z-50 cursor-pointer mix-blend-difference text-3xl  font-Authorfont"
+            className="text-white max-md:ml-5 cursor-pointer mix-blend-difference text-2xl  font-Authorfont"
           >
             Kahaani Studio
           </Link>

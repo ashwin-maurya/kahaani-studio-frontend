@@ -22,9 +22,9 @@ export default function HeroAbout() {
             backgroundImage: `url("${backgroundImage}")`,
           }}
         >
-          <div className="relative max-w-[12vw] h-full z-10 pr-10 max-md:hidden pt-0 flex flex-col justify-center items-center text-center ">
+          <div className="absolute max-w-[12vw] h-full z-10 pr-10 max-md:hidden pt-0 flex flex-col justify-center items-center text-center ">
             <div className="rotate-90">
-              <div className="text-[8rem]  font-bold opacity-60 rotate-180">
+              <div className="text-[8rem] 2xl:text-[10rem] max-xl:text-[7rem] max-lg:text-[5rem]  font-bold opacity-60 rotate-180">
                 EXPLORE
               </div>
             </div>
