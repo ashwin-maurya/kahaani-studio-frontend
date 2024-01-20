@@ -8,7 +8,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import TravelLayout from "./Layout/TravelLayout";
 import PhotographyLayout from "./Layout/PhotographyLayout";
 import SingleBlogPageLayout from "./Layout/SingleBlogPageLayout";
-import NewsletterLayout from "./Layout/NewsletterLayout";
 import AboutLayout from "./Layout/AboutLayout";
 const App = () => {
   return (
@@ -22,9 +21,9 @@ const App = () => {
           <Route path="/home" element={<HomeLayout />} />
           <Route path="/travel" element={<TravelLayout />} />
           <Route path="/photography" element={<PhotographyLayout />} />
-          <Route path="/blog" element={<SingleBlogPageLayout />} />
+          <Route path="/lifestyle" element={<AboutLayout />} />
           <Route path="/about" element={<AboutLayout />} />
-          <Route path="/newsletter" element={<NewsletterLayout />} />
+          <Route path="/blog" element={<SingleBlogPageLayout />} />
         </Routes>
         <Footer></Footer>
       </div>

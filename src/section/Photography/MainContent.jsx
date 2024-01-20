@@ -101,7 +101,12 @@ export default function MainContent() {
       </div>
 
       {selectedImage && (
-        <PhotoModal selectedImage={selectedImage} closeImage={closeImage} />
+        <PhotoModal
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
+          imageData={imageData}
+          closeImage={closeImage}
+        />
       )}
     </>
   );
