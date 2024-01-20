@@ -3,10 +3,10 @@ import React from "react";
 export default function Newsletter() {
   return (
     <>
-      <div class="container my-24 mx-auto md:px-6">
+      <div class="max-w-screen-xl my-24 mx-auto ">
         <section class="mb-32 text-center lg:text-left">
           <div class="py-12 max-md:px-5 md:px-6 lg:my-12">
-            <div class="container mx-auto xl:px-32">
+            <div class="mx-auto xl:px-12">
               <div class="grid items-center gap-12 lg:grid-cols-2">
                 <div class="md:mt-12 lg:mt-0">
                   <h1 class="mb-12 max-md:mb-6 text-4xl font-bold font-Oswald tracking-tight md:text-5xl xl:text-6xl">
@@ -41,16 +41,14 @@ export default function Newsletter() {
                     </button>
                   </div>
                 </div>
-                <div class="mb-12 lg:mb-0">
-                  <div class="relative w-full overflow-hidden rounded-lg shadow-lg blogsshadow-black/20 pt-72">
-                    <iframe
-                      class="embed-responsive-item absolute top-0 right-0 bottom-0 left-0 h-full w-full"
-                      src="https://www.youtube.com/embed/gYjRhHzqeLc?si=9niHgcqMTNCh8iCF"
-                      allowfullscreen=""
-                      data-gtm-yt-inspected-2340190_699="true"
-                      id="240632615"
-                    ></iframe>
-                  </div>
+                <div class="aspect-video ">
+                  <iframe
+                    class="embed-responsive-item rounded-md h-full w-full"
+                    src="https://www.youtube.com/embed/gYjRhHzqeLc?si=9niHgcqMTNCh8iCF"
+                    allowfullscreen=""
+                    data-gtm-yt-inspected-2340190_699="true"
+                    id="240632615"
+                  ></iframe>
                 </div>
               </div>
             </div>

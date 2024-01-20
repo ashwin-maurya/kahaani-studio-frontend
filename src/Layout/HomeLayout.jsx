@@ -5,15 +5,15 @@ import BlogContent from "../section/Home/BlogContent";
 import StoryContent from "../section/Home/StoryContent";
 import BlogCards from "../section/Home/BlogCards";
 import Newsletter from "../section/Home/Newsletter";
+import YoutubeContent from "../section/Home/YoutubeContent";
 export default function HomeLayout() {
   return (
     <div>
       <HeroAbout />
-      <About />
-      {/* <BlogContent /> */}
       <StoryContent />
-      <BlogCards />
+      <YoutubeContent />
       <Newsletter />
+      <BlogCards />
     </div>
   );
 }

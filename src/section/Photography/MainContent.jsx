@@ -86,11 +86,11 @@ export default function MainContent() {
               onClick={() => openImage(image)}
             >
               <img
-                className="w-full group-hover:scale-105 transition-all ease-in-out duration-500 group-hover:opacity-70"
+                className="w-full group-hover:scale-105 transition-all ease-in-out duration-500 group-hover:opacity-90"
                 alt={image.description}
                 src={image.src}
               />
-              <div className="absolute -top-10 left-0 group-hover:translate-y-10 transition-all ease-in-out duration-300 pt-3 pl-5">
+              <div className="absolute bg-[#00000071]  left-0 top-0 transition-all ease-in-out duration-300 py-3 px-5">
                 <h1 className="block text-white uppercase font-Oswald">
                   {image.location}
                 </h1>
