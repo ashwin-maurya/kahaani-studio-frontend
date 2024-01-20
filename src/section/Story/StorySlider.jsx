@@ -87,8 +87,8 @@ const StorySlider = () => {
     <ReactInstaStories
       stories={stories}
       defaultInterval={1500}
-      width={432}
-      height={768}
+      width="450px"
+      height="100%"
     />
   );
 };
