@@ -12,7 +12,7 @@ export default function HomeLayout() {
       <About />
       {/* <BlogContent /> */}
       <StoryContent />
-      {/* <BlogCards /> */}
+      <BlogCards />
       <Newsletter />
     </div>
   );

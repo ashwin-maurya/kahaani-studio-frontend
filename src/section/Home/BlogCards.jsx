@@ -26,18 +26,18 @@ const blogsicles = [
 export default function BlogCards() {
   return (
     <>
-      <div className="mt-40 px-12 max-sm:px-0 max-sm:py-10 max-sm:pt-20">
+      <div className="mt-40 px-12 max-md:px-0 max-sm:mt-20">
         <div className="flex flex-col text-center w-full mb-10">
           <h2 className="max-sm:tracking-[6px] max-sm:text-[20px] tracking-[6px] font-semibold text-[40px] text-gray-900 font-Oswald textce uppercase">
             New blogs
           </h2>
         </div>
         <div className="flex justify-center items-center 2xl:gap-10 max-md:gap-0   flex-wrap max-md:flex-col w-full">
-          <div className="flex justify-center 2xl:gap-10 max-md:gap-0 w-full  flex-wrap max-md:flex-col ">
+          <div className="flex justify-center flex-row 2xl:gap-10 max-md:gap-0 w-full  flex-wrap max-md:flex-col ">
             {blogsicles.map((blogs) => (
               <div
                 key={blogs.id}
-                className="flex flex-col m-10 max-sm:m-2 max-sm:justify-center max-sm:items-center max-md:flex-row max-sm:pb-5 max-w-[300px] max-md:max-w-full max-sm:mx-5 w-full"
+                className="flex flex-col m-0 max-sm:justify-center max-sm:items-center max-md:flex-row max-sm:pb-5 max-md:px-2 w-full"
               >
                 <img
                   alt="blogs"

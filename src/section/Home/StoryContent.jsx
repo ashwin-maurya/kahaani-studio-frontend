@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
+import StoryModal from "../Story/StoryModal";
 const stories = [
   {
     category: "Politics",
@@ -66,9 +66,17 @@ export default function StoryContent() {
       scrollContainerRef.current.scrollLeft += scrollOffset;
     }
   };
+
+  const [ShowStories, setShowStories] = useState(false);
+
+  const openModal = () => {
+    setShowStories(true);
+  };
+
   return (
     <>
-      <div className="max-w-screen-xl p-5 max-sm:px-0 mx-auto relative mt-20">
+      <StoryModal setShowStories={setShowStories} ShowStories={ShowStories} />
+      <div className="max-w-screen-xl p-5 max-sm:px-0 mx-auto relative mt-20 max-md:mt-0">
         <div className="flex gap-5 overflow-hidden mx-10 max-md:mx-0">
           <button
             onClick={() => handleScroll(-400)}
@@ -78,11 +86,11 @@ export default function StoryContent() {
           </button>
 
           <div
-            className="flex items-end justify-start flex-shrink-0 gap-5 w-full text-left bg-center bg-cover h-[400px] overflow-x-auto scroll-smooth transition-all ease-in-out duration-300"
+            className="flex items-end justify-start flex-shrink-0 gap-5 max-md:gap-2 w-full text-left bg-center bg-cover h-[400px] overflow-x-auto scroll-smooth transition-all ease-in-out duration-300"
             ref={scrollContainerRef}
           >
             <h1
-              className="text-4xl font-CooperHevitt uppercase mx-10 h-full cursor-pointer text-center rotate-180"
+              className="text-4xl max-md:text-2xl font-CooperHevitt uppercase mx-10 max-md:mx-2 max-md:ml-4 h-full cursor-pointer text-center rotate-180"
               style={{ writingMode: "vertical-lr" }}
             >
               Trending Stories
@@ -90,20 +98,17 @@ export default function StoryContent() {
             {stories.map((story, index) => (
               <div
                 key={index}
-                className="relative flex min-w-[300px] items-end justify-start w-full text-left bg-center bg-cover h-[400px] bg-gray-500"
+                className="relative flex min-w-[300px] items-end justify-start w-full text-left bg-center bg-cover h-[400px] cursor-pointer max-md:h-[350px] max-md:min-w-[250px] bg-gray-500"
+                onClick={openModal}
                 style={{
                   backgroundImage: `url("${story.imageUrl}")`,
                 }}
               >
                 <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-gray-900 to-gray-900"></div>
                 <div className="absolute top-0 left-0 right-0 flex items-center justify-between">
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="px-3 py-2 text-xs font-semibold tracki uppercase text-gray-100 bg-violet-400"
-                  >
+                  <span className="px-3 py-2 text-xs font-semibold tracki uppercase text-gray-100 bg-violet-400">
                     {story.category}
-                  </a>
+                  </span>
                   <div className="flex flex-col justify-start text-center mr-5 mt-3 text-gray-100">
                     <span className="text-3xl font-semibold leadi tracki">
                       {story.date.day}
@@ -112,13 +117,9 @@ export default function StoryContent() {
                   </div>
                 </div>
                 <h2 className="z-10 p-5">
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="font-medium font-montserrat text-md group-hover:underline text-gray-100"
-                  >
+                  <span className="font-medium font-montserrat text-md group-hover:underline text-gray-100">
                     {story.title}
-                  </a>
+                  </span>
                 </h2>
               </div>
             ))}

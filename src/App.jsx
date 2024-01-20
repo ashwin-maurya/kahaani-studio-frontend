@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import TravelLayout from "./Layout/TravelLayout";
 import PhotographyLayout from "./Layout/PhotographyLayout";
+import SingleBlogPageLayout from "./Layout/SingleBlogPageLayout";
 const App = () => {
   return (
     <Router>
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/home" element={<HomeLayout />} />
           <Route path="/travel" element={<TravelLayout />} />
           <Route path="/photography" element={<PhotographyLayout />} />
+          <Route path="/blog" element={<SingleBlogPageLayout />} />
         </Routes>
         <Footer></Footer>
       </div>

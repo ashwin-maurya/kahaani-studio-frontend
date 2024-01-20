@@ -13,6 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-insta-stories": "^2.6.2",
     "react-router-dom": "^6.20.1"
   },
   "devDependencies": {
