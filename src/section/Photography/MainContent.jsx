@@ -77,7 +77,7 @@ export default function MainContent() {
       <div className="block w-screen columns-3 max-lg:columns-2 max-md:columns-2 gap-0 break-inside-avoid px-10 mt-10 max-md:px-0">
         {imageData.map((image, index) => (
           <div
-            className="group m-2 cursor-pointer bg-black relative overflow-hidden "
+            className="group m-2 my-4 max-md:m-1 max-md:my-2 cursor-pointer bg-black relative overflow-hidden "
             key={index}
           >
             <div
@@ -90,8 +90,8 @@ export default function MainContent() {
                 alt={image.description}
                 src={image.src}
               />
-              <div className="absolute bg-[#00000071]  left-0 top-0 transition-all ease-in-out duration-300 py-3 px-5">
-                <h1 className="block text-white uppercase font-Oswald">
+              <div className="absolute bg-[#00000071]  left-0 top-0 transition-all ease-in-out duration-300 py-3 max-md:py-1 px-5 max-md:px-2">
+                <h1 className="block max-md:text-xs text-white uppercase font-Oswald">
                   {image.location}
                 </h1>
               </div>

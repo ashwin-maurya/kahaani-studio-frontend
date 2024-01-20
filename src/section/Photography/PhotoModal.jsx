@@ -56,13 +56,13 @@ export default function PhotoModal({ selectedImage, closeImage }) {
               }}
             />
             <span
-              className="text-xl -translate-y-10 group-hover:translate-y-0 text-white absolute top-0 right-0 bg-gray-600 p-2 hover:scale-95 transition-all ease-in-out duration-500 cursor-pointer"
+              className="text-xl max-md:text-lg -translate-y-10 max-md:translate-y-0 group-hover:translate-y-0 text-white absolute top-0 right-0 bg-gray-600 p-2 hover:scale-95 transition-all ease-in-out duration-500 cursor-pointer"
               onClick={closeImage}
             >
               <FaTimes />
             </span>
             <span
-              className={`text-xl w-full opacity-0 group-hover:opacity-100 text-white absolute bottom-0 right-0 bg-[#00000071] p-2 transition-all ease-in-out duration-500`}
+              className={`text-xl w-full opacity-0  max-md:opacity-100 group-hover:opacity-100 text-white absolute bottom-0 right-0 bg-[#00000071] p-2 transition-all ease-in-out duration-500`}
             >
               <h1 className="font-Oswald text-base">
                 {selectedImage.location}
