@@ -15,7 +15,12 @@ export default function BlogCards() {
   })();
   return (
     <>
-      <div className="mt-40 px-12 max-md:px-0 max-sm:mt-20">
+      <div className="mt-40 px-12 max-md:px-0 max-sm:mt-20 2xl:px-40">
+        <div>
+          <h1 className="text-3xl my-5 font-Oswald text-center">
+            Some Instagram Feed
+          </h1>
+        </div>
         <div id="curator-feed-new-feed-layout">
           <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">
             Powered by Curator.io
