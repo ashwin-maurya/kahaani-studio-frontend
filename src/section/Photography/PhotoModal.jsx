@@ -74,6 +74,7 @@ export default function PhotoModal({
         >
           <div className="zoom-wrapper__image  group shadow-lg relative h-full m-auto flex justify-center items-center">
             <img
+              loading="lazy"
               ref={imageRef}
               className={`max-h-[95vh] transform transition-transform ease duration-300 ${
                 zoomed ? "scale-[2]  cursor-zoom-out" : " cursor-zoom-in "

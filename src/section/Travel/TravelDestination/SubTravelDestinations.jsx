@@ -51,8 +51,8 @@ export default function SubTravelDestinations() {
 
   return (
     <>
-      <div className="max-w-screen-xl pb-10 max-sm:px-0 mx-auto relative mt-0 max-md:mt-0">
-        <div className="flex gap-5 overflow-hidden mx-10 max-md:mx-0">
+      <div className="max-w-screen-xl pb-10 max-sm:px-0 mx-auto relative mt-0 max-md:mt-5">
+        <div className="flex gap-5 overflow-hidden overflow-x-scroll mx-10 max-md:mx-0">
           <button
             onClick={() => handleScroll(-400)}
             className="absolute left-0  text-2xl top-0 bottom-0 ml-2 max-md:hidden text-black px-2 py-1 focus:outline-none z-50 bg-white hover:bg-stone-100 rounded-md my-5"
@@ -61,7 +61,7 @@ export default function SubTravelDestinations() {
           </button>
 
           <div
-            className="flex items-center justify-start flex-shrink-0 gap-5 max-md:gap-2 w-full text-left bg-center bg-cover max-h-[200px]  overflow-x-auto scroll-smooth transition-all ease-in-out duration-300"
+            className="flex items-center justify-start  gap-5 max-md:gap-2 w-full text-left bg-center bg-cover max-h-[200px] max-md:max-h-[150px]  overflow-x-scroll scroll-smooth transition-all ease-in-out duration-300 "
             ref={scrollContainerRef}
           >
             <h1
@@ -77,10 +77,11 @@ export default function SubTravelDestinations() {
                   className="w-full flex-col rounded-full flex justify-center items-center mix-blend-normal text-center "
                 >
                   <img
-                    className="group bg-no-repeat h-[150px] w-[150px] bg-cover  scale-95 object-cover object-center transition-all ease-in-out duration-500 group-hover:opacity-90 rounded-full"
+                    loading="lazy"
+                    className="group bg-no-repeat min-w-[150px] max-md:min-w-[100px] h-[150px] w-[150px] max-md:w-[100px] max-md:h-[100px] bg-cover  scale-95 object-cover object-center transition-all ease-in-out duration-500 group-hover:opacity-90 rounded-full"
                     src={destination.imageUrl}
                   />
-                  <span className="text-lg text-center transition-all ease-out duration-500 font-bold tracking-wider font-Oswald uppercase w-full">
+                  <span className="text-lg max-md:text-xs text-center transition-all ease-out duration-500 font-bold tracking-wider font-Oswald uppercase w-full">
                     {destination.title}
                   </span>
                 </a>

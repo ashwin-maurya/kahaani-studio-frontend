@@ -86,6 +86,7 @@ export default function MainContent() {
               onClick={() => openImage(image)}
             >
               <img
+                loading="lazy"
                 className="w-full group-hover:scale-105 transition-all ease-in-out duration-500 group-hover:opacity-90"
                 alt={image.description}
                 src={image.src}

@@ -7,6 +7,7 @@ export default function Articles() {
         <div class="bg-white w-72 h-96 shadow-md rounded m-3">
           <div class="h-3/4 w-full">
             <img
+              loading="lazy"
               class="w-full h-full object-cover rounded-t"
               src="https://images.pexels.com/photos/6157052/pexels-photo-6157052.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               alt="piña"
@@ -26,6 +27,7 @@ export default function Articles() {
         <div class="bg-white w-72 h-96 shadow-md rounded m-3">
           <div class="h-3/4 w-full">
             <img
+              loading="lazy"
               class="w-full h-full object-cover rounded-t"
               src="https://images.pexels.com/photos/5966630/pexels-photo-5966630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               alt="piña"
@@ -45,6 +47,7 @@ export default function Articles() {
         <div class="bg-white w-72 h-96 shadow-md rounded m-3">
           <div class="h-3/4 w-full">
             <img
+              loading="lazy"
               class="w-full h-full object-cover rounded-t"
               src="https://images.pexels.com/photos/5217960/pexels-photo-5217960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               alt="piña"

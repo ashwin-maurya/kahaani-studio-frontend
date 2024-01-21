@@ -38,6 +38,7 @@ export default function BannerHero() {
         </div>
         <div class="bg-red-600 w-full md:w-1/2 h-screen">
           <img
+            loading="lazy"
             src="https://source.unsplash.com/7H77FWkK_x4/1600x900"
             class="h-screen w-full"
             alt=""

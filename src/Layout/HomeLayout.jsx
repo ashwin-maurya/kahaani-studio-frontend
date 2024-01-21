@@ -1,17 +1,17 @@
 import React from "react";
-import HeroAbout from "../section/Home/HeroAbout";
-import BlogContent from "../section/Home/BlogContent";
-import StoryContent from "../section/Home/StoryContent";
+import HeroAbout from "../section/Home/Hero/HeroAbout";
+import StoryContent from "../section/Home/Stories/StoryContent";
+import YoutubeContent from "../section/Home/YoutubeContent/YoutubeContent";
+import Newsletter from "../section/Home/Newsletter/Newsletter";
 import BlogCards from "../section/Home/BlogCards";
-import Newsletter from "../section/Home/Newsletter";
-import YoutubeContent from "../section/Home/YoutubeContent";
+import NewsletterHero from "../section/Home/Newsletter/NewsletterHero";
 export default function HomeLayout() {
   return (
     <div>
       <HeroAbout />
       <StoryContent />
       <YoutubeContent />
-      <Newsletter />
+      <NewsletterHero />
       <BlogCards />
     </div>
   );

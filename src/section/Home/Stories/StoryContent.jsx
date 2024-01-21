@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import StoryModal from "../Story/StoryModal";
+import StoryModal from "../../Story/StoryModal";
 const stories = [
   {
     category: "Politics",
@@ -76,17 +76,17 @@ export default function StoryContent() {
   return (
     <>
       <StoryModal setShowStories={setShowStories} ShowStories={ShowStories} />
-      <div className="max-w-screen-xl p-5 max-sm:px-0 mx-auto relative mt-40 max-md:mt-0">
+      <div className="max-w-screen-xl p-5 max-sm:px-0 mx-auto relative mt-40 max-md:mt-10">
         <div className="flex gap-5 overflow-hidden mx-10 max-md:mx-0">
           <button
             onClick={() => handleScroll(-400)}
-            className="absolute left-0  text-2xl top-0 bottom-0 ml-2 max-md:hidden text-black px-2 py-1 focus:outline-none z-50 bg-white hover:bg-stone-100 rounded-md my-5"
+            className="absolute left-0  text-2xl top-0 bottom-0 ml-2 max-md:hidden text-black px-2 py-1 focus:outline-none z-50 bg-white hover:bg-purple-100 rounded-md my-5"
           >
             <FaChevronLeft />
           </button>
 
           <div
-            className="flex items-end justify-start flex-shrink-0 gap-5 max-md:gap-2 w-full text-left bg-center bg-cover h-[400px] overflow-x-auto scroll-smooth transition-all ease-in-out duration-300"
+            className="flex items-end justify-start flex-shrink-0 gap-5 max-md:gap-2 w-full text-left bg-center bg-cover 2xl:h-[500px] h-[400px] overflow-x-auto scroll-smooth transition-all ease-in-out duration-300"
             ref={scrollContainerRef}
           >
             <h1
@@ -98,7 +98,7 @@ export default function StoryContent() {
             {stories.map((story, index) => (
               <div
                 key={index}
-                className="relative flex min-w-[300px] items-end justify-start w-full text-left bg-center bg-cover h-[400px] cursor-pointer max-md:h-[350px] max-md:min-w-[250px] bg-gray-500"
+                className="relative flex min-w-[300px] items-end justify-start w-full text-left bg-center bg-cover 2xl:h-[500px] h-[400px] cursor-pointer max-md:h-[350px] max-md:min-w-[250px] bg-gray-500"
                 onClick={openModal}
                 style={{
                   backgroundImage: `url("${story.imageUrl}")`,
@@ -133,7 +133,7 @@ export default function StoryContent() {
 
           <button
             onClick={() => handleScroll(400)}
-            className="absolute right-0 text-2xl max-md:hidden top-0 bottom-0 mr-2 text-black px-2 py-1 focus:outline-none bg-white hover:bg-stone-100 rounded-md my-5"
+            className="absolute right-0 text-2xl max-md:hidden top-0 bottom-0 mr-2 text-black px-2 py-1 focus:outline-none bg-white hover:bg-purple-100 rounded-md my-5"
           >
             <FaChevronRight />
           </button>

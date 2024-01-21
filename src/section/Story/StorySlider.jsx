@@ -32,6 +32,7 @@ const StorySlider = () => {
               <code style={code}>here they are 😄 -></code>
             </pre> */}
             <img
+              loading="lazy"
               style={image}
               src="https://i.ibb.co/fY1DmQW/8aacdef9ba37db60c7a96271877cfbb5.jpg"
             ></img>

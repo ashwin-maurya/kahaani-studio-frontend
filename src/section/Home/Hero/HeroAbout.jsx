@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import HeroSlider from "./HeroSlider";
+import HeroSlider from "../HeroSlider";
 
 export default function HeroAbout() {
   const [backgroundImage, setBackgroundImage] = useState(
@@ -45,6 +45,7 @@ export default function HeroAbout() {
             </div>
             <div className="relative cursor-pointer rounded-md">
               <img
+                loading="lazy"
                 className="w-[400px] max-sm:w-[350px] h-[300px] m-2 bg-cover bg-center"
                 style={{
                   backgroundImage: `url(https://content.presspage.com/uploads/2338/1920_selfie-auf-der-reise-copypeopleimages.com-adobestock-493554509.jpeg?10000)`,

@@ -6,6 +6,7 @@ export default function About() {
       <div className="flex w-full h-full max-md:flex-col justify-center items-center  flex-row-reverse  background">
         <div className="relative cursor-pointer rounded-md">
           <img
+            loading="lazy"
             className="w-[500px] max-sm:w-[350px] h-[400px] m-2 shadow-md bg-cover bg-center bg-white"
             style={{
               backgroundImage: `url(https://content.presspage.com/uploads/2338/1920_selfie-auf-der-reise-copypeopleimages.com-adobestock-493554509.jpeg?10000)`,

@@ -12,6 +12,7 @@ export default function Hero() {
           }}
         ></div>
         <img
+          loading="lazy"
           src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
           class="absolute left-0 top-0 w-full h-full z-0 object-cover"
         />

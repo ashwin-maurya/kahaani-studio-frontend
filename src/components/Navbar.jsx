@@ -52,7 +52,7 @@ const Navbar = () => {
       {showNav && <SideNav NavStatus={NavStatus}></SideNav>}
       <section
         id="navbar"
-        className={`fixed w-full border-white top-0 select-none transition-all ease-in-out duration-700 z-[100] ${
+        className={`fixed w-full border-white top-0 select-none  z-[100] ${
           isScrolled &&
           (location.pathname === "/" || location.pathname === "/home")
             ? "mix-blend-difference"
