@@ -54,11 +54,11 @@ export default function Articles() {
       {articlesData.map((article, index) => (
         <div
           key={index}
-          className={`md mx-14 flex flex-wrap items-center max-md:mx-5 ${
-            index % 2 !== 0 ? "flex-row-reverse" : ""
+          className={`md mx-14 flex flex-wrap items-center max-md:mx-5 max-md:mb-5 max-md:flex-col-reverse ${
+            index % 2 !== 0 ? "flex-row-reverse " : ""
           }`}
         >
-          <div className="w-1/2 bg-white p-10 max-md:w-full">
+          <div className="w-1/2 bg-white p-10 max-md:w-full max-md:px-0 max-md:py-5">
             <div className="max-md:mx-4">
               <h1 className="text-6xl font-bold">{article.title}</h1>
 
@@ -86,7 +86,7 @@ export default function Articles() {
               </button>
             </div>
           </div>
-          <div className="h-[400px] w-1/2 bg-gray-800 max-md:w-full ">
+          <div className="h-[400px] w-1/2 bg-gray-800 max-md:h-[300px] max-md:w-full ">
             <img
               loading="lazy"
               src={article.imageSrc}
