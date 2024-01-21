@@ -11,18 +11,18 @@ export default function YoutubeContent() {
 
   return (
     <>
-      <div className="2xl:max-w-screen-xl max-md:scale-[.9] scale-[.8] 2xl:scale-100 2xl:my-40 mx-auto  mt-20 max-sm:mt-5 mb-20">
-        <h1 className="text-5xl mb-10 relative right-10 max-md:right-0 font-thin my-5 font-Oswald text-left">
+      <div className="scale-[.8] max-md:scale-[.9] max-sm:mt-5  2xl:max-w-screen-xl 2xl:scale-100">
+        <h1 className="relative right-10 mb-10 text-left font-Oswald text-5xl  font-thin max-md:right-0">
           Latest Videos
         </h1>
         <div className="flex max-md:flex-col">
-          <div className=" aspect-video  w-[75%] max-md:w-full max-md:mb-4">
+          <div className=" aspect-video  w-[75%] max-md:mb-4 max-md:w-full">
             <YoutubeLazyLoad
               videoUrl={videos[0].videoUrl}
               altText={videos[0].altText}
             />
           </div>
-          <div className="flex flex-col justify-between mx-5 max-md:mx-0 gap-3">
+          <div className="mx-5 flex flex-col justify-between gap-3 max-md:mx-0">
             {videos.slice(1).map((video) => (
               <div key={video.id} className=" aspect-video ">
                 <YoutubeLazyLoad

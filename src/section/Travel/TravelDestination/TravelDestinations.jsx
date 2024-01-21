@@ -42,30 +42,30 @@ const travelDestinationsData = [
 export default function TravelDestinations() {
   return (
     <>
-      <h1 className="text-center uppercase font-CooperHevitt font-thin text-4xl max-md:text-xl">
+      <h1 className="text-center font-CooperHevitt text-4xl font-thin uppercase max-md:text-xl">
         FEATURED DESTINATIONS
       </h1>
-      <div className="block w-screen columns-3 max-lg:columns-2 max-md:columns-2 gap-0 break-inside-avoid px-10 mt-10 max-md:mt-3 max-md:px-0">
+      <div className="mt-10 block w-full columns-3 break-inside-avoid gap-0 px-10 max-lg:columns-2 max-md:mt-3 max-md:columns-2 max-md:px-0">
         {travelDestinationsData.map((destination) => (
-          <div className="relative overflow-hidden">
-            <div key={destination.id} className={`group bg-no-repeat bg-cover`}>
+          <a href="#" className="relative overflow-hidden">
+            <div key={destination.id} className={`group bg-cover bg-no-repeat`}>
               <a
                 href={destination.link}
-                className="w-full h-full flex justify-center items-center mix-blend-normal text-center "
+                className="flex h-full w-full items-center justify-center text-center mix-blend-normal "
               >
                 <img
                   loading="lazy"
-                  className="w-full scale-95 object-cover object-center transition-all ease-in-out duration-500 group-hover:opacity-90"
+                  className="w-full scale-95 object-cover object-center transition-all duration-500 ease-in-out group-hover:opacity-80"
                   src={destination.imageUrl}
                 />
-                <div className="absolute flex text-white flex-wrap items-center justify-center h-auto m-0 p-5 w-full">
-                  <span className="bg-[#00000082] text-xl max-sm:text-sm transition-all ease-out duration-500 font-bold tracking-wider font-Oswald px-10 group-hover:px-16 py-5 group-hover:py-8 uppercase">
+                <div className="absolute m-0 flex h-auto w-full flex-wrap items-center justify-center p-5 text-white">
+                  <span className="bg-[#00000082] px-10 py-5 font-Oswald text-xl font-bold uppercase tracking-wider transition-all duration-500 ease-out  max-sm:text-sm">
                     {destination.title}
                   </span>
                 </div>
               </a>
             </div>
-          </div>
+          </a>
         ))}
       </div>
       <SubTravelDestinations />

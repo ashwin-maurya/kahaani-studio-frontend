@@ -38,6 +38,24 @@ const travelDestinationsData = [
     link: "#",
     imageUrl: "https://picsum.photos/1024/768?image=1080",
   },
+  {
+    id: 7,
+    title: "Destination 4",
+    link: "#",
+    imageUrl: "https://picsum.photos/1024/768?image=1073",
+  },
+  {
+    id: 8,
+    title: "Destination 5",
+    link: "#",
+    imageUrl: "https://picsum.photos/1024/768?image=1032",
+  },
+  {
+    id: 9,
+    title: "Destination 6",
+    link: "#",
+    imageUrl: "https://picsum.photos/1024/768?image=1080",
+  },
 ];
 
 export default function SubTravelDestinations() {
@@ -51,50 +69,50 @@ export default function SubTravelDestinations() {
 
   return (
     <>
-      <div className="max-w-screen-xl pb-10 max-sm:px-0 mx-auto relative mt-0 max-md:mt-5">
-        <div className="flex gap-5 overflow-hidden overflow-x-scroll mx-10 max-md:mx-0">
+      <div className="relative mx-10 mt-5 max-w-screen-xl pb-10 max-md:mt-5 max-sm:px-0">
+        <div className="mx-10 flex items-center justify-center gap-5 overflow-hidden overflow-x-scroll max-md:mx-0">
           <button
             onClick={() => handleScroll(-400)}
-            className="absolute left-0  text-2xl top-0 bottom-0 ml-2 max-md:hidden text-black px-2 py-1 focus:outline-none z-50 bg-white hover:bg-stone-100 rounded-md my-5"
+            className="absolute left-0 z-50 h-full rounded-md bg-white px-2 py-1 text-2xl text-black hover:bg-stone-100 focus:outline-none max-md:hidden"
           >
             <FaChevronLeft />
           </button>
 
           <div
-            className="flex items-center justify-start  gap-5 max-md:gap-2 w-full text-left bg-center bg-cover max-h-[200px] max-md:max-h-[150px]  overflow-x-scroll scroll-smooth transition-all ease-in-out duration-300 "
+            className="flex max-h-[200px] w-full  items-center justify-start gap-5 overflow-x-scroll scroll-smooth bg-cover bg-center text-left  transition-all duration-300 ease-in-out max-md:max-h-[150px] max-md:gap-2 "
             ref={scrollContainerRef}
           >
             <h1
-              className="text-3xl h-full max-md:text-2xl font-CooperHevitt uppercase mx-10 max-md:mx-2 max-md:ml-4 cursor-pointer text-center rotate-180"
+              className="mx-10 h-full rotate-180 cursor-pointer text-center font-CooperHevitt text-3xl uppercase max-md:mx-2 max-md:ml-4 max-md:text-2xl"
               style={{ writingMode: "vertical-lr" }}
             >
               More
             </h1>
             {travelDestinationsData.map((destination) => (
-              <div className="relative items-end justify-start w-full text-left bg-center bg-cover cursor-pointer flex flex-col">
+              <div className="relative flex w-full cursor-pointer flex-col items-end justify-start bg-cover bg-center text-left">
                 <a
                   href={destination.link}
-                  className="w-full flex-col rounded-full flex justify-center items-center mix-blend-normal text-center "
+                  className="flex w-full flex-col items-center justify-center rounded-full text-center mix-blend-normal "
                 >
                   <img
                     loading="lazy"
-                    className="group bg-no-repeat min-w-[150px] max-md:min-w-[100px] h-[150px] w-[150px] max-md:w-[100px] max-md:h-[100px] bg-cover  scale-95 object-cover object-center transition-all ease-in-out duration-500 group-hover:opacity-90 rounded-full"
+                    className="group h-[150px] w-[150px] min-w-[150px] scale-95 rounded-full bg-cover bg-no-repeat object-cover  object-center transition-all duration-500 ease-in-out group-hover:opacity-90 max-md:h-[100px] max-md:w-[100px] max-md:min-w-[100px]"
                     src={destination.imageUrl}
                   />
-                  <span className="text-lg max-md:text-xs text-center transition-all ease-out duration-500 font-bold tracking-wider font-Oswald uppercase w-full">
+                  <span className="w-full text-center font-Oswald text-lg font-bold uppercase tracking-wider transition-all duration-500 ease-out max-md:text-xs">
                     {destination.title}
                   </span>
                 </a>
               </div>
             ))}
           </div>
+          <button
+            onClick={() => handleScroll(400)}
+            className="absolute right-0 z-50 h-full rounded-md bg-white px-2 py-1 text-2xl text-black hover:bg-stone-100 focus:outline-none max-md:hidden"
+          >
+            <FaChevronRight />
+          </button>
         </div>
-        <button
-          onClick={() => handleScroll(400)}
-          className="absolute right-0 text-2xl max-md:hidden top-0 bottom-0 mr-2 text-black px-2 py-1 bg-white focus:outline-none hover:bg-stone-100 rounded-md my-5"
-        >
-          <FaChevronRight />
-        </button>
       </div>
     </>
   );

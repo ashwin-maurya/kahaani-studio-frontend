@@ -9,10 +9,18 @@ export default function HomeLayout() {
   return (
     <div>
       <HeroAbout />
-      <StoryContent />
-      <YoutubeContent />
-      <NewsletterHero />
-      <BlogCards />
+      <div className="mx-auto max-w-screen-xl pt-20">
+        <StoryContent />
+      </div>
+      <div className="mx-auto max-w-screen-xl pt-20">
+        <YoutubeContent />
+      </div>
+      <div className="mx-auto pt-28">
+        <NewsletterHero />
+      </div>
+      <div className="mx-auto max-w-screen-xl pt-20">
+        <BlogCards />
+      </div>
     </div>
   );
 }

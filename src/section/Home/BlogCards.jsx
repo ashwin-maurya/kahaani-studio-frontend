@@ -15,9 +15,9 @@ export default function BlogCards() {
   })();
   return (
     <>
-      <div className="mt-40 px-12 max-md:px-0 max-sm:mt-20 2xl:px-40">
+      <div className="max-md:px-0 max-sm:mt-20 2xl:px-40">
         <div>
-          <h1 className="text-3xl my-5 font-Oswald text-center">
+          <h1 className="my-5 text-center font-Oswald text-3xl">
             Some Instagram Feed
           </h1>
         </div>
