@@ -11,7 +11,7 @@ export default function YoutubeContent() {
 
   return (
     <>
-      <div className="scale-[.8] max-md:scale-[.9] max-sm:mt-5  2xl:max-w-screen-xl 2xl:scale-100">
+      <div className="scale-[.8] max-md:scale-[.9]  2xl:max-w-screen-xl 2xl:scale-100">
         <h1 className="relative right-10 mb-10 text-left font-Oswald text-5xl  font-thin max-md:right-0">
           Latest Videos
         </h1>

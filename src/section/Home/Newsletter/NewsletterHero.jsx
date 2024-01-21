@@ -3,7 +3,7 @@ import Newsletter from "./Newsletter";
 export default function NewsletterHero() {
   return (
     <>
-      <div className="relative min-h-72 bg-gray-400 bg-cover bg-fixed bg-center bg-no-repeat">
+      <div className="relative min-h-72 bg-blue-300 bg-cover bg-fixed bg-center bg-no-repeat">
         <div className="absolute inset-x-0 bottom-0">
           <svg
             viewBox="0 0 224 12"

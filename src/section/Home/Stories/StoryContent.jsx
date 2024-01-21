@@ -76,7 +76,7 @@ export default function StoryContent() {
   return (
     <>
       <StoryModal setShowStories={setShowStories} ShowStories={ShowStories} />
-      <div className="relative p-5 max-md:mt-10 max-sm:px-0">
+      <div className="relative p-5 max-sm:px-0">
         <div className="mx-10 flex gap-5 overflow-hidden max-md:mx-0">
           <button
             onClick={() => handleScroll(-400)}

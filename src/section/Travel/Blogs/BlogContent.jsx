@@ -41,7 +41,10 @@ export default function BlogContent() {
       </h1>
       <main className="flex w-full flex-wrap items-start justify-center px-10 py-10 max-md:flex-col max-md:px-6">
         {featuredDestinations.map((destination, index) => (
-          <a href="#" className="group w-1/3 rounded px-5 pb-5 max-md:w-full">
+          <a
+            href="#"
+            className="group w-1/3 rounded px-5 pb-5 max-md:w-full max-md:px-0"
+          >
             <div key={index} className="">
               <div className="h-full w-full">
                 <img
