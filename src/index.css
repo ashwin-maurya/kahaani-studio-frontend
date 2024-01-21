@@ -10,34 +10,35 @@
 
 @font-face {
   font-family: "Minerva-Modern-Regular";
-  src: local("Minerva-Modern-Regular"),
+  src:
+    local("Minerva-Modern-Regular"),
     url(./fonts/Minerva-Modern-Regular.otf) format("opentype");
 }
-@font-face {
-  font-family: "Slabo27px-Regular";
-  src: local("Slabo27px-Regular"),
-    url(./fonts/Slabo27px-Regular.otf) format("opentype");
-}
+
 @font-face {
   font-family: "Mont-ExtraLightDEMO";
-  src: local("Mont-ExtraLightDEMO"),
+  src:
+    local("Mont-ExtraLightDEMO"),
     url(./fonts/Mont-ExtraLightDEMO.otf) format("opentype");
 }
 
 @font-face {
   font-family: "GamiliademoRegular-mL9Ev";
-  src: local("GamiliademoRegular-mL9Ev"),
+  src:
+    local("GamiliademoRegular-mL9Ev"),
     url(./fonts/GamiliademoRegular-mL9Ev.otf) format("opentype");
 }
 @font-face {
   font-family: "CooperHewitt-Light";
-  src: local("CooperHewitt-Light"),
+  src:
+    local("CooperHewitt-Light"),
     url(./fonts/CooperHewitt-Light.otf) format("opentype");
 }
 @font-face {
-  font-family: "AGaramondPro-Regular";
-  src: local("AGaramondPro-Regular"),
-    url(./fonts/AGaramondPro-Regular.otf) format("opentype");
+  font-family: "HankenGrotesk-VariableFont_wght";
+  src:
+    local("HankenGrotesk-VariableFont_wght"),
+    url(./fonts/HankenGrotesk-VariableFont_wght.ttf) format("truetype");
 }
 
 * {

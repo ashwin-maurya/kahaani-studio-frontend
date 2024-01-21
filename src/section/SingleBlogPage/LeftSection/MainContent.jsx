@@ -3,7 +3,7 @@ import React from "react";
 export default function MainContent() {
   return (
     <>
-      <div class="px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
+      <div class="font-HankenGrotesk  mx-auto mt-12  px-4 text-xl leading-relaxed tracking-wide text-gray-700">
         <p class="pb-6">
           Advantage old had otherwise sincerity dependent additions. It in
           adapted natural hastily is justice. Six draw you him full not mean
@@ -35,7 +35,7 @@ export default function MainContent() {
           If feelings so prospect no as raptures quitting.
         </p>
 
-        <div class="border-l-4 border-gray-500 pl-4 mb-6 italic rounded">
+        <div class="mb-6 rounded border-l-4 border-gray-500 pl-4 italic">
           Sportsman do offending supported extremity breakfast by listening.
           Decisively advantages nor expression unpleasing she led met. Estate
           was tended ten boy nearer seemed. As so seeing latter he should thirty
@@ -52,7 +52,7 @@ export default function MainContent() {
           remarkably new assistance saw literature mrs favourable.
         </p>
 
-        <h2 class="text-2xl text-gray-800 font-semibold mb-4 mt-4">
+        <h2 class="mb-4 mt-4 text-2xl font-semibold text-gray-800">
           Uneasy barton seeing remark happen his has
         </h2>
 
