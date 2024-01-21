@@ -13,7 +13,7 @@ export default function Hero() {
           >
             Nutrition
           </a>
-          <h2 class="text-center font-Gamiliademo text-4xl font-semibold leading-tight text-gray-800">
+          <h2 class="text-center font-Gamiliademo text-4xl font-semibold leading-tight text-gray-800 max-md:text-2xl">
             Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales,
             massa et auctor.
           </h2>
