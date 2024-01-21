@@ -17,7 +17,7 @@ export default function Hero() {
             Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales,
             massa et auctor.
           </h2>
-          <h1 className="my-5 flex justify-center text-center font-CooperHevitt font-normal">
+          <h1 className="my-5 flex  justify-center text-center font-CooperHevitt font-normal">
             <span>by Shikha Gautam</span>
             <span className="mx-2 opacity-50">•</span>
             <span>20th January, 2023</span>
