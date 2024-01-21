@@ -133,7 +133,7 @@ export default function StoryContent() {
 
           <button
             onClick={() => handleScroll(400)}
-            className="absolute right-0 text-2xl max-md:hidden top-0 bottom-0 mr-2 text-black px-2 py-1 focus:outline-none hover:bg-stone-100 rounded-md my-5"
+            className="absolute right-0 text-2xl max-md:hidden top-0 bottom-0 mr-2 text-black px-2 py-1 focus:outline-none bg-white hover:bg-stone-100 rounded-md my-5"
           >
             <FaChevronRight />
           </button>

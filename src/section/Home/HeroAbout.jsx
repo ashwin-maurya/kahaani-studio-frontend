@@ -30,12 +30,12 @@ export default function HeroAbout() {
             </div>
           </div>
 
-          <div className="absolute max-md:w-full flex flexror justify-center items-center right-0 bottom-0 ">
-            <div className="max-w-[400px]  mix-blend-difference  max-md:max-w-full flex flex-col max-md:mt-10 w-full mr-10 max-md:mr-0 max-md:px-5  ">
-              <h1 className="pb-5 max-sm:pb-2 antialiased font-semibold text-5xl relative font-Oswald capitalize">
+          <div className="absolute max-md:w-full flex max-md:flex-col-reverse flexror justify-center items-center right-0 bottom-0 ">
+            <div className="max-w-[400px]  mix-blend-difference  max-md:max-w-full flex flex-col  max-md:mt-10 w-full mr-10 max-md:mr-0 max-md:px-5  ">
+              <h1 className="pb-5 max-sm:pb-2 antialiased font-semibold text-5xl max-md:text-3xl relative font-Oswald capitalize">
                 Shikha Gautam
               </h1>
-              <p className="pb-5 text-xl font-CooperHevitt antialiased font-bold">
+              <p className="pb-5 text-xl max-md:text-base font-CooperHevitt antialiased font-bold">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
                 laborum suscipit doloremque, expedita voluptatum maiores
                 corporis modi assumenda esse consectetur error nulla, vero

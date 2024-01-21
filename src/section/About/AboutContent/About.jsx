@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <>
-      <div className="flex mt-10 py-20 w-full h-full max-md:flex-col justify-center items-center  flex-row-reverse  background">
+      <div className="flex w-full h-full max-md:flex-col justify-center items-center  flex-row-reverse  background">
         <div className="relative cursor-pointer rounded-md">
           <img
             className="w-[500px] max-sm:w-[350px] h-[400px] m-2 shadow-md bg-cover bg-center bg-white"

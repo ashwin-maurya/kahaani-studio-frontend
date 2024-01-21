@@ -71,7 +71,7 @@ export default function MainContent() {
 
   return (
     <>
-      <h1 className="pt-40 text-center uppercase font-CooperHevitt font-thin text-4xl">
+      <h1 className="text-center uppercase font-CooperHevitt font-thin text-4xl">
         Photo Gallery
       </h1>
       <div className="block w-screen columns-3 max-lg:columns-2 max-md:columns-2 gap-0 break-inside-avoid px-10 mt-10 max-md:px-0">
