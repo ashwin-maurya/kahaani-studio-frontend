@@ -10,15 +10,15 @@ export default function SideNav(props) {
     <>
       <div
         id="mySidenav"
-        className="backdrop-blur-sm fixed select-none w-screen sidenav bg-Opacitywhite h-[100vh] overflow-hidden  z-[99] transition-all ease-in-out delay-75 duration-200 bg-[#ffffff7e]"
+        className="sidenav bg-Opacitywhite fixed z-[99] h-[100vh] w-screen select-none overflow-hidden  bg-[#ffffff48] backdrop-blur-md transition-all delay-75 duration-200 ease-in-out"
       >
-        <div className="w-full flex justify-start  items-center select-none h-full shadow-lg overflow-hidden dark:bg-darkBgMain flex-col">
-          <div className="flex w-auto mt-24">
-            <ul className="flex-1 flex flex-col items-center gap-8">
+        <div className="dark:bg-darkBgMain flex h-full  w-full select-none flex-col items-center justify-start overflow-hidden shadow-lg">
+          <div className="mt-24 flex w-auto">
+            <ul className="flex flex-1 flex-col items-center gap-8">
               {navLinks.map((item) => (
                 <li
                   key={item.label}
-                  className={`relative px-2 font-CooperHevitt uppercase font-normal text-lg cursor-pointer`}
+                  className={`relative cursor-pointer px-2 font-CooperHevitt text-lg font-normal uppercase`}
                 >
                   <Link to={item.href}>{item.label}</Link>
                 </li>

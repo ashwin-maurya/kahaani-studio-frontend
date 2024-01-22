@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { navLinks } from "./constants";
 import SideNav from "./SideNav";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 const Navbar = () => {
   const location = useLocation();
   const [showNav, setNav] = useState(false);
@@ -52,7 +52,7 @@ const Navbar = () => {
       {showNav && <SideNav NavStatus={NavStatus}></SideNav>}
       <section
         id="navbar"
-        className={`fixed w-full border-white top-0 select-none  z-[100] ${
+        className={`fixed top-0 z-[100] w-full select-none  border-white ${
           isScrolled &&
           (location.pathname === "/" || location.pathname === "/home")
             ? "mix-blend-difference"
@@ -60,30 +60,30 @@ const Navbar = () => {
         }`}
       >
         <nav
-          className={`text-white flex flex-row justify-end px-10 max-md:px-0 top-0 max-md:flex-row max-md:justify-between  items-center w-full py-5 max-md:py-2`}
+          className={`top-0 flex w-full flex-row items-center justify-end px-10 py-5 text-white  max-md:flex-row max-md:justify-between max-md:px-0 max-md:py-2`}
         >
           <Link
             to="/"
-            className="text-white max-md:ml-5 cursor-pointer mix-blend-difference text-2xl  font-Authorfont"
+            className="cursor-pointer font-Authorfont text-2xl text-white mix-blend-difference  max-md:ml-5"
           >
             Kahaani Studio
           </Link>
-          <div className="flex absolute items-center w-[100%] justify-center max-sm:mt-0 2xl:mb-2 mix-blend-difference text-[#ffffff]">
-            <ul className="flex-1 flex w-full justify-center items-center gap-8 max-md:hidden">
+          <div className="absolute flex w-[100%] items-center justify-center text-[#ffffff] mix-blend-difference max-sm:mt-0 2xl:mb-2">
+            <ul className="flex w-full flex-1 items-center justify-center gap-8 max-md:hidden">
               {navLinks.map((item) => (
                 <li
                   key={item.label}
-                  className={`relative px-2 font-CooperHevitt uppercase font-normal text-lg cursor-pointer`}
+                  className={`relative cursor-pointer px-2 font-CooperHevitt text-lg font-normal uppercase`}
                 >
                   <Link to={item.href}>{item.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="hidden max-md:block outline-none" onClick={NavStatus}>
-            <div className="relative group outline-none hover:bg-transparent">
-              <div className="relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all duration-200 text-2xl  mix-blend-difference ">
-                <FaBars />
+          <div className="hidden outline-none max-md:block" onClick={NavStatus}>
+            <div className="group relative outline-none hover:bg-transparent">
+              <div className="relative flex h-[50px] w-[50px] transform items-center justify-center overflow-hidden rounded-full text-3xl mix-blend-difference transition-all  duration-200 ">
+                {showNav ? <FaTimes /> : <FaBars />}
               </div>
             </div>
           </div>
