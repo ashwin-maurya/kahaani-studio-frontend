@@ -20,7 +20,7 @@ export default function SideNav(props) {
                   key={item.label}
                   className={`relative cursor-pointer px-2 font-CooperHevitt text-lg font-normal uppercase`}
                 >
-                  <Link to={item.href} className="text-white">
+                  <Link to={item.href} className="text-black">
                     {item.label}
                   </Link>
                 </span>
