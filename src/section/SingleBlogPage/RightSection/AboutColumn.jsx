@@ -10,7 +10,7 @@ export default function AboutColumn() {
         <div className="relative w-full cursor-pointer rounded-md">
           <img
             loading="lazy"
-            className="w-full  max-w-[400px] bg-white bg-cover bg-center shadow-md"
+            className="w-full  max-w-[300px] bg-white bg-cover bg-center shadow-md"
             src="https://content.presspage.com/uploads/2338/1920_selfie-auf-der-reise-copypeopleimages.com-adobestock-493554509.jpeg?10000"
           ></img>
         </div>
