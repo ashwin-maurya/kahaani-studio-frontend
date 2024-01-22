@@ -3,7 +3,7 @@ import React from "react";
 export default function MainContent() {
   return (
     <>
-      <div class="font-HankenGrotesk  mx-auto mt-12 px-4 text-xl leading-relaxed tracking-wide text-gray-700 max-md:text-base">
+      <div class="font-HankenGrotesk  mx-auto mt-12 px-4 text-xl leading-relaxed tracking-wide text-gray-700 max-md:text-lg">
         <p class="pb-6">
           Advantage old had otherwise sincerity dependent additions. It in
           adapted natural hastily is justice. Six draw you him full not mean
