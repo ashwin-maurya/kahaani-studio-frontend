@@ -5,7 +5,7 @@ import AboutColumn from "../section/SingleBlogPage/RightSection/AboutColumn";
 export default function SingleBlogPageLayout() {
   return (
     <>
-      <div class=" mx-auto mt-16 flex w-full items-start justify-start px-10 max-md:flex-col max-md:px-5">
+      <div class=" mx-auto mt-16 flex w-full items-start justify-start px-10 max-md:flex-col max-md:px-5 max-sm:px-0">
         <div className="max-w-[73vw] border-r border-black pr-10 max-md:max-w-full max-md:border-none max-md:pr-0  2xl:max-w-[70vw]">
           <Hero />
           <MainContent />
