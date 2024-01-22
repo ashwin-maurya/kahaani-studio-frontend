@@ -106,7 +106,7 @@ export default function StoryContent() {
               >
                 <div className="absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b from-gray-900 via-transparent to-gray-900"></div>
                 <div className="absolute left-0 right-0 top-0 flex items-center justify-between">
-                  <span className="tracki bg-violet-400 px-3 py-2 text-xs font-semibold uppercase text-gray-100">
+                  <span className="tracki font-HankenGrotesk bg-blue-300 px-3 py-2 text-xs font-semibold uppercase text-gray-100">
                     {story.category}
                   </span>
                   <div className="mr-5 mt-3 flex flex-col justify-start text-center text-gray-100">
