@@ -99,7 +99,7 @@ export default function SubTravelDestinations() {
                     className="group h-[150px] w-[150px] min-w-[150px] scale-95 rounded-full bg-cover bg-no-repeat object-cover  object-center transition-all duration-500 ease-in-out group-hover:opacity-90 max-md:h-[100px] max-md:w-[100px] max-md:min-w-[100px]"
                     src={destination.imageUrl}
                   />
-                  <span className="w-full text-center font-Oswald text-lg font-bold uppercase tracking-wider transition-all duration-500 ease-out max-md:text-xs">
+                  <span className="w-full text-center font-Oswald text-lg font-bold uppercase tracking-wider text-black transition-all duration-500 ease-out max-md:text-xs">
                     {destination.title}
                   </span>
                 </a>

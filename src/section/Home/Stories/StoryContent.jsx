@@ -80,7 +80,7 @@ export default function StoryContent() {
         <div className="mx-10 flex gap-5 overflow-hidden max-md:mx-0">
           <button
             onClick={() => handleScroll(-400)}
-            className="absolute bottom-0  left-0 top-0 z-50 my-5 ml-2 rounded-md bg-white px-2 py-1 text-2xl text-black hover:bg-gray-100 focus:outline-none max-md:hidden"
+            className="absolute bottom-0  left-0 top-0 z-50 my-5 ml-2 rounded-md border-none bg-white px-2 py-1 text-2xl text-black outline-none hover:bg-gray-100 focus:outline-none max-md:hidden"
           >
             <FaChevronLeft />
           </button>

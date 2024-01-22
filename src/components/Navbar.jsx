@@ -56,7 +56,7 @@ const Navbar = () => {
           isScrolled &&
           (location.pathname === "/" || location.pathname === "/home")
             ? "mix-blend-difference"
-            : "bg-stone-50"
+            : "bg-stone-100"
         }`}
       >
         <nav
@@ -69,16 +69,18 @@ const Navbar = () => {
             Kahaani Studio
           </Link>
           <div className="absolute flex w-[100%] items-center justify-center text-[#ffffff] mix-blend-difference max-sm:mt-0 2xl:mb-2">
-            <ul className="flex w-full flex-1 items-center justify-center gap-8 max-md:hidden">
+            <span className="flex w-full flex-1 items-center justify-center gap-8 max-md:hidden">
               {navLinks.map((item) => (
-                <li
+                <span
                   key={item.label}
-                  className={`relative cursor-pointer px-2 font-CooperHevitt text-lg font-normal uppercase`}
+                  className={`relative cursor-pointer list-none px-2 font-CooperHevitt text-lg  font-normal uppercase`}
                 >
-                  <Link to={item.href}>{item.label}</Link>
-                </li>
+                  <Link to={item.href} className="text-white">
+                    {item.label}
+                  </Link>
+                </span>
               ))}
-            </ul>
+            </span>
           </div>
           <div className="hidden outline-none max-md:block" onClick={NavStatus}>
             <div className="group relative outline-none hover:bg-transparent">

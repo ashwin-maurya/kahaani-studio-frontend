@@ -47,6 +47,13 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+a {
+  text-decoration: none !important;
+}
+button {
+  outline: none !important;
+  border: none;
+}
 body {
   overflow-x: hidden;
   background-color: #ffffff;

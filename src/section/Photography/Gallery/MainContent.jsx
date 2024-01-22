@@ -71,13 +71,13 @@ export default function MainContent() {
 
   return (
     <>
-      <h1 className="text-center uppercase font-CooperHevitt font-thin text-4xl">
+      <h1 className="text-center font-CooperHevitt text-4xl font-thin uppercase">
         Photo Gallery
       </h1>
-      <div className="block w-screen columns-3 max-lg:columns-2 max-md:columns-2 gap-0 break-inside-avoid px-10 mt-10 max-md:px-0">
+      <div className="mt-10 block w-screen columns-3 break-inside-avoid gap-0 px-10 max-lg:columns-2 max-md:columns-2 max-md:px-0">
         {imageData.map((image, index) => (
           <div
-            className="group m-2 my-4 max-md:m-1 max-md:my-2 cursor-pointer bg-black relative overflow-hidden "
+            className="group relative m-2 my-4 cursor-pointer overflow-hidden bg-black max-md:m-1 max-md:my-2 "
             key={index}
           >
             <div
@@ -87,12 +87,12 @@ export default function MainContent() {
             >
               <img
                 loading="lazy"
-                className="w-full group-hover:scale-105 transition-all ease-in-out duration-500 group-hover:opacity-90"
+                className="w-full transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-90"
                 alt={image.description}
                 src={image.src}
               />
-              <div className="absolute bg-[#00000071]  left-0 top-0 transition-all ease-in-out duration-300 py-3 max-md:py-1 px-5 max-md:px-2">
-                <h1 className="block max-md:text-xs text-white uppercase font-Oswald">
+              <div className="absolute left-0  top-0 bg-[#00000071] px-5 py-3 transition-all duration-300 ease-in-out max-md:px-2 max-md:py-1">
+                <h1 className="block font-Oswald text-base uppercase tracking-wide text-white max-md:text-xs">
                   {image.location}
                 </h1>
               </div>

@@ -55,7 +55,7 @@ export default function BlogContent() {
                 />
               </div>
               <div className="w-full pb-3 pt-2">
-                <span className="font-Gamiliademo text-xl font-semibold uppercase tracking-wider group-hover:text-yellow-700">
+                <span className="font-Gamiliademo text-xl font-semibold uppercase tracking-wider text-black group-hover:text-yellow-700">
                   {destination.title}
                 </span>
               </div>

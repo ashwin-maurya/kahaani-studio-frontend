@@ -1,5 +1,5 @@
 import React from "react";
-import MainContent from "../section/Photography/MainContent";
+import MainContent from "../section/Photography/Gallery/MainContent";
 import GalleryHero from "../section/Photography/Hero/GalleryHero";
 export default function PhotographyLayout() {
   return (

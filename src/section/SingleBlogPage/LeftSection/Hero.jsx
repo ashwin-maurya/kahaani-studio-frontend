@@ -9,7 +9,7 @@ export default function Hero() {
         <div class="bottom-0  left-0 py-4">
           <a
             href="#"
-            class="mb-2 inline-flex items-center justify-center bg-black px-4 py-1 text-gray-200"
+            class="font-HankenGrotesk mb-2 inline-flex items-center justify-center bg-black px-4 py-1 text-gray-200"
           >
             Nutrition
           </a>
@@ -17,7 +17,7 @@ export default function Hero() {
             Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales,
             massa et auctor.
           </h2>
-          <h1 className="my-5 flex  justify-center text-center font-CooperHevitt font-normal">
+          <h1 className="my-5 flex justify-center text-center font-CooperHevitt text-base font-normal">
             <span>by Shikha Gautam</span>
             <span className="mx-2 opacity-50">•</span>
             <span>20th January, 2023</span>

@@ -20,20 +20,20 @@ export default function Newsletter() {
                       Subsribe to my NewsLetter
                     </span>
                   </h1>
-                  <div class="mb-6 flex-row md:mb-0 md:flex">
+                  <div class="mb-6 flex-row items-center justify-center md:mb-0 md:flex">
                     <div
                       class="relative mb-3 w-full md:mb-0 md:mr-3"
                       data-te-input-wrapper-init
                     >
                       <input
                         type="text"
-                        class="peer block min-h-[auto] w-full rounded border bg-transparent px-3 py-[0.32rem] leading-[2.15] text-white outline-none transition-all duration-200 ease-linear placeholder:text-white"
-                        id="exampleFormControlInput2"
+                        class="peer block min-h-[auto] w-full rounded border-none  border-white bg-transparent px-3 py-[0.32rem] leading-[2.15] text-white outline-none outline-1 outline-white ring-0 transition-all duration-200 ease-linear placeholder:text-white "
+                        id="exampleFormControlInput2 "
                         placeholder="example@xyz.com"
                       />
                       <label
                         for="exampleFormControlInput2"
-                        class="text-primary pointer-events-none absolute  left-3 top-0 mb-0 max-w-[90%] origin-[0_0] -translate-y-[1.15rem] scale-[0.8] truncate bg-blue-300 pt-[0.37rem] leading-[2.15] text-white antialiased transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] "
+                        class="text-primary pointer-events-none absolute  left-3 top-0 mb-0 max-w-[90%] origin-[0_0] -translate-y-[20px] scale-[0.8] truncate bg-blue-300 pt-[0.37rem] font-sans leading-[2.15] text-white antialiased transition-all duration-200 ease-out "
                       >
                         Enter your email
                       </label>

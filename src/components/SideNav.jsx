@@ -14,16 +14,18 @@ export default function SideNav(props) {
       >
         <div className="dark:bg-darkBgMain flex h-full  w-full select-none flex-col items-center justify-start overflow-hidden shadow-lg">
           <div className="mt-24 flex w-auto">
-            <ul className="flex flex-1 flex-col items-center gap-8">
+            <span className="flex flex-1 flex-col items-center gap-8">
               {navLinks.map((item) => (
-                <li
+                <span
                   key={item.label}
                   className={`relative cursor-pointer px-2 font-CooperHevitt text-lg font-normal uppercase`}
                 >
-                  <Link to={item.href}>{item.label}</Link>
-                </li>
+                  <Link to={item.href} className="text-white">
+                    {item.label}
+                  </Link>
+                </span>
               ))}
-            </ul>
+            </span>
           </div>
         </div>
       </div>
