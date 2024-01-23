@@ -48,7 +48,7 @@ export default function PhotoModal({
 
   const navigateImage = (direction) => {
     const currentIndex = imageData.findIndex(
-      (image) => image.id === selectedImage.id
+      (image) => image.id === selectedImage.id,
     );
     let nextIndex;
 
@@ -64,19 +64,19 @@ export default function PhotoModal({
     <>
       <div
         id="myModal"
-        className={`fixed inset-0 flex items-center transition-all z-[99999999999] ease-in-out duration-300 justify-center backdrop-blur-sm bg-Opacityblack select-none bg-[#00000052]`}
+        className={`bg-Opacityblack fixed inset-0 z-[99999999999] flex select-none items-center justify-center bg-[#00000052] backdrop-blur-sm transition-all duration-300 ease-in-out`}
         ref={modalRef}
         onClick={handleOutsideClick}
       >
         <div
-          className="overflow-hidden z-[999999999] backdrop-blur-sm "
+          className="z-[999999999] overflow-hidden backdrop-blur-sm "
           id={selectedImage.id}
         >
-          <div className="zoom-wrapper__image  group shadow-lg relative h-full m-auto flex justify-center items-center">
+          <div className="zoom-wrapper__image  group relative m-auto flex h-full items-center justify-center shadow-lg">
             <img
               loading="lazy"
               ref={imageRef}
-              className={`max-h-[95vh] transform transition-transform ease duration-300 ${
+              className={`ease max-h-[95vh] transform transition-transform duration-300 ${
                 zoomed ? "scale-[2]  cursor-zoom-out" : " cursor-zoom-in "
               }`}
               alt={selectedImage.description}
@@ -87,13 +87,13 @@ export default function PhotoModal({
               }}
             />
             <span
-              className="text-xl max-md:text-lg -translate-y-10 max-md:translate-y-0 group-hover:translate-y-0 text-white absolute top-0 right-0 bg-gray-600 p-2 hover:scale-95 transition-all ease-in-out duration-500 cursor-pointer"
+              className="absolute right-0 top-0 -translate-y-10 cursor-pointer bg-gray-600 p-2 text-xl text-white transition-all duration-500 ease-in-out hover:scale-95 group-hover:translate-y-0 max-md:translate-y-0 max-md:text-lg"
               onClick={closeImage}
             >
               <FaTimes />
             </span>
             <span
-              className={`text-xl w-full opacity-0  max-md:opacity-100 group-hover:opacity-100 text-white absolute bottom-0 right-0 bg-[#00000071] p-2 max-sm:p-1 transition-all ease-in-out duration-500`}
+              className={`absolute bottom-0 right-0  w-full bg-[#00000071] p-2 text-xl text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 max-md:opacity-100 max-sm:p-1`}
             >
               <h1 className="font-Oswald text-base max-sm:text-xs">
                 {selectedImage.location}
@@ -105,18 +105,18 @@ export default function PhotoModal({
           </div>
         </div>
         <div
-          className="absolute max-md:bottom-0 bg-[#00000086] py-10 left-0 flex items-center transform -translate-y-2/2 cursor-pointer"
+          className="-translate-y-2/2 absolute left-0 flex transform cursor-pointer items-center bg-[#00000086] py-10 max-md:bottom-0"
           onClick={() => navigateImage("left")}
         >
-          <button className="text-white text-2xl p-2 cursor-pointer">
+          <button className="cursor-pointer bg-transparent p-2 text-2xl text-white">
             <FaChevronLeft />
           </button>
         </div>
         <div
-          className="absolute max-md:bottom-0 bg-[#00000086] py-10 right-0 flex items-center transform -translate-y-1/1 cursor-pointer"
+          className="-translate-y-1/1 absolute right-0 flex transform cursor-pointer items-center bg-[#00000086] py-10 max-md:bottom-0"
           onClick={() => navigateImage("right")}
         >
-          <button className="text-white text-2xl p-2 cursor-pointer">
+          <button className="cursor-pointer bg-transparent p-2 text-2xl text-white">
             <FaChevronRight />
           </button>
         </div>
