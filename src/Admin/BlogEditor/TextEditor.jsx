@@ -2,35 +2,37 @@ import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
 const TextEditor = () => {
-  const handleImageUpload = async (blobInfo, success, failure, progress) => {
+  const handleImageUpload = async (blobInfo) => {
     try {
       const formData = new FormData();
       formData.append("file", blobInfo.blob(), blobInfo.filename());
-
-      const cloudinaryUrl = `https://api.cloudinary.com/v1_1/dhktoeo0l/upload/demo_kahaani_studio`;
+      formData.append("upload_preset", "demo_kahaani_studio");
+      formData.append("cloud_name", "dhktoeo0l");
+      const cloudinaryUrl = `https://api.cloudinary.com/v1_1/dhktoeo0l/image/upload`;
 
       const response = await fetch(cloudinaryUrl, {
         method: "POST",
         body: formData,
-        mode: "no-cors", // Set the mode to 'no-cors'
       });
 
-      // Since 'no-cors' mode is used, you won't be able to access response.json() or response.headers
+      const data = await response.json();
+      const imageUrl = data.secure_url;
 
-      // Assume the request was successful without checking the response
+      console.log("Image URL:", imageUrl);
 
-      // Provide some indication of success
-      success("Image uploaded successfully");
+      // Return just the URL as a string
+      return imageUrl;
     } catch (error) {
       console.error("Error uploading image:", error);
-      failure("Image upload failed");
+      // Return an empty string or handle the error as needed
+      return "";
     }
   };
 
   return (
     <div className="m-40">
       <Editor
-        apiKey="5ut6u9dgrcqt2984hizk9fjum5vun8f704k2usewa1yf1fqu"
+        apiKey="YOUR_TINYMCE_API_KEY"
         initialValue="<p>This is the initial content of the editor.</p>"
         init={{
           height: 500,
