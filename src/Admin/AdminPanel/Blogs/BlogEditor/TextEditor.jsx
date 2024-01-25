@@ -49,8 +49,6 @@ const TextEditor = ({ content, onContentChange }) => {
           width: "100%",
           height: 700,
           plugin_preview_width: 650,
-          selector: "textarea", // change this value according to your HTML
-          menubar: "view",
           plugins: [
             "advlist",
             "autolink",

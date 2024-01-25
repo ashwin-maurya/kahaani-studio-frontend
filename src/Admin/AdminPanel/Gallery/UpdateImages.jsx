@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import GalleryContext from "../AdminContexts/GalleryContexts/GalleryContext";
+import GalleryContext from "../AdminContexts/GalleryContexts/GalleryAdminContext";
 
 export default function UpdateImages() {
   const galleryContext = useContext(GalleryContext);
@@ -10,7 +10,7 @@ export default function UpdateImages() {
 
   return (
     <>
-      <div className="mt-16 flex flex-col">
+      <div className="mb-10 flex flex-col">
         <h1 className="break-words text-center font-Gamiliademo text-2xl font-bold uppercase">
           Your Photo Gallery
         </h1>

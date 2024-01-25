@@ -6,7 +6,7 @@ import {
   FaTwitter,
   FaShare,
 } from "react-icons/fa";
-
+import ShareWeb from "./ShareWeb";
 export default function ShareModal() {
   return (
     <>
@@ -16,6 +16,7 @@ export default function ShareModal() {
         <div
           className={` flex cursor-pointer flex-col items-center justify-center bg-gray-800 p-1 shadow transition-all duration-500 ease-out`}
         >
+          <ShareWeb />
           <div className="p-2  transition-all duration-200 ease-out hover:scale-105">
             <FaFacebookF />
           </div>

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import BlogContext from "../../AdminContexts/BlogContexts/BlogContext";
+import BlogContext from "../../AdminContexts/BlogContexts/BlogAdminContext";
 
 export default function BlogPage() {
   const blogContext = useContext(BlogContext);
@@ -12,7 +12,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <h1 className="text-center font-CooperHevitt text-4xl font-thin uppercase max-md:text-xl">
+      <h1 className="text-center font-Gamiliademo text-4xl font-thin max-md:text-xl">
         Latest blogs
       </h1>
       <main className="flex w-full flex-wrap items-start justify-center px-10 py-10 max-md:flex-col max-md:px-6">

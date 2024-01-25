@@ -1,7 +1,7 @@
 // GalleryState.js
 
 import React, { useReducer, useEffect } from "react";
-import GalleryContext from "./GalleryContext";
+import GalleryContext from "./GalleryAdminContext";
 import axios from "axios";
 
 const galleryReducer = (state, action) => {
@@ -32,7 +32,9 @@ const GalleryState = (props) => {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get("http://localhost:5001/api/gallery/all");
+      const response = await axios.get(
+        "http://localhost:5001/api/admin/gallery/all",
+      );
       dispatch({ type: "SET_IMAGES", payload: response.data });
       console.log(response.data);
     } catch (error) {
@@ -43,7 +45,7 @@ const GalleryState = (props) => {
   const addImage = async (imageData) => {
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/gallery/add",
+        "http://localhost:5001/api/admin/gallery/add",
         imageData,
       );
 

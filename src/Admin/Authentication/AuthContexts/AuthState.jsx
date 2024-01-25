@@ -60,7 +60,7 @@ const AuthState = (props) => {
   const adminSignup = async (formData) => {
     try {
       const res = await axios.post(
-        "http://localhost:5001/api/admin/signup",
+        "http://localhost:5001/api/admin/admin/signup",
         formData,
       );
 
@@ -84,7 +84,7 @@ const AuthState = (props) => {
   const adminLogin = async (formData) => {
     try {
       const res = await axios.post(
-        "http://localhost:5001/api/admin/login",
+        "http://localhost:5001/api/admin/admin/login",
         formData,
       );
 
@@ -122,7 +122,7 @@ const AuthState = (props) => {
       }
 
       const response = await axios.get(
-        "http://localhost:5001/api/admin/validate",
+        "http://localhost:5001/api/admin/admin/validate",
         {
           headers: {
             Authorization: `Bearer ${authtoken.replace(/"/g, "")}`,

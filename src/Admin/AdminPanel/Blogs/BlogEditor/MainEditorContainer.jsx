@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import TextEditor from "./TextEditor";
-import BlogContext from "../../AdminContexts/BlogContexts/BlogContext";
+import BlogContext from "../../AdminContexts/BlogContexts/BlogAdminContext";
 
 export default function MainEditorContainer() {
   const blogContext = useContext(BlogContext);
@@ -66,9 +66,9 @@ export default function MainEditorContainer() {
 
   return (
     <>
-      <div className="mx-auto mt-16 w-full max-w-screen-xl select-none px-4 ">
+      <div className="mx-auto mb-10 w-full max-w-screen-xl select-none px-4 ">
         <h1 className="mb-5 text-center">Blog Editor</h1>
-        <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+        <div className="rounded-lg bg-white p-8 shadow-lg ">
           <form action="" className="space-y-4" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-5">
@@ -141,7 +141,7 @@ export default function MainEditorContainer() {
                           or drag and drop
                         </p>
                         <p className="text-xs text-gray-500 ">
-                          SVG, PNG, JPG or GIF (MAX. 800x400px)
+                          SVG, PNG, JPG or GIF
                         </p>
                       </div>
                       <input

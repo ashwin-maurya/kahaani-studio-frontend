@@ -1,40 +1,16 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-const blogs = [
-  {
-    title: "Exploring the Tropics",
-    imageUrl:
-      "https://images.pexels.com/photos/7919/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1000",
-  },
-  {
-    title: "Journey through Exotic Islands",
-    imageUrl:
-      "https://images.pexels.com/photos/774861/pexels-photo-774861.jpeg?auto=compress&cs=tinysrgb&w=1000",
-  },
-  {
-    title: "Discovering Paradise: Tropical Escapes",
-    imageUrl:
-      "https://images.pexels.com/photos/1367179/pexels-photo-1367179.jpeg?auto=compress&cs=tinysrgb&w=1000",
-  },
-  {
-    title: "Adventures in Kyoto",
-    imageUrl:
-      "https://images.pexels.com/photos/1374065/pexels-photo-1374065.jpeg?auto=compress&cs=tinysrgb&w=1000",
-  },
-  {
-    title: "Island Paradise Retreat",
-    imageUrl:
-      "https://images.pexels.com/photos/2265876/pexels-photo-2265876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  },
-  {
-    title: "Jungle Safari Expedition",
-    imageUrl:
-      "https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  },
-];
+import BlogClientContext from "../../../Contexts/Blogs/BlogClientContext";
 
 export default function BlogContent() {
+  const { blogs, fetchBlogs } = useContext(BlogClientContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch blogs when the component mounts
+    fetchBlogs();
+  }, []);
+
   return (
     <>
       <h1 className="text-center font-CooperHevitt text-4xl font-thin uppercase max-md:text-xl">
@@ -43,10 +19,12 @@ export default function BlogContent() {
       <main className="flex w-full flex-wrap items-start justify-center px-10 py-10 max-md:flex-col max-md:px-6">
         {blogs.map((blog, index) => (
           <div
-            className="group w-1/3 rounded px-5 pb-5 max-md:w-full max-md:px-0"
+            className="group w-1/3 cursor-pointer rounded px-5 pb-5 max-md:w-full max-md:px-0"
             key={index}
             onClick={() =>
-              navigate(`/blog/${blog.title.toLowerCase().replace(/\s+/g, "-")}`)
+              navigate(
+                `/blog/${blog.title.toLowerCase().replace(/\s+/g, "-")}/${blog?._id}`,
+              )
             }
           >
             <div className="">
@@ -54,12 +32,12 @@ export default function BlogContent() {
                 <img
                   loading="lazy"
                   className="max-h-[200px] min-h-[200px] w-full rounded-t object-cover"
-                  src={blog.imageUrl}
+                  src={blog.imageURL}
                   alt={blog.title}
                 />
               </div>
               <div className="w-full pb-3 pt-2">
-                <span className="font-Gamiliademo text-xl font-semibold uppercase tracking-wider text-black group-hover:text-yellow-700">
+                <span className="line-clamp-2 px-2 font-Gamiliademo text-xl font-semibold tracking-wider text-black group-hover:text-yellow-700">
                   {blog.title}
                 </span>
               </div>

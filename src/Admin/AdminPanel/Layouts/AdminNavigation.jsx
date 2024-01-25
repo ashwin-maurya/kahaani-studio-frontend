@@ -10,7 +10,7 @@ export default function AdminLayout() {
   return (
     <div className="flex">
       <SideNav />
-      <div className="mx-auto w-full max-w-screen-xl pt-20 max-md:pt-5">
+      <div className="mx-auto w-full max-w-screen-xl pt-5 max-md:pt-5">
         <Routes>
           <Route path="/" element={<AuthenticatedAdminPage />} />
           <Route path="/gallery/addimage" element={<ImageForm />} />

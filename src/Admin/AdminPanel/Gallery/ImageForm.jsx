@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import GalleryContext from "../AdminContexts/GalleryContexts/GalleryContext";
+import GalleryContext from "../AdminContexts/GalleryContexts/GalleryAdminContext";
 
 const ImageForm = () => {
   const [formData, setFormData] = useState({
@@ -82,7 +82,7 @@ const ImageForm = () => {
   };
 
   return (
-    <div className="mx-auto my-0 max-w-96">
+    <div className="mx-auto my-10 max-w-96">
       <h2 className="mb-5 text-center font-Gamiliademo text-2xl uppercase">
         Add Image
       </h2>
@@ -121,7 +121,7 @@ const ImageForm = () => {
                 </svg>
 
                 <p className="text-center text-xs text-gray-500 ">
-                  SVG, PNG, JPG or GIF (MAX. 800x400px)
+                  SVG, PNG, JPG or GIF
                 </p>
               </div>
               <input
@@ -146,7 +146,7 @@ const ImageForm = () => {
         <br />
 
         <label className="font-CooperHevitt text-xl text-black">
-          Image Title:
+          Image Location:
           <input
             className="w-full rounded-sm border-none bg-stone-100 p-3 text-sm"
             type="text"
@@ -158,7 +158,7 @@ const ImageForm = () => {
         <br />
 
         <label className="font-CooperHevitt text-xl text-black">
-          Image Description:
+          Image Description/Alt:
           <input
             className="w-full rounded-sm border-none bg-stone-100 p-3 text-sm"
             type="text"

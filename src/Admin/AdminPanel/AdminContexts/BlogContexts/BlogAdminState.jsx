@@ -1,7 +1,7 @@
 // BlogState.js
 
 import React, { useReducer, useEffect, useContext } from "react";
-import BlogContext from "./BlogContext";
+import BlogContext from "./BlogAdminContext";
 import axios from "axios";
 
 const blogReducer = (state, action) => {
@@ -34,7 +34,7 @@ const BlogState = (props) => {
   const addBlog = async (blogData) => {
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/blogs/add",
+        "http://localhost:5001/api/admin/blogs/add",
         blogData,
       );
       console.log("Blog added:", response.data);
@@ -48,7 +48,7 @@ const BlogState = (props) => {
   const fetchBlogs = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/blogs/getBlogs",
+        "http://localhost:5001/api/admin/blogs/getBlogs",
       );
       console.log("Blogs fetched:", response.data);
       dispatch({ type: "SET_BLOGS", payload: response.data });
@@ -61,7 +61,7 @@ const BlogState = (props) => {
   const fetchBlogsWithContent = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/blogs/getBlogsWithContent",
+        "http://localhost:5001/api/admin/blogs/getBlogsWithContent",
       );
       dispatch({ type: "SET_BLOGS_WITH_CONTENT", payload: response.data });
     } catch (error) {
