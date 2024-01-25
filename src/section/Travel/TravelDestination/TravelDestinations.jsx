@@ -1,45 +1,46 @@
 import React from "react";
 import SubTravelDestinations from "./SubTravelDestinations";
+import { useNavigate } from "react-router-dom";
 const travelDestinationsData = [
   {
     id: 1,
-    title: "Destination 1",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1033",
+    title: "paris",
+    imageUrl:
+      "https://images.pexels.com/photos/7919/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1000",
   },
   {
     id: 2,
-    title: "Destination 2",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=967",
+    title: "new york",
+    imageUrl:
+      "https://images.pexels.com/photos/774861/pexels-photo-774861.jpeg?auto=compress&cs=tinysrgb&w=1000",
   },
   {
     id: 3,
-    title: "Destination 3",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=924",
+    title: "tokyo",
+    imageUrl:
+      "https://images.pexels.com/photos/1367179/pexels-photo-1367179.jpeg?auto=compress&cs=tinysrgb&w=1000",
   },
   {
     id: 4,
-    title: "Destination 4",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1073",
+    title: "kolkata",
+    imageUrl:
+      "https://images.pexels.com/photos/1367105/pexels-photo-1367105.jpeg?auto=compress&cs=tinysrgb&w=1000",
   },
   {
     id: 5,
-    title: "Destination 5",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1032",
+    title: "Mumbai",
+    imageUrl:
+      "https://images.pexels.com/photos/1292115/pexels-photo-1292115.jpeg?auto=compress&cs=tinysrgb&w=1000",
   },
   {
     id: 6,
-    title: "Destination 6",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1080",
+    title: "Delhi",
+    imageUrl:
+      "https://images.pexels.com/photos/794079/pexels-photo-794079.jpeg?auto=compress&cs=tinysrgb&w=1000",
   },
 ];
-
 export default function TravelDestinations() {
+  const navigate = useNavigate();
   return (
     <>
       <h1 className="text-center font-CooperHevitt text-4xl font-thin uppercase max-md:text-xl">
@@ -47,15 +48,20 @@ export default function TravelDestinations() {
       </h1>
       <div className="mt-10 block w-full columns-3 break-inside-avoid gap-0 px-10 max-lg:columns-2 max-md:mt-3 max-md:columns-2 max-md:px-0">
         {travelDestinationsData.map((destination) => (
-          <a href="#" className="relative overflow-hidden">
-            <div key={destination.id} className={`group bg-cover bg-no-repeat`}>
-              <a
-                href={destination.link}
-                className="flex h-full w-full items-center justify-center text-center mix-blend-normal "
-              >
+          <div
+            key={destination.id}
+            className="relative overflow-hidden"
+            onClick={() =>
+              navigate(
+                `/destination/${destination.title.toLowerCase().replace(/\s+/g, "-")}`,
+              )
+            }
+          >
+            <div className={`group bg-cover bg-no-repeat`}>
+              <div className="flex h-full w-full items-center justify-center text-center mix-blend-normal ">
                 <img
                   loading="lazy"
-                  className="w-full scale-95 object-cover object-center transition-all duration-500 ease-in-out group-hover:opacity-80"
+                  className="h-[300px] w-full scale-95 object-cover object-center transition-all duration-500 ease-in-out group-hover:opacity-80"
                   src={destination.imageUrl}
                 />
                 <div className="absolute m-0 flex h-auto w-full flex-wrap items-center justify-center p-5 text-white">
@@ -63,9 +69,9 @@ export default function TravelDestinations() {
                     {destination.title}
                   </span>
                 </div>
-              </a>
+              </div>
             </div>
-          </a>
+          </div>
         ))}
       </div>
       <SubTravelDestinations />

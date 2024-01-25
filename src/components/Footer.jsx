@@ -1,82 +1,75 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 export default function Footer() {
+  const location = useLocation();
   return (
     <>
-      <footer className="mt-5 border-t-[1px] bg-white invert">
+      <footer
+        className={`${location.pathname.includes("/admin") ? "hidden" : ""}  mt-5 border-t-[1px] bg-white invert`}
+      >
         <div className=" w-full px-20  py-10 max-lg:px-5 max-lg:py-2">
           <div className="mb-10 flex max-lg:flex-col">
             <div className="flex w-[60%] gap-20 max-lg:my-5 max-lg:mb-10 max-lg:w-full">
               <ul className="font-medium capitalize text-gray-800">
-                <h4 className="mb-4 font-sans">Popular destinations</h4>
+                <h4 className="mb-4 font-sans">Popular Reads</h4>
                 <li className="mb-4 list-none font-sans text-black">
                   <Link to="/" className="text-black hover:underline">
-                    Ladakh
+                    Best Ladakh stories you must read
                   </Link>
                 </li>
                 <li className="mb-4 list-none font-sans text-black">
                   <Link to="/" className="text-black hover:underline">
-                    Tokyo
+                    Tokyo Travel Guide for Adventure
                   </Link>
                 </li>
                 <li className="list-none font-sans text-black ">
                   <Link to="/" className="text-black hover:underline">
-                    Iceland
+                    Icelands most famous waterfalls
                   </Link>
                 </li>
               </ul>
               <ul className="font-medium capitalize text-gray-800">
-                <h4 className="mb-4 font-sans">More Blogs</h4>
+                <h4 className="mb-4 font-sans">Categories</h4>
                 <li className="mb-4 list-none font-sans text-black">
                   <Link to="/" className="text-black hover:underline">
-                    Road trips to plan
+                    Hotels & Stays
                   </Link>
                 </li>
                 <li className="mb-4 list-none font-sans text-black">
                   <Link to="/" className="text-black hover:underline">
-                    My Travel Camera Gear
-                  </Link>
-                </li>
-                <li className="list-none font-sans text-black ">
-                  <Link to="/" className="text-black hover:underline">
-                    Affordable Travel Insurance
+                    Folk Tales
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div className="grid w-[40%] grid-cols-2 gap-8 font-montserrat max-lg:w-full sm:grid-cols-3  sm:gap-6 2xl:text-lg">
+            <div className="font-montserrat grid w-[40%] grid-cols-2 gap-8 max-lg:w-full sm:grid-cols-3  sm:gap-6 2xl:text-lg">
               <ul className="font-medium capitalize text-gray-600">
                 <li className="mb-4 list-none font-sans text-black">
                   <Link to="/" className="text-black hover:underline">
-                    Blogs
+                    Hotels & Stays
                   </Link>
                 </li>
                 <li className="mb-4 list-none font-sans text-black">
                   <Link to="/" className="text-black hover:underline">
-                    hotels
+                    Folk Tales
                   </Link>
                 </li>
                 <li className="list-none font-sans text-black ">
                   <Link to="/" className="text-black hover:underline">
-                    cinema
+                    Legends & Mythology
                   </Link>
                 </li>
               </ul>
               <ul className="font-medium  text-gray-600">
                 <li className="mb-4 list-none font-sans text-black">
                   <Link to="/" className="text-black hover:underline ">
-                    Books
+                    Wonderful Places
                   </Link>
                 </li>
                 <li className="mb-4 list-none font-sans text-black">
                   <Link to="/" className="text-black hover:underline">
-                    Mythology
-                  </Link>
-                </li>
-                <li className="list-none font-sans text-black ">
-                  <Link to="/" className="text-black hover:underline">
-                    lifestyle
+                    All About Food
                   </Link>
                 </li>
               </ul>

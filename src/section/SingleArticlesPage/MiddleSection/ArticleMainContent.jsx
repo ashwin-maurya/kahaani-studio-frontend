@@ -3,8 +3,8 @@ import React from "react";
 export default function MainContent() {
   return (
     <>
-      <div class="font-HankenGrotesk  mx-auto mt-12 px-4 text-xl leading-relaxed tracking-wide text-gray-700 max-md:text-lg">
-        <p class="pb-6">
+      <div className="mx-auto  mt-12 px-4 font-HankenGrotesk text-xl leading-relaxed tracking-wide text-gray-700 max-md:text-lg">
+        <p className="pb-6">
           Advantage old had otherwise sincerity dependent additions. It in
           adapted natural hastily is justice. Six draw you him full not mean
           evil. Prepare garrets it expense windows shewing do an. She projection
@@ -13,7 +13,7 @@ export default function MainContent() {
           rendered led six.
         </p>
 
-        <p class="pb-6">
+        <p className="pb-6">
           Difficulty on insensible reasonable in. From as went he they.
           Preference themselves me as thoroughly partiality considered on in
           estimating. Middletons acceptance discovered projecting so is so or.
@@ -25,7 +25,7 @@ export default function MainContent() {
           advantage frankness to concluded unwilling.
         </p>
 
-        <p class="pb-6">
+        <p className="pb-6">
           Adieus except say barton put feebly favour him. Entreaties unpleasant
           sufficient few pianoforte discovered uncommonly ask. Morning cousins
           amongst in mr weather do neither. Warmth object matter course active
@@ -35,7 +35,7 @@ export default function MainContent() {
           If feelings so prospect no as raptures quitting.
         </p>
 
-        <div class="mb-6 rounded border-l-4 border-gray-500 pl-4 italic">
+        <div className="mb-6 rounded border-l-4 border-gray-500 pl-4 italic">
           Sportsman do offending supported extremity breakfast by listening.
           Decisively advantages nor expression unpleasing she led met. Estate
           was tended ten boy nearer seemed. As so seeing latter he should thirty
@@ -43,7 +43,7 @@ export default function MainContent() {
           show snug tore.
         </div>
 
-        <p class="pb-6">
+        <p className="pb-6">
           Exquisite cordially mr happiness of neglected distrusts. Boisterous
           impossible unaffected he me everything. Is fine loud deal an rent open
           give. Find upon and sent spot song son eyes. Do endeavor he differed
@@ -52,11 +52,11 @@ export default function MainContent() {
           remarkably new assistance saw literature mrs favourable.
         </p>
 
-        <h2 class="mb-4 mt-4 text-2xl font-semibold text-gray-800">
+        <h2 className="mb-4 mt-4 text-2xl font-semibold text-gray-800">
           Uneasy barton seeing remark happen his has
         </h2>
 
-        <p class="pb-6">
+        <p className="pb-6">
           Guest it he tears aware as. Make my no cold of need. He been past in
           by my hard. Warmly thrown oh he common future. Otherwise concealed
           favourite frankness on be at dashwoods defective at. Sympathize
@@ -64,7 +64,7 @@ export default function MainContent() {
           edward settle limits at in.
         </p>
 
-        <p class="pb-6">
+        <p className="pb-6">
           Dashwood contempt on mr unlocked resolved provided of of. Stanhill
           wondered it it welcomed oh. Hundred no prudent he however smiling at
           an offence. If earnestly extremity he he propriety something admitting
@@ -75,7 +75,7 @@ export default function MainContent() {
           few hard pure she.
         </p>
 
-        <p class="pb-6">
+        <p className="pb-6">
           Breakfast agreeable incommode departure it an. By ignorant at on
           wondered relation. Enough at tastes really so cousin am of. Extensive
           therefore supported by extremity of contented. Is pursuit compact
@@ -84,7 +84,7 @@ export default function MainContent() {
           been sent hard hill.
         </p>
 
-        <p class="pb-6">
+        <p className="pb-6">
           Detract yet delight written farther his general. If in so bred at dare
           rose lose good. Feel and make two real miss use easy. Celebrated
           delightful an especially increasing instrument am. Indulgence

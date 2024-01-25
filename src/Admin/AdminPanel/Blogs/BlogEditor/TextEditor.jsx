@@ -1,7 +1,7 @@
 import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
-const TextEditor = () => {
+const TextEditor = ({ content, onContentChange }) => {
   const handleImageUpload = async (blobInfo) => {
     try {
       const formData = new FormData();
@@ -28,45 +28,67 @@ const TextEditor = () => {
       return "";
     }
   };
-
+  const handleEditorChange = (content, editor) => {
+    // Notify the parent component about the content changes
+    onContentChange(content);
+  };
   return (
-    <div className="m-40">
+    <>
+      <label
+        className="mb-3 font-CooperHevitt text-xl text-black"
+        htmlFor="title"
+      >
+        Blog Content Editor
+      </label>
       <Editor
-        apiKey="YOUR_TINYMCE_API_KEY"
-        initialValue="<p>This is the initial content of the editor.</p>"
+        apiKey="5ut6u9dgrcqt2984hizk9fjum5vun8f704k2usewa1yf1fqu"
+        placeholder="Write your blog here..."
+        value={content}
+        onEditorChange={handleEditorChange}
         init={{
-          height: 500,
+          width: "100%",
+          height: 700,
+          plugin_preview_width: 650,
+          selector: "textarea", // change this value according to your HTML
+          menubar: "view",
           plugins: [
             "advlist",
             "autolink",
-            "lists",
             "link",
             "image",
+            "lists",
             "charmap",
             "preview",
             "anchor",
+            "pagebreak",
             "searchreplace",
+            "wordcount",
             "visualblocks",
+            "visualchars",
             "code",
             "fullscreen",
             "insertdatetime",
             "media",
             "table",
-            "code",
+            "emoticons",
             "help",
-            "wordcount",
           ],
           toolbar:
-            "undo redo | blocks | " +
-            "bold italic forecolor | alignleft aligncenter " +
-            "alignright alignjustify | bullist numlist outdent indent | " +
-            "removeformat | help | image",
+            "undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | " +
+            "bullist numlist outdent indent | link image | print preview media fullscreen | " +
+            "forecolor backcolor emoticons | help",
+          menu: {
+            favs: {
+              title: "My Favorites",
+              items: "code visualaid | searchreplace | emoticons",
+            },
+          },
           content_style:
             "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
           images_upload_handler: handleImageUpload,
         }}
       />
-    </div>
+    </>
   );
 };
 

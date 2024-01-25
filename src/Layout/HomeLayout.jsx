@@ -12,7 +12,7 @@ export default function HomeLayout() {
       <div className="mx-auto max-w-screen-xl pt-20 max-md:pt-5">
         <StoryContent />
       </div>
-      <div className="mx-auto max-w-screen-xl pt-20 max-md:pt-5">
+      <div className="mx-auto max-w-screen-xl pt-10 max-md:pt-5">
         <YoutubeContent />
       </div>
       <div className="mx-auto pt-28 max-md:pt-10">

@@ -93,7 +93,7 @@ export default function StoryContent() {
               className="mx-10 h-full rotate-180 cursor-pointer text-center font-CooperHevitt text-4xl uppercase max-md:mx-2 max-md:ml-4 max-md:text-2xl"
               style={{ writingMode: "vertical-lr" }}
             >
-              Trending Stories..
+              Spotlight
             </h1>
             {stories.map((story, index) => (
               <div
@@ -106,7 +106,7 @@ export default function StoryContent() {
               >
                 <div className="absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b from-gray-900 via-transparent to-gray-900"></div>
                 <div className="absolute left-0 right-0 top-0 flex items-center justify-between">
-                  <span className="tracki font-HankenGrotesk bg-blue-300 px-3 py-2 text-xs font-semibold uppercase text-gray-100">
+                  <span className="tracki bg-sky-300 px-3 py-2 font-HankenGrotesk text-xs font-semibold uppercase text-gray-100">
                     {story.category}
                   </span>
                   <div className="mr-5 mt-3 flex flex-col justify-start text-center text-gray-100">

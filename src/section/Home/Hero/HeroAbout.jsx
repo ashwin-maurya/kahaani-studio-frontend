@@ -24,7 +24,7 @@ export default function HeroAbout() {
         >
           <div className="absolute z-10 flex h-full max-w-[12vw] flex-col items-center justify-center pr-10 pt-0 text-center max-md:hidden ">
             <div className="rotate-90">
-              <div className="rotate-180 font-sans text-[8rem] font-bold opacity-60 max-xl:text-[7rem] max-lg:text-[5rem] 2xl:text-[10rem]">
+              <div className="ml-16 rotate-180 font-sans text-[7rem] font-bold opacity-60 max-xl:text-[7rem] max-lg:text-[5rem] 2xl:text-[9rem]">
                 EXPLORE
               </div>
             </div>
@@ -36,11 +36,11 @@ export default function HeroAbout() {
                 Shikha Gautam
               </h1>
               <p className="pb-5 font-CooperHevitt text-xl font-bold antialiased max-md:text-base">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
-                laborum suscipit doloremque, expedita voluptatum maiores
-                corporis modi assumenda esse consectetur error nulla, vero
-                alias. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Esse consectetur error nulla, vero alias.
+                Shikha Gautam is a storyteller, who fell in love with content
+                creation long before it became a thing. She forayed into the
+                world of travel, reaching some of the furthest places in India
+                and the world, slow travelling and documenting people, culture,
+                topographies, folk tales, legends, mythology and more
               </p>
             </div>
             <div className="relative cursor-pointer rounded-md">

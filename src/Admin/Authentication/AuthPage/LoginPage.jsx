@@ -1,8 +1,10 @@
-import React, { useState, useContext } from "react";
-import AuthContext from "../Context/AuthContext";
+import React, { useState, useEffect, useContext } from "react";
+import AuthContext from "../AuthContexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-const AuthForm = () => {
-  const authContext = useContext(AuthContext);
+const LoginPage = () => {
+  const { adminSignup, adminLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [signupData, setSignupData] = useState({
     phoneNumber: "",
@@ -32,7 +34,7 @@ const AuthForm = () => {
     e.preventDefault();
     try {
       console.log(signupData);
-      await authContext.adminSignup(signupData);
+      await adminSignup(signupData);
       // Redirect or perform any action after successful signup
     } catch (error) {
       // Handle signup error
@@ -43,7 +45,7 @@ const AuthForm = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      await authContext.adminLogin(loginData);
+      await adminLogin(loginData);
       // Redirect or perform any action after successful login
     } catch (error) {
       // Handle login error
@@ -52,59 +54,85 @@ const AuthForm = () => {
   };
 
   return (
-    <div className="m-40">
-      <h1 className="text-4xl text-red-800">
-        {authContext.initialStateChecked
-          ? "Admin Logged in "
-          : "Admin Not logged in"}
-      </h1>
-      <h2>Signup</h2>
-      <form onSubmit={handleSignupSubmit}>
-        <label>
-          Phone Number:
-          <input
-            type="text"
-            name="phoneNumber"
-            value={signupData.phoneNumber}
-            onChange={handleSignupChange}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            name="password"
-            value={signupData.password}
-            onChange={handleSignupChange}
-          />
-        </label>
-        <button type="submit">Signup</button>
-      </form>
-
-      <h2>Login</h2>
-      <form onSubmit={handleLoginSubmit}>
-        <label>
-          Phone Number:
-          <input
-            type="text"
-            name="phoneNumber"
-            value={loginData.phoneNumber}
-            onChange={handleLoginChange}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            name="password"
-            value={loginData.password}
-            onChange={handleLoginChange}
-          />
-        </label>
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <>
+      <div className="pt-16">
+        <div className="mb-20 flex">
+          {/* <div className="w-full">
+            <h2 className="my-5 text-center font-sans text-2xl">Signup</h2>
+            <form
+              onSubmit={handleSignupSubmit}
+              className="mx-auto flex w-3/4 flex-col gap-3"
+            >
+              <label className="mb-3 font-CooperHevitt text-xl text-black">
+                Phone Number:
+                <input
+                  className="w-full rounded-sm border-none bg-stone-100 p-3 text-sm"
+                  type="text"
+                  name="phoneNumber"
+                  value={signupData.phoneNumber}
+                  onChange={handleSignupChange}
+                />
+              </label>
+              <label className="mb-3 font-CooperHevitt text-xl text-black">
+                Password:
+                <input
+                  className="w-full rounded-sm border-none bg-stone-100 p-3 text-sm"
+                  type="password"
+                  name="password"
+                  value={signupData.password}
+                  onChange={handleSignupChange}
+                />
+              </label>
+              <div className="mt-4">
+                <button
+                  type="submit"
+                  className="inline-block w-full rounded-sm bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                >
+                  Signup
+                </button>
+              </div>
+            </form>
+          </div> */}
+          <div className="w-full">
+            <h2 className="my-5 text-center font-sans text-2xl">Admin Login</h2>
+            <form
+              onSubmit={handleLoginSubmit}
+              className="mx-auto flex w-2/4 flex-col gap-3"
+            >
+              <label className="mb-3 font-CooperHevitt text-xl text-black">
+                Phone Number:
+                <input
+                  className="w-full rounded-sm border-none bg-stone-100 p-3 text-sm"
+                  type="text"
+                  name="phoneNumber"
+                  value={loginData.phoneNumber}
+                  onChange={handleLoginChange}
+                />
+              </label>
+              <label className="mb-3 font-CooperHevitt text-xl text-black">
+                Password:
+                <input
+                  className="w-full rounded-sm border-none bg-stone-100 p-3 text-sm"
+                  type="password"
+                  name="password"
+                  value={loginData.password}
+                  onChange={handleLoginChange}
+                />
+              </label>
+              <div className="mt-4">
+                <button
+                  type="submit"
+                  className="inline-block w-full rounded-sm bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default AuthForm;
+export default LoginPage;

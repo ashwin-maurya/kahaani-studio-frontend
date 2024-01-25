@@ -22,7 +22,11 @@ export default function BlogCards() {
           </h1>
         </div>
         <div id="curator-feed-new-feed-layout">
-          <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">
+          <a
+            href="https://curator.io"
+            target="_blank"
+            className="crt-logo crt-tag"
+          >
             Powered by Curator.io
           </a>
         </div>

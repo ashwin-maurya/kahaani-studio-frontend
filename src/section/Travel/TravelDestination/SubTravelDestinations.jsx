@@ -89,7 +89,10 @@ export default function SubTravelDestinations() {
               More
             </h1>
             {travelDestinationsData.map((destination) => (
-              <div className="relative flex w-full cursor-pointer flex-col items-end justify-start bg-cover bg-center text-left">
+              <div
+                className="relative flex w-full cursor-pointer flex-col items-end justify-start bg-cover bg-center text-left"
+                key={destination.id}
+              >
                 <a
                   href={destination.link}
                   className="flex w-full flex-col items-center justify-center rounded-full text-center mix-blend-normal "
