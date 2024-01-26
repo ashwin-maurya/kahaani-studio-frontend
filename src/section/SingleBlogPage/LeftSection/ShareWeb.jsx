@@ -9,12 +9,11 @@ const ShareWeb = ({ title }) => {
     <>
       <RWebShare
         data={{
-          text: title + "<br/>",
+          text: `${title}\n`,
           url: currentURL,
           title: "Kahaani Studio",
         }}
         sites={["facebook", "twitter", "linkedin", "whatsapp"]}
-        onClick={() => console.log("shared successfully!")}
       >
         <FaShare />
       </RWebShare>
