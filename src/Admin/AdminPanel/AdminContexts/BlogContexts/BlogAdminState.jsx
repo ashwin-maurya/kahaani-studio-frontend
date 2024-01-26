@@ -34,7 +34,7 @@ const BlogState = (props) => {
   const addBlog = async (blogData) => {
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/admin/blogs/add",
+        "https://kahaani-studio-backend.onrender.com/api/admin/blogs/add",
         blogData,
       );
       console.log("Blog added:", response.data);
@@ -48,7 +48,7 @@ const BlogState = (props) => {
   const fetchBlogs = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/admin/blogs/getBlogs",
+        "https://kahaani-studio-backend.onrender.com/api/admin/blogs/getBlogs",
       );
       console.log("Blogs fetched:", response.data);
       dispatch({ type: "SET_BLOGS", payload: response.data });
@@ -61,7 +61,7 @@ const BlogState = (props) => {
   const fetchBlogsWithContent = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/admin/blogs/getBlogsWithContent",
+        "https://kahaani-studio-backend.onrender.com/api/admin/blogs/getBlogsWithContent",
       );
       dispatch({ type: "SET_BLOGS_WITH_CONTENT", payload: response.data });
     } catch (error) {
