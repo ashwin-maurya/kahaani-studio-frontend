@@ -12,7 +12,7 @@ export default function SearchBar() {
       <div
         className={`${
           expanded ? "w-full" : "w-12"
-        } relative flex h-12 items-center overflow-hidden rounded-md bg-gray-100 shadow-sm transition-all duration-300 ease-in-out focus-within:shadow-md max-sm:bg-gray-300/90`}
+        } relative flex h-12 items-center overflow-hidden rounded-md bg-gray-100 shadow-sm transition-all duration-300 ease-in-out focus-within:shadow-md max-sm:bg-gray-200`}
       >
         <div
           className="grid h-full w-14 cursor-pointer place-items-center text-gray-600"
