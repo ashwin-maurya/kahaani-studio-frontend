@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import { RWebShare } from "react-web-share";
-import { useLocation } from "react-router-dom";
+import { FaShare } from "react-icons/fa";
+
 const ShareWeb = () => {
-  const location = useLocation();
+  const currentURL = window.location.href;
+
   return (
-    <div>
+    <>
       <RWebShare
         data={{
           text: "Like humans, flamingos make friends for life",
-          url: "https://on.natgeo.com/2zHaNup",
+          url: currentURL,
           title: "Flamingos",
-          sites: ["facebook", "twitter", "linkedin", "whatsapp"],
         }}
+        sites={["facebook", "twitter", "linkedin", "whatsapp"]}
         onClick={() => console.log("shared successfully!")}
       >
-        <button>Share 🔗</button>
+        <FaShare />
       </RWebShare>
-    </div>
+    </>
   );
 };
 
