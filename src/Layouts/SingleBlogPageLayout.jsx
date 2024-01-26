@@ -30,7 +30,9 @@ export default function SingleBlogPageLayout() {
             category={category}
             imageURL={imageURL}
           />
-          <ShareModalHorizonatal title={title} />
+          <div className="sm:hidden">
+            <ShareModalHorizonatal title={title} />
+          </div>
           <BlogMainContent content={blogContent?.content} />
           <ShareModalHorizonatal title={title} />
         </div>
