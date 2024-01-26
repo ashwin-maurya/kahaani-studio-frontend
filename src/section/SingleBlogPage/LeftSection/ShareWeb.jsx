@@ -9,7 +9,7 @@ const ShareWeb = ({ title }) => {
     <>
       <RWebShare
         data={{
-          text: { title },
+          text: title,
           url: currentURL,
           title: "Kahaani Studio",
         }}
