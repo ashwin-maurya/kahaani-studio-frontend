@@ -21,7 +21,7 @@ export default function SingleBlogPageLayout() {
 
   return (
     <>
-      <ShareModal />
+      <ShareModal title={title} />
       <div className="mx-auto mt-16 flex w-full items-start justify-start px-10 max-md:flex-col max-md:px-5 max-sm:px-0">
         <div className="min-w-[73vw] max-w-[73vw] border-r border-black pr-10 max-md:max-w-full max-md:border-none max-md:pr-0  2xl:max-w-[70vw]">
           <Hero
@@ -30,7 +30,7 @@ export default function SingleBlogPageLayout() {
             category={category}
             imageURL={imageURL}
           />
-          <ShareModalHorizonatal />
+          <ShareModalHorizonatal title={title} />
           <BlogMainContent content={blogContent?.content} />
         </div>
         <div className="pl-5">
