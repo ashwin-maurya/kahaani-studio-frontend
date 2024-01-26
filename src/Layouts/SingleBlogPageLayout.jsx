@@ -5,7 +5,7 @@ import Hero from "../section/SingleBlogPage/LeftSection/BlogHero";
 import BlogMainContent from "../section/SingleBlogPage/LeftSection/BlogMainContent";
 import AboutColumn from "../section/SingleBlogPage/RightSection/AboutColumn";
 import ShareModal from "../section/SingleBlogPage/LeftSection/ShareModal";
-
+import ShareModalHorizonatal from "../section/SingleBlogPage/LeftSection/ShareModalHorizonatal";
 export default function SingleBlogPageLayout() {
   const { blogId } = useParams();
   const { blogsWithContent, fetchBlogsWithContent } =
@@ -30,6 +30,7 @@ export default function SingleBlogPageLayout() {
             category={category}
             imageURL={imageURL}
           />
+          <ShareModalHorizonatal />
           <BlogMainContent content={blogContent?.content} />
         </div>
         <div className="pl-5">
