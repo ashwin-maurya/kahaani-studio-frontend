@@ -24,29 +24,29 @@ export default function ShareModalHorizonatal({ title }) {
           Share the Article :{" "}
         </h1>
         <div className="flex text-white ">
-          <div className="item-center flex w-auto  justify-center overflow-hidden bg-black px-2 py-2 text-2xl text-gray-200 transition-all duration-200 ease-out hover:scale-105 max-md:px-4">
+          <div className="item-center flex w-auto  justify-center overflow-hidden bg-black px-2 py-2 text-2xl text-gray-200 transition-all duration-200 ease-out hover:scale-105 max-md:px-6">
             <ShareWeb title={title} />
           </div>
           <FacebookShareButton url={currentUrl}>
-            <div className="item-center flex  justify-center overflow-hidden bg-blue-500 px-2 py-2 text-2xl  transition-all duration-200 ease-out hover:scale-105 max-md:px-4">
+            <div className="item-center flex  justify-center overflow-hidden bg-blue-500 px-2 py-2 text-2xl  transition-all duration-200 ease-out hover:scale-105 max-md:px-6">
               <FaFacebook />
             </div>
           </FacebookShareButton>
 
           <PinterestShareButton url={currentUrl}>
-            <div className="item-center flex  justify-center overflow-hidden bg-red-500 px-2 py-2 text-2xl  transition-all duration-200 ease-out hover:scale-105 max-md:px-4">
+            <div className="item-center flex  justify-center overflow-hidden bg-red-500 px-2 py-2 text-2xl  transition-all duration-200 ease-out hover:scale-105 max-md:px-6">
               <FaPinterest />
             </div>
           </PinterestShareButton>
 
           <TwitterShareButton url={currentUrl}>
-            <div className="item-center flex  justify-center overflow-hidden bg-blue-400 px-2 py-2 text-2xl  transition-all duration-200 ease-out hover:scale-105 max-md:px-4">
+            <div className="item-center flex  justify-center overflow-hidden bg-blue-400 px-2 py-2 text-2xl  transition-all duration-200 ease-out hover:scale-105 max-md:px-6">
               <FaTwitter />
             </div>
           </TwitterShareButton>
 
           <TelegramShareButton url={currentUrl}>
-            <div className="item-center flex  justify-center overflow-hidden bg-blue-300 px-2 py-2 text-2xl  transition-all duration-200 ease-out hover:scale-105 max-md:px-4">
+            <div className="item-center flex  justify-center overflow-hidden bg-blue-300 px-2 py-2 text-2xl  transition-all duration-200 ease-out hover:scale-105 max-md:px-6">
               <FaTelegramPlane />
             </div>
           </TelegramShareButton>
