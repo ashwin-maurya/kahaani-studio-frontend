@@ -59,7 +59,67 @@ body {
   background-color: #ffffff;
   scroll-behavior: smooth;
 }
-
+.blogContent img {
+  max-width: 100%;
+}
+.blogContent code,
+p,
+div,
+span,
+li,
+ul,
+ol,
+pre,
+blockquote,
+table,
+td,
+th,
+em,
+strong,
+b,
+i,
+small,
+sub,
+sup,
+strike,
+del,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button,
+textarea,
+input,
+select,
+option,
+fieldset,
+legend,
+label,
+hr,
+figure,
+figcaption,
+form,
+iframe,
+video,
+audio,
+canvas,
+nav,
+header,
+footer,
+section,
+article,
+aside,
+main,
+menu,
+summary,
+details,
+mark,
+time {
+  text-wrap: wrap;
+}
 .slide-animation {
   animation: slide 12300ms infinite;
 }
