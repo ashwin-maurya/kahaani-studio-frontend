@@ -32,6 +32,7 @@ export default function SingleBlogPageLayout() {
           />
           <ShareModalHorizonatal title={title} />
           <BlogMainContent content={blogContent?.content} />
+          <ShareModalHorizonatal title={title} />
         </div>
         <div className="pl-5">
           <AboutColumn />
