@@ -9,7 +9,6 @@ export default function PhotoModal({
 }) {
   const modalRef = useRef(null);
   const imageRef = useRef(null);
-  const descriptionRef = useRef(null);
   const [zoomed, setZoomed] = useState(false);
   const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
 
@@ -45,10 +44,9 @@ export default function PhotoModal({
   const getTransformOrigin = () => {
     return `${zoomPosition.x}% ${zoomPosition.y}%`;
   };
-
   const navigateImage = (direction) => {
     const currentIndex = imageData.findIndex(
-      (image) => image.id === selectedImage.id,
+      (image) => image._id === selectedImage._id,
     );
     let nextIndex;
 
@@ -60,6 +58,7 @@ export default function PhotoModal({
 
     setSelectedImage(imageData[nextIndex]);
   };
+
   return (
     <>
       <div
@@ -79,8 +78,8 @@ export default function PhotoModal({
               className={`ease max-h-[95vh] transform transition-transform duration-300 ${
                 zoomed ? "scale-[2]  cursor-zoom-out" : " cursor-zoom-in "
               }`}
-              alt={selectedImage.description}
-              src={selectedImage.src}
+              alt={selectedImage.imgDescription}
+              src={selectedImage.imageURL}
               onClick={handleImageClick}
               style={{
                 transformOrigin: getTransformOrigin(),
@@ -95,11 +94,11 @@ export default function PhotoModal({
             <span
               className={`absolute bottom-0 right-0  w-full bg-[#00000071] p-2 text-xl text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 max-md:opacity-100 max-sm:p-1`}
             >
-              <h1 className="font-Oswald text-base max-sm:text-xs">
-                {selectedImage.location}
+              <h1 className="font-Oswald text-base capitalize max-sm:text-xs">
+                {selectedImage.imageLocation}
               </h1>
               <p className="font-Authorfont text-sm max-sm:text-[10px]">
-                {selectedImage.description}
+                {selectedImage.imgDescription}
               </p>
             </span>
           </div>

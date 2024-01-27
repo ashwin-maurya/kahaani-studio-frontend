@@ -6,6 +6,7 @@ import BlogMainContent from "../section/SingleBlogPage/LeftSection/BlogMainConte
 import AboutColumn from "../section/SingleBlogPage/RightSection/AboutColumn";
 import ShareModal from "../section/SingleBlogPage/LeftSection/ShareModal";
 import ShareModalHorizonatal from "../section/SingleBlogPage/LeftSection/ShareModalHorizonatal";
+import SingleBlogPageSkeleton from "./Skeletons/SingleBlogPageSkeleton";
 export default function SingleBlogPageLayout() {
   const { blogId } = useParams();
   const { blogsWithContent, fetchBlogsWithContent } =
@@ -16,6 +17,10 @@ export default function SingleBlogPageLayout() {
     fetchBlogsWithContent(blogId);
   }, [blogId]);
   const { date, title, category, imageURL, blogContent } = blogsWithContent;
+
+  if (!blogsWithContent || blogsWithContent.length === 0) {
+    return <SingleBlogPageSkeleton />;
+  }
 
   console.log(date);
 

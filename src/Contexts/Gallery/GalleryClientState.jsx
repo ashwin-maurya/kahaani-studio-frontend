@@ -1,7 +1,7 @@
 // GalleryState.js
 
 import React, { useReducer, useEffect } from "react";
-import GalleryContext from "./GalleryAdminContext";
+import GalleryClientContext from "./GalleryClientContext";
 import axios from "axios";
 
 const galleryReducer = (state, action) => {
@@ -11,19 +11,13 @@ const galleryReducer = (state, action) => {
         ...state,
         images: action.payload,
       };
-    case "ADD_IMAGE":
-      return {
-        ...state,
-        images: [...state.images, action.payload],
-      };
-    // Add more cases as needed
 
     default:
       return state;
   }
 };
 
-const GalleryState = (props) => {
+const GalleryClientState = (props) => {
   const initialState = {
     images: [],
   };
@@ -33,7 +27,7 @@ const GalleryState = (props) => {
   const fetchImages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/admin/gallery/all",
+        "http://localhost:5001/api/client/gallery/all",
       );
       dispatch({ type: "SET_IMAGES", payload: response.data });
       console.log(response.data);
@@ -42,30 +36,16 @@ const GalleryState = (props) => {
     }
   };
 
-  const addImage = async (imageData) => {
-    try {
-      const response = await axios.post(
-        "http://localhost:5001/api/admin/gallery/add",
-        imageData,
-      );
-
-      dispatch({ type: "ADD_IMAGE", payload: response.data });
-    } catch (error) {
-      console.error("Error adding image:", error);
-    }
-  };
-
   return (
-    <GalleryContext.Provider
+    <GalleryClientContext.Provider
       value={{
         images: state.images,
-        addImage,
         fetchImages,
       }}
     >
       {props.children}
-    </GalleryContext.Provider>
+    </GalleryClientContext.Provider>
   );
 };
 
-export default GalleryState;
+export default GalleryClientState;
