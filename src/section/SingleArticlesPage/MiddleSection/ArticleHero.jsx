@@ -1,6 +1,7 @@
 import React from "react";
+import { FormatDate } from "../../../Contexts/Date/FormatDate";
 
-export default function ArticleHero() {
+export default function ArticleHero({ date, title, category, imageURL }) {
   return (
     <>
       <section className="text-center">
@@ -8,21 +9,24 @@ export default function ArticleHero() {
           <h3 className="text-center font-Oswald text-base font-thin uppercase tracking-[10px] opacity-90">
             Article By Shihka Gautam
           </h3>
+
           <br />
-          <h2 className="text-center font-Gamiliademo text-4xl font-semibold leading-tight text-gray-800 max-md:text-2xl">
-            Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales,
-            massa et auctor.
+          <h2 className="text-center font-Gamiliademo text-4xl font-semibold capitalize leading-tight text-gray-800 max-md:text-2xl">
+            {title}
           </h2>
+          <h3 className="mt-5 text-center font-Oswald text-sm font-bold uppercase tracking-[5px] opacity-90">
+            {FormatDate(date)}
+          </h3>
         </div>
       </section>
       <section
         className={`relative flex w-full items-center justify-center overflow-hidden bg-cover bg-fixed bg-top bg-no-repeat py-56`}
         style={{
-          backgroundImage: `url("https://www.cleartrip.com/collections/wp-content/uploads/2019/05/Rajasthan-Safari.jpg")`,
+          backgroundImage: `url(${imageURL})`,
         }}
       >
         <h2 className={`font-Oswald text-6xl uppercase text-white`}>
-          Rajasthan
+          {category}
         </h2>
       </section>
     </>

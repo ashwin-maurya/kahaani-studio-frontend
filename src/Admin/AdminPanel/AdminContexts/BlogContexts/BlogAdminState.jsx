@@ -32,10 +32,19 @@ const BlogState = (props) => {
 
   // Function to add a new blog
   const addBlog = async (blogData) => {
+    const authtoken = localStorage.getItem("authtoken");
+    if (!authtoken) {
+      return;
+    }
     try {
       const response = await axios.post(
         "https://kahaani-studio-backend.onrender.com/api/admin/blogs/add",
         blogData,
+        {
+          headers: {
+            Authorization: `Bearer ${authtoken.replace(/"/g, "")}`,
+          },
+        },
       );
       console.log("Blog added:", response.data);
       // You can dispatch an action if needed
@@ -58,14 +67,15 @@ const BlogState = (props) => {
   };
 
   // Function to fetch blogs with content
-  const fetchBlogsWithContent = async () => {
+  const fetchBlogsWithContent = async (blogId) => {
     try {
       const response = await axios.get(
-        "https://kahaani-studio-backend.onrender.com/api/admin/blogs/getBlogsWithContent",
+        `https://kahaani-studio-backend.onrender.com/api/client/blogs/getBlogsWithContent/${blogId}`,
       );
       dispatch({ type: "SET_BLOGS_WITH_CONTENT", payload: response.data });
+      console.log("Blog with content fetched:", response.data);
     } catch (error) {
-      console.error("Error fetching blogs with content:", error);
+      console.error("Error fetching blog with content:", error);
     }
   };
 

@@ -29,20 +29,6 @@ const BlogClientState = (props) => {
 
   const [state, dispatch] = useReducer(blogReducer, initialState);
 
-  // Function to add a new blog
-  const addBlog = async (blogData) => {
-    try {
-      const response = await axios.post(
-        "https://kahaani-studio-backend.onrender.com/api/client/blogs/add",
-        blogData,
-      );
-      console.log("Blog added:", response.data);
-      // You can dispatch an action if needed
-    } catch (error) {
-      console.error("Error adding blog:", error);
-    }
-  };
-
   // Function to fetch blogs
   const fetchBlogs = async () => {
     try {
@@ -72,7 +58,6 @@ const BlogClientState = (props) => {
     <BlogClientContext.Provider
       value={{
         fetchBlogs,
-        addBlog,
         fetchBlogsWithContent,
         blogs: state.blogs,
         blogsWithContent: state.blogsWithContent,

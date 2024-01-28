@@ -23,7 +23,10 @@ export default function ClientRoutes() {
           path="/blog/:blogTitle/:blogId"
           element={<SingleBlogPageLayout />}
         />
-        <Route path="/articles/:articleID" element={<SingleArticlesPage />} />
+        <Route
+          path="/articles/:articleTitle/:articleId"
+          element={<SingleArticlesPage />}
+        />
       </Routes>
     </>
   );

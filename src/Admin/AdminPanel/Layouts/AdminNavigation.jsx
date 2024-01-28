@@ -6,6 +6,8 @@ import ImageForm from "../Gallery/ImageForm";
 import MainEditorContainer from "../Blogs/BlogEditor/MainEditorContainer";
 import UpdateImages from "../Gallery/UpdateImages";
 import BlogPage from "../Blogs/BlogUpdate/BlogPage";
+import ArticlePage from "../Articles/ArticleUpdate/ArticlePage";
+import MainEditorContainerArticles from "../Articles/ArticleEditor/MainEditorContainerArticles";
 export default function AdminLayout() {
   return (
     <div className="flex">
@@ -17,6 +19,11 @@ export default function AdminLayout() {
           <Route path="/gallery/updateimage" element={<UpdateImages />} />
           <Route path="/blogs/addblog" element={<MainEditorContainer />} />
           <Route path="/blogs/updateblog" element={<BlogPage />} />
+          <Route
+            path="/articles/addarticle"
+            element={<MainEditorContainerArticles />}
+          />
+          <Route path="/articles/updatearticle" element={<ArticlePage />} />
         </Routes>
       </div>
     </div>

@@ -13,7 +13,7 @@ export default function Hero({ date, title, category, imageURL }) {
           >
             {category}
           </a>
-          <h2 className="text-center font-Gamiliademo text-4xl font-semibold leading-tight text-gray-800 max-md:text-2xl">
+          <h2 className="text-center font-Gamiliademo text-4xl font-semibold leading-tight text-gray-800 max-md:mx-2 max-md:text-2xl">
             {title}
           </h2>
           <h1 className="my-5 flex justify-center text-center font-CooperHevitt text-base font-normal">

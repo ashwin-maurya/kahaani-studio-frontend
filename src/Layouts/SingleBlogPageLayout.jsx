@@ -4,8 +4,8 @@ import BlogClientContext from "../Contexts/Blogs/BlogClientContext";
 import Hero from "../section/SingleBlogPage/LeftSection/BlogHero";
 import BlogMainContent from "../section/SingleBlogPage/LeftSection/BlogMainContent";
 import AboutColumn from "../section/SingleBlogPage/RightSection/AboutColumn";
-import ShareModal from "../section/SingleBlogPage/LeftSection/ShareModal";
-import ShareModalHorizonatal from "../section/SingleBlogPage/LeftSection/ShareModalHorizonatal";
+import ShareModal from "../section/Share/ShareModal";
+import ShareModalHorizonatal from "../section/Share/ShareModalHorizonatal";
 import SingleBlogPageSkeleton from "./Skeletons/SingleBlogPageSkeleton";
 export default function SingleBlogPageLayout() {
   const { blogId } = useParams();
@@ -21,8 +21,6 @@ export default function SingleBlogPageLayout() {
   if (!blogsWithContent || blogsWithContent.length === 0) {
     return <SingleBlogPageSkeleton />;
   }
-
-  console.log(date);
 
   return (
     <>
