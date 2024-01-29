@@ -7,7 +7,7 @@ import AboutLayout from "../Layouts/AboutLayout";
 import DestinationLayout from "../Layouts/DestinationLayout";
 import SingleBlogPageLayout from "../Layouts/SingleBlogPageLayout";
 import SingleArticlesPage from "../Layouts/SingleArticlesPage";
-
+import StoryModal from "../section/Story/StoryModal";
 export default function ClientRoutes() {
   return (
     <>
@@ -19,6 +19,7 @@ export default function ClientRoutes() {
         <Route path="/lifestyle" element={<AboutLayout />} />
         <Route path="/about" element={<AboutLayout />} />
         <Route path="/destination/:location" element={<DestinationLayout />} />
+        <Route path="/story/:storyId" element={<StoryModal />} />
         <Route
           path="/blog/:blogTitle/:blogId"
           element={<SingleBlogPageLayout />}

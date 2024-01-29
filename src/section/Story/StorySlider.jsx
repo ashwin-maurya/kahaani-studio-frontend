@@ -2,34 +2,39 @@ import React, { useEffect, useRef, useState } from "react";
 import Stories from "stories-react";
 import { storyContentGroup } from "../../components/constants/constants";
 import "stories-react/dist/index.css";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-const StorySlider = ({ selectedStoryIndex, setSelectedStoryIndex }) => {
-  const [currentStoryIndex, setCurrentStoryIndex] =
-    useState(selectedStoryIndex);
+const StorySlider = () => {
+  const { storyId } = useParams();
+  const navigate = useNavigate();
+  const [currentStoryIndex, setCurrentStoryIndex] = useState(storyId);
+
+  useEffect(() => {
+    setCurrentStoryIndex(storyId);
+  }, [storyId]);
 
   const nextStory = () => {
-    // Check if the current story is the last one
     if (currentStoryIndex < storyContentGroup.length - 1) {
-      setTimeout(() => {
-        setCurrentStoryIndex((prevIndex) => prevIndex + 1);
-      }, 0);
+      navigate(`/story/${parseInt(currentStoryIndex) + 1}`);
     } else {
-      // If it's the last story, call setShowStories(true)
-      setSelectedStoryIndex(null);
+      // Handle case when there is no next story
     }
   };
 
   const prevStory = () => {
-    setCurrentStoryIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : prevIndex,
-    );
+    if (currentStoryIndex > 0) {
+      navigate(`/story/${parseInt(currentStoryIndex) - 1}`);
+    } else {
+      // Handle case when there is no previous story
+    }
   };
 
   return (
     <>
       <button
         onClick={prevStory}
-        className="fixed left-0 top-1/2  z-[9999999999999] -translate-y-1/2 transform bg-gray-950 p-5 text-white"
+        className="fixed left-0 top-1/2  z-[9999999999999] -translate-y-1/2 transform bg-gray-100 p-5 text-black"
       >
         Previous
       </button>
@@ -47,7 +52,7 @@ const StorySlider = ({ selectedStoryIndex, setSelectedStoryIndex }) => {
       )}
       <button
         onClick={nextStory}
-        className="fixed right-0 top-1/2 z-[9999999999999] -translate-y-1/2 transform bg-gray-950 p-5 text-white"
+        className="fixed right-0 top-1/2 z-[9999999999999] -translate-y-1/2 transform bg-gray-100 p-5 text-black"
       >
         Next
       </button>

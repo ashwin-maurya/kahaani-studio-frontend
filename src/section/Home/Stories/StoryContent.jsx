@@ -1,11 +1,13 @@
 import React, { useRef, useState, lazy, Suspense } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // Import useHistory
 const LazyStoryModal = lazy(() => import("../../Story/StoryModal"));
 import { stories } from "../../../components/constants/constants";
 
 export default function StoryContent() {
   const scrollContainerRef = useRef(null);
   const [selectedStoryIndex, setSelectedStoryIndex] = useState(null);
+  const navigate = useNavigate(); // Initialize useHistory
 
   const handleScroll = (scrollOffset) => {
     if (scrollContainerRef.current) {
@@ -13,18 +15,19 @@ export default function StoryContent() {
     }
   };
 
-  const openModal = (index) => {
-    setSelectedStoryIndex(index);
+  const openStoryPage = (index) => {
+    // Navigate to the story page with the story ID
+    navigate(`/story/${index}`);
   };
 
   return (
     <>
-      <Suspense fallback={null}>
+      {/* <Suspense fallback={null}>
         <LazyStoryModal
           selectedStoryIndex={selectedStoryIndex}
           setSelectedStoryIndex={setSelectedStoryIndex}
         />
-      </Suspense>
+      </Suspense> */}
       <div className="relative p-5 max-sm:px-0">
         <div className="mx-10 flex gap-5 overflow-hidden max-md:mx-0">
           <button
@@ -48,7 +51,7 @@ export default function StoryContent() {
               <div
                 key={index}
                 className="relative flex h-[400px] w-full min-w-[300px] cursor-pointer items-end justify-start bg-gray-500 bg-cover bg-center text-left max-md:h-[350px] max-md:min-w-[250px] 2xl:h-[500px]"
-                onClick={() => openModal(index)}
+                onClick={() => openStoryPage(index)}
                 style={{
                   backgroundImage: `url("${story.imageUrl}")`,
                 }}
