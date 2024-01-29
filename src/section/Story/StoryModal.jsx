@@ -1,16 +1,19 @@
-import { useRef, useEffect } from "react";
+// StoryModal.jsx
+
+import React, { useEffect, useRef } from "react";
 import StorySlider from "./StorySlider";
-export default function StoryModal(props) {
-  const { setShowStories, ShowStories } = props;
+
+const StoryModal = ({ selectedStoryIndex, setSelectedStoryIndex }) => {
   const modalRef = useRef(null);
 
   const handleOutsideClick = (event) => {
     if (modalRef.current === event.target) {
-      setShowStories();
+      setSelectedStoryIndex(null);
     }
   };
+
   useEffect(() => {
-    if (ShowStories) {
+    if (selectedStoryIndex !== null) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -19,24 +22,31 @@ export default function StoryModal(props) {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [ShowStories]);
+  }, [selectedStoryIndex]);
 
   return (
     <>
       <div
         id="myModal"
         className={`${
-          ShowStories
-            ? " opacity-100 translate-y-0 "
-            : " opacity-0 -translate-y-full"
-        } fixed inset-0 flex items-center transition-all  z-[99999999999] ease-in-out duration-300 justify-center backdrop-blur-sm bg-Opacityblack select-none `}
+          selectedStoryIndex !== null
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0"
+        } bg-Opacityblack fixed inset-0 z-[99999999999] flex  select-none items-center justify-center backdrop-blur-sm transition-all duration-300 ease-in-out `}
         ref={modalRef}
         onClick={handleOutsideClick}
       >
-        <div className="w-auto max-lg:w-[100%] flex rounded-lg h-screen overflow-hidden bg-white shadow-xl">
-          <StorySlider />
+        <div className="bg- flex h-screen items-center justify-center overflow-hidden rounded-lg shadow-xl max-lg:w-[100%]">
+          {selectedStoryIndex !== null && (
+            <StorySlider
+              setSelectedStoryIndex={setSelectedStoryIndex}
+              selectedStoryIndex={selectedStoryIndex}
+            />
+          )}
         </div>
       </div>
     </>
   );
-}
+};
+
+export default StoryModal;

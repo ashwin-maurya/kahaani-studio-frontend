@@ -1,65 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, lazy, Suspense } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import StoryModal from "../../Story/StoryModal";
-const stories = [
-  {
-    category: "Politics",
-    date: {
-      day: "04",
-      month: "Aug",
-    },
-    imageUrl: "https://source.unsplash.com/random/240x320",
-    title: "Autem sunt tempora mollitia magnam non voluptates",
-  },
-  {
-    category: "Health",
-    date: {
-      day: "01",
-      month: "Aug",
-    },
-    imageUrl: "https://source.unsplash.com/random/241x320",
-    title: "Inventore reiciendis aliquam excepturi",
-  },
-  {
-    category: "Science",
-    date: {
-      day: "28",
-      month: "Jul",
-    },
-    imageUrl: "https://source.unsplash.com/random/242x320",
-    title: "Officiis mollitia dignissimos commodi optio vero animi",
-  },
-  {
-    category: "Sports",
-    date: {
-      day: "19",
-      month: "Jul",
-    },
-    imageUrl: "https://source.unsplash.com/random/243x320",
-    title: "Doloribus sit illo necessitatibus architecto exercitationem enim",
-  },
-  {
-    category: "Sports",
-    date: {
-      day: "19",
-      month: "Jul",
-    },
-    imageUrl: "https://source.unsplash.com/random/243x320",
-    title: "Doloribus sit illo necessitatibus architecto exercitationem enim",
-  },
-  {
-    category: "Sports",
-    date: {
-      day: "19",
-      month: "Jul",
-    },
-    imageUrl: "https://source.unsplash.com/random/243x320",
-    title: "Doloribus sit illo necessitatibus architecto exercitationem enim",
-  },
-];
+const LazyStoryModal = lazy(() => import("../../Story/StoryModal"));
+import { stories } from "../../../components/constants/constants";
 
 export default function StoryContent() {
   const scrollContainerRef = useRef(null);
+  const [selectedStoryIndex, setSelectedStoryIndex] = useState(null);
 
   const handleScroll = (scrollOffset) => {
     if (scrollContainerRef.current) {
@@ -67,15 +13,18 @@ export default function StoryContent() {
     }
   };
 
-  const [ShowStories, setShowStories] = useState(false);
-
-  const openModal = () => {
-    setShowStories(true);
+  const openModal = (index) => {
+    setSelectedStoryIndex(index);
   };
 
   return (
     <>
-      <StoryModal setShowStories={setShowStories} ShowStories={ShowStories} />
+      <Suspense fallback={null}>
+        <LazyStoryModal
+          selectedStoryIndex={selectedStoryIndex}
+          setSelectedStoryIndex={setSelectedStoryIndex}
+        />
+      </Suspense>
       <div className="relative p-5 max-sm:px-0">
         <div className="mx-10 flex gap-5 overflow-hidden max-md:mx-0">
           <button
@@ -99,22 +48,16 @@ export default function StoryContent() {
               <div
                 key={index}
                 className="relative flex h-[400px] w-full min-w-[300px] cursor-pointer items-end justify-start bg-gray-500 bg-cover bg-center text-left max-md:h-[350px] max-md:min-w-[250px] 2xl:h-[500px]"
-                onClick={openModal}
+                onClick={() => openModal(index)}
                 style={{
                   backgroundImage: `url("${story.imageUrl}")`,
                 }}
               >
                 <div className="absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b from-gray-900 via-transparent to-gray-900"></div>
-                <div className="absolute left-0 right-0 top-0 flex items-center justify-between">
+                <div className="absolute left-0 right-0 top-0 m-2 flex items-center justify-between">
                   <span className="tracki bg-sky-300 px-3 py-2 font-HankenGrotesk text-xs font-semibold uppercase text-gray-100">
                     {story.category}
                   </span>
-                  <div className="mr-5 mt-3 flex flex-col justify-start text-center text-gray-100">
-                    <span className="leadi tracki text-3xl font-semibold">
-                      {story.date.day}
-                    </span>
-                    <span className="leadi uppercase">{story.date.month}</span>
-                  </div>
                 </div>
                 <h2 className="z-10 p-5">
                   <span className="text-md font-montserrat font-medium text-gray-100 group-hover:underline">

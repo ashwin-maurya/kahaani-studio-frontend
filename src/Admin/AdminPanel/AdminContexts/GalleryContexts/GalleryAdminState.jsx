@@ -33,7 +33,7 @@ const GalleryState = (props) => {
   const fetchImages = async () => {
     try {
       const response = await axios.get(
-        "https://kahaani-studio-backend.onrender.com/api/admin/gallery/all",
+        "http://localhost:5001/api/admin/gallery/all",
       );
       dispatch({ type: "SET_IMAGES", payload: response.data });
       console.log(response.data);
@@ -45,7 +45,7 @@ const GalleryState = (props) => {
   const addImage = async (imageData) => {
     try {
       const response = await axios.post(
-        "https://kahaani-studio-backend.onrender.com/api/admin/gallery/add",
+        "http://localhost:5001/api/admin/gallery/add",
         imageData,
       );
 
