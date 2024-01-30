@@ -1,15 +1,19 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ArticleClientContext from "../../../Contexts/Articles/ArticleClientContext";
-
-export default function Articles() {
-  const { articles, fetchArticle } = useContext(ArticleClientContext);
+import { useParams } from "react-router-dom";
+import ArticleClientContext from "../../Contexts/Articles/ArticleClientContext";
+export default function ArticlesContentDestination() {
+  const { articles, fetchArticleByDestination } =
+    useContext(ArticleClientContext);
+  const { location } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch blogs when the component mounts
-    fetchArticle();
-  }, []);
+    fetchArticleByDestination(location);
+  }, [location]);
+
+  console.log(articles);
   return (
     <>
       {articles.map((article, index) => (
@@ -26,7 +30,7 @@ export default function Articles() {
         >
           <div className="w-1/2 bg-white p-10 font-sans max-md:w-full max-md:px-0 max-md:py-5">
             <div className="max-md:mx-4">
-              <h1 className="text-6xl font-bold">{article?.location}</h1>
+              <h1 className="text-6xl font-bold">{article.location}</h1>
 
               <div className="mt-8 flex font-light text-gray-500">
                 <div className="pr-4">

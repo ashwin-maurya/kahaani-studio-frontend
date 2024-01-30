@@ -18,7 +18,7 @@ const StorySlider = () => {
     if (currentStoryIndex < storyContentGroup.length - 1) {
       navigate(`/story/${parseInt(currentStoryIndex) + 1}`);
     } else {
-      // Handle case when there is no next story
+      navigate(`/home`);
     }
   };
 

@@ -1,93 +1,123 @@
-import React from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
-export default function () {
+import { GoFileMedia } from "react-icons/go";
+import { GrArticle } from "react-icons/gr";
+import { TfiWrite } from "react-icons/tfi";
+import { CiLocationOn } from "react-icons/ci";
+import { IoHomeOutline } from "react-icons/io5";
+import { FaPlus } from "react-icons/fa6";
+
+export default function Sidebar() {
+  const sectionsData = [
+    {
+      name: "Gallery",
+      icon: GoFileMedia,
+      linksTitle: ["Add Image", "Update Image"],
+      links: ["addimage", "updateimage"],
+    },
+    {
+      name: "Blogs",
+      icon: GrArticle,
+      linksTitle: ["Add Blog", "Update Blog"],
+      links: ["addblog", "updateblog"],
+    },
+    {
+      name: "Articles",
+      icon: TfiWrite,
+      linksTitle: ["Add Articles", "Update Articles"],
+      links: ["addarticle", "updatearticle"],
+    },
+    {
+      name: "Destination",
+      icon: CiLocationOn,
+      linksTitle: ["View/Update"],
+      links: ["viewupdate"],
+    },
+  ];
+
+  const [sectionsExpanded, setSectionsExpanded] = useState(
+    sectionsData.reduce((acc, section) => {
+      acc[section.name.toLowerCase()] = false;
+      return acc;
+    }, {}),
+  );
+
+  const toggleSection = (section) => {
+    setSectionsExpanded((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
   return (
     <>
-      <div className="sticky top-0 flex h-screen w-72 min-w-72 max-w-72 select-none flex-col border-r-2 border-black bg-stone-100">
-        <aside className="h-full w-full p-6">
-          <div className="flex items-center justify-between  font-HankenGrotesk font-bold  text-gray-600 ">
+      <aside className="sticky top-0 flex h-screen w-72 min-w-72 max-w-72 select-none flex-col border-r-2 border-black bg-stone-800">
+        <div className="h-full w-full  p-6">
+          <div className="flex items-center  justify-between overflow-y-scroll  font-HankenGrotesk font-bold  text-gray-100 ">
             <h2>Dashboard</h2>
             <FaBars className="text-2xl" />
           </div>
-          <nav className="mt-5 text-sm">
-            <div className="space-y-2">
-              <h2 className="mt-5 font-VulturaRegular text-sm font-semibold uppercase dark:text-gray-400">
-                <Link
-                  className="flex items-center rounded-md p-2 font-HankenGrotesk font-bold text-gray-600 hover:bg-white"
-                  rel="noopener noreferrer"
-                  to="/admin"
-                >
-                  Home
-                </Link>{" "}
-              </h2>
+          <nav className="mt-5 h-full overflow-y-scroll scroll-smooth text-sm">
+            <div>
+              <Link
+                className="my-1 flex cursor-pointer items-center justify-between rounded-lg p-3 font-VulturaRegular text-base font-semibold uppercase text-gray-300 transition-all duration-200 ease-in-out hover:bg-gray-600 "
+                to={`/admin`}
+                rel="noopener noreferrer"
+              >
+                <span className="flex items-center justify-center">
+                  <IoHomeOutline
+                    className="mr-2 inline-block text-xl"
+                    alt="home"
+                  />
+                  <span className="flex items-center rounded-md font-HankenGrotesk font-bold text-gray-300 ">
+                    Home
+                  </span>
+                </span>
+              </Link>
             </div>
-            <div className="space-y-2">
-              <h2 className="mt-5 font-VulturaRegular text-sm font-semibold uppercase dark:text-gray-400">
-                Gallery
-              </h2>
-              <div className="flex flex-col ">
-                <Link
-                  className="flex items-center rounded-md p-2 font-HankenGrotesk font-bold text-gray-600 hover:bg-white"
-                  rel="noopener noreferrer"
-                  to="/admin/gallery/addimage"
+            {sectionsData.map((section, index) => (
+              <div key={index}>
+                <h2
+                  className="my-1 flex cursor-pointer items-center justify-between rounded-lg p-3 font-VulturaRegular text-base font-semibold uppercase text-gray-300 transition-all duration-200 ease-in-out hover:bg-gray-600"
+                  onClick={() => toggleSection(section.name.toLowerCase())}
                 >
-                  Add Image
-                </Link>
-                <Link
-                  className="flex items-center rounded-md p-2  font-HankenGrotesk font-bold text-gray-600 hover:bg-white"
-                  rel="noopener noreferrer"
-                  to="/admin/gallery/updateimage"
+                  <span className="flex items-center justify-center">
+                    <section.icon className="mr-2 inline-block text-xl" />
+                    {section.name}
+                  </span>
+                  {sectionsExpanded[section.name.toLowerCase()] ? (
+                    <FaChevronUp
+                      className="ml-2 inline-block"
+                      alt="chevron-up"
+                    />
+                  ) : (
+                    <FaChevronDown
+                      className="ml-2 inline-block"
+                      alt="chevron-down"
+                    />
+                  )}
+                </h2>
+                <div
+                  className={`mx-5 flex  flex-col overflow-hidden transition-all duration-200 ease-in-out ${sectionsExpanded[section.name.toLowerCase()] ? `h-20` : `h-0`}`}
                 >
-                  Update Image
-                </Link>
+                  {section.linksTitle.map((linkTitle, linkIndex) => (
+                    <Link
+                      key={linkIndex}
+                      className="flex items-center rounded-md p-2 font-HankenGrotesk text-sm font-bold text-gray-100 transition-all duration-200 ease-in-out  hover:bg-gray-500"
+                      rel="noopener noreferrer"
+                      to={`/admin/${section.name.toLowerCase()}/${section.links[linkIndex]}/`}
+                    >
+                      <FaPlus className="mr-2" alt="plus icon" />
+                      {linkTitle}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="space-y-2">
-              <h2 className="mt-5  font-VulturaRegular text-sm font-semibold uppercase dark:text-gray-400">
-                Blogs
-              </h2>
-              <div className="flex flex-col ">
-                <Link
-                  className="flex items-center rounded-md p-2 font-HankenGrotesk font-bold  text-gray-600 hover:bg-white"
-                  rel="noopener noreferrer"
-                  to="/admin/blogs/addblog"
-                >
-                  Add Blog
-                </Link>
-                <Link
-                  className="flex items-center rounded-md p-2 font-HankenGrotesk font-bold  text-gray-600 hover:bg-white"
-                  rel="noopener noreferrer"
-                  to="/admin/blogs/updateblog"
-                >
-                  Update Blog
-                </Link>
-              </div>
-            </div>
-            <div className="space-y-2">
-              <h2 className="mt-5 font-VulturaRegular text-sm font-semibold uppercase dark:text-gray-400">
-                Articles
-              </h2>
-              <div className="flex flex-col ">
-                <Link
-                  className="flex items-center rounded-md p-2 font-HankenGrotesk font-bold  text-gray-600 hover:bg-white"
-                  rel="noopener noreferrer"
-                  to="/admin/articles/addarticle"
-                >
-                  Add Articles
-                </Link>
-                <Link
-                  className="flex items-center rounded-md p-2 font-HankenGrotesk font-bold  text-gray-600 hover:bg-white"
-                  rel="noopener noreferrer"
-                  to="/admin/articles/updatearticle"
-                >
-                  Update Articles
-                </Link>
-              </div>
-            </div>
+            ))}
           </nav>
-        </aside>
-      </div>
+        </div>
+      </aside>
     </>
   );
 }

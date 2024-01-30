@@ -18,7 +18,7 @@ export default function Hero() {
             target="_blank"
             className="text-black underline"
           >
-            <span itemprop="name"> Shikha Gautam</span>
+            <span itemProp="name"> Shikha Gautam</span>
           </a>
         </p>
       </div>

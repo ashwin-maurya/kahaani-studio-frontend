@@ -14,10 +14,10 @@ export default function TravelLayout() {
         <div className="mx-auto max-w-screen-xl pt-14">
           <TravelDestinations />
         </div>
-        <div className="mx-auto mt-20 max-w-screen-xl max-md:mt-10">
+        <div className="mx-auto mt-40 max-w-screen-xl max-md:mt-10">
           <Articles />
         </div>
-        <div className="mx-auto mt-28 max-w-screen-xl max-md:mt-10 ">
+        <div className="mx-auto mt-40 max-w-screen-xl max-md:mt-10 ">
           <BlogContent />
         </div>
       </div>

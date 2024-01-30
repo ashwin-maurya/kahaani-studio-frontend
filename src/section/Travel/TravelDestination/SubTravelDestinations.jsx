@@ -1,70 +1,18 @@
 import React, { useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-const travelDestinationsData = [
-  {
-    id: 1,
-    title: "Destination 1",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1033",
-  },
-  {
-    id: 2,
-    title: "Destination 2",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=967",
-  },
-  {
-    id: 3,
-    title: "Destination 3",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=924",
-  },
-  {
-    id: 4,
-    title: "Destination 4",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1073",
-  },
-  {
-    id: 5,
-    title: "Destination 5",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1032",
-  },
-  {
-    id: 6,
-    title: "Destination 6",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1080",
-  },
-  {
-    id: 7,
-    title: "Destination 4",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1073",
-  },
-  {
-    id: 8,
-    title: "Destination 5",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1032",
-  },
-  {
-    id: 9,
-    title: "Destination 6",
-    link: "#",
-    imageUrl: "https://picsum.photos/1024/768?image=1080",
-  },
-];
-
-export default function SubTravelDestinations() {
+import { useNavigate } from "react-router-dom";
+export default function SubTravelDestinations({ destinations }) {
+  const navigate = useNavigate();
   const scrollContainerRef = useRef(null);
 
   const handleScroll = (scrollOffset) => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollLeft += scrollOffset;
     }
+  };
+  const getDefaultImage = () => {
+    // Replace with the default image URL if imageURL is not found or empty
+    return "https://1.img-dpreview.com/files/p/TS560x560~forums/62803172/ae5fffae14814b88b8eb7551ef16ea84";
   };
 
   return (
@@ -79,7 +27,7 @@ export default function SubTravelDestinations() {
           </button>
 
           <div
-            className="flex max-h-[200px] w-full  items-center justify-start gap-5 overflow-x-scroll scroll-smooth bg-cover bg-center text-left  transition-all duration-300 ease-in-out max-md:max-h-[150px] max-md:gap-2 "
+            className="flex max-h-[200px] w-full  items-start justify-start gap-5 overflow-x-scroll scroll-smooth bg-cover bg-center text-left  transition-all duration-300 ease-in-out max-md:max-h-[150px] max-md:gap-2 "
             ref={scrollContainerRef}
           >
             <h1
@@ -88,24 +36,26 @@ export default function SubTravelDestinations() {
             >
               More
             </h1>
-            {travelDestinationsData.map((destination) => (
+            {destinations?.map((destination) => (
               <div
-                className="relative flex w-full cursor-pointer flex-col items-end justify-start bg-cover bg-center text-left"
+                className="relative flex w-full cursor-pointer flex-col items-start  justify-start bg-cover bg-center text-left"
                 key={destination.id}
+                onClick={() =>
+                  navigate(
+                    `/destination/${destination.location.toLowerCase().replace(/\s+/g, "-")}`,
+                  )
+                }
               >
-                <a
-                  href={destination.link}
-                  className="flex w-full flex-col items-center justify-center rounded-full text-center mix-blend-normal "
-                >
+                <div className="flex flex-col items-center justify-center rounded-full text-center mix-blend-normal ">
                   <img
                     loading="lazy"
                     className="group h-[150px] w-[150px] min-w-[150px] scale-95 rounded-full bg-cover bg-no-repeat object-cover  object-center transition-all duration-500 ease-in-out group-hover:opacity-90 max-md:h-[100px] max-md:w-[100px] max-md:min-w-[100px]"
-                    src={destination.imageUrl}
+                    src={destination.imageURL || getDefaultImage()}
                   />
                   <span className="w-full text-center font-Oswald text-lg font-bold uppercase tracking-wider text-black transition-all duration-500 ease-out max-md:text-xs">
-                    {destination.title}
+                    {destination.location}
                   </span>
-                </a>
+                </div>
               </div>
             ))}
           </div>

@@ -40,6 +40,17 @@ const BlogClientState = (props) => {
       console.error("Error fetching blogs:", error);
     }
   };
+  // Function to fetch blogs
+  const fetchBlogsByDestination = async (location) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5001/api/client/blogs/fetchBlogsByDestination/${location}`,
+      );
+      dispatch({ type: "SET_BLOGS", payload: response.data });
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    }
+  };
 
   // Function to fetch blog with content for the requested Blog ID
   const fetchBlogsWithContent = async (blogId) => {
@@ -59,6 +70,7 @@ const BlogClientState = (props) => {
       value={{
         fetchBlogs,
         fetchBlogsWithContent,
+        fetchBlogsByDestination,
         blogs: state.blogs,
         blogsWithContent: state.blogsWithContent,
       }}

@@ -8,11 +8,12 @@ export default function MainEditorContainerArticles() {
   const [formData, setFormData] = useState({
     title: "",
     category: "",
+    location: "",
     imageURL: "",
     content: "",
   });
 
-  const { title, category, imageURL, content } = formData;
+  const { title, category, location, imageURL, content } = formData;
 
   const handleChange = async (e) => {
     const { name, value, files } = e.target;
@@ -107,7 +108,22 @@ export default function MainEditorContainerArticles() {
                     />
                   </div>
                 </div>
-
+                <div className="w-1/3">
+                  <label
+                    className="mb-3 font-CooperHevitt text-xl text-black"
+                    htmlFor="location"
+                  >
+                    Location
+                  </label>
+                  <input
+                    className="w-full rounded-sm border-none bg-stone-100 p-3 text-sm"
+                    type="text"
+                    id="location"
+                    name="location"
+                    value={location}
+                    onChange={handleChange}
+                  />
+                </div>
                 <div>
                   <label
                     className="mb-3 font-CooperHevitt text-xl text-black"

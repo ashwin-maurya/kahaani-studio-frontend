@@ -14,11 +14,13 @@ import AuthState from "./Admin/Authentication/AuthContexts/AuthState";
 import GalleryAdminState from "./Admin/AdminPanel/AdminContexts/GalleryContexts/GalleryAdminState";
 import BlogAdminState from "./Admin/AdminPanel/AdminContexts/BlogContexts/BlogAdminState";
 import ArticleAdminState from "./Admin/AdminPanel/AdminContexts/ArticleContexts/ArticleAdminState";
+import DestinationAdminState from "./Admin/AdminPanel/AdminContexts/DestinationContexts/DestinationAdminState";
 
 //Client States
 import BlogClientState from "./Contexts/Blogs/BlogClientState";
 import GalleryClientState from "./Contexts/Gallery/GalleryClientState";
 import ArticleClientState from "./Contexts/Articles/ArticleClientState";
+import DestinationClientState from "./Contexts/Destinations/DestinationClientState";
 const App = () => {
   return (
     <Router>
@@ -27,27 +29,34 @@ const App = () => {
         <BlogAdminState>
           <ArticleAdminState>
             <GalleryAdminState>
-              {/* Client Contexts */}
-              <BlogClientState>
-                <ArticleClientState>
-                  <GalleryClientState>
-                    <ScrollProgress />
-                    <ScrollToTop />
-                    <div className=" container">
-                      <Navbar></Navbar>
-                      <Routes>
-                        <Route path="/admin/*" element={<AdminNavigation />} />
-                        <Route path="/*" element={<ClientRoutes />} />
-                        <Route
-                          path="/authenticate/admin/login"
-                          element={<LoginPage />}
-                        />
-                      </Routes>
-                      <Footer></Footer>
-                    </div>
-                  </GalleryClientState>
-                </ArticleClientState>
-              </BlogClientState>
+              <DestinationAdminState>
+                {/* Client Contexts */}
+                <BlogClientState>
+                  <ArticleClientState>
+                    <GalleryClientState>
+                      <DestinationClientState>
+                        <ScrollProgress />
+                        <ScrollToTop />
+                        <div className=" container">
+                          <Navbar></Navbar>
+                          <Routes>
+                            <Route
+                              path="/admin/*"
+                              element={<AdminNavigation />}
+                            />
+                            <Route path="/*" element={<ClientRoutes />} />
+                            <Route
+                              path="/authenticate/admin/login"
+                              element={<LoginPage />}
+                            />
+                          </Routes>
+                          <Footer></Footer>
+                        </div>
+                      </DestinationClientState>
+                    </GalleryClientState>
+                  </ArticleClientState>
+                </BlogClientState>
+              </DestinationAdminState>
             </GalleryAdminState>
           </ArticleAdminState>
         </BlogAdminState>

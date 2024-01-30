@@ -41,6 +41,18 @@ const ArticleClientState = (props) => {
       console.error("Error fetching articles:", error);
     }
   };
+  // Function to fetch blogs
+  const fetchArticleByDestination = async (location) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5001/api/client/article/fetchArticleByDestination/${location}`,
+      );
+      console.log("Article fetched:", response.data);
+      dispatch({ type: "SET_ARTICLES", payload: response.data });
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+    }
+  };
 
   // Function to fetch blogs with content
   const fetchArticlesWithContent = async (articleId) => {
@@ -59,6 +71,7 @@ const ArticleClientState = (props) => {
       value={{
         fetchArticle,
         fetchArticlesWithContent,
+        fetchArticleByDestination,
         articles: state.articles,
         articlesWithContent: state.articlesWithContent,
       }}

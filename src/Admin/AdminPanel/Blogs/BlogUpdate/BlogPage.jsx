@@ -32,7 +32,7 @@ export default function BlogPage() {
                 />
               </div>
               <div className="w-full pb-3 pt-2">
-                <span className="font-Gamiliademo text-xl font-semibold uppercase tracking-wider text-black group-hover:text-yellow-700">
+                <span className="font-Gamiliademo text-base  font-semibold uppercase tracking-wider text-black group-hover:text-yellow-700 ">
                   {blog.title}{" "}
                 </span>
               </div>

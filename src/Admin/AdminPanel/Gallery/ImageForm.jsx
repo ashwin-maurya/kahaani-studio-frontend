@@ -82,7 +82,7 @@ const ImageForm = () => {
   };
 
   return (
-    <div className="mx-auto my-10 max-w-96">
+    <div className="mx-auto my-5 max-w-96">
       <h2 className="mb-5 text-center font-Gamiliademo text-2xl uppercase">
         Add Image
       </h2>

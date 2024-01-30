@@ -8,11 +8,13 @@ import UpdateImages from "../Gallery/UpdateImages";
 import BlogPage from "../Blogs/BlogUpdate/BlogPage";
 import ArticlePage from "../Articles/ArticleUpdate/ArticlePage";
 import MainEditorContainerArticles from "../Articles/ArticleEditor/MainEditorContainerArticles";
+import Destinations from "../Destination/Destinations";
+
 export default function AdminLayout() {
   return (
     <div className="flex">
       <SideNav />
-      <div className="mx-auto w-full max-w-screen-xl pt-5 max-md:pt-5">
+      <div className="mx-auto w-full max-w-screen-xl overflow-y-scroll scroll-smooth pt-5 max-md:pt-5">
         <Routes>
           <Route path="/" element={<AuthenticatedAdminPage />} />
           <Route path="/gallery/addimage" element={<ImageForm />} />
@@ -24,6 +26,7 @@ export default function AdminLayout() {
             element={<MainEditorContainerArticles />}
           />
           <Route path="/articles/updatearticle" element={<ArticlePage />} />
+          <Route path="/destination/viewupdate" element={<Destinations />} />
         </Routes>
       </div>
     </div>

@@ -1,59 +1,43 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import SubTravelDestinations from "./SubTravelDestinations";
 import { useNavigate } from "react-router-dom";
-const travelDestinationsData = [
-  {
-    id: 1,
-    title: "paris",
-    imageUrl:
-      "https://images.pexels.com/photos/7919/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1000",
-  },
-  {
-    id: 2,
-    title: "new york",
-    imageUrl:
-      "https://images.pexels.com/photos/774861/pexels-photo-774861.jpeg?auto=compress&cs=tinysrgb&w=1000",
-  },
-  {
-    id: 3,
-    title: "tokyo",
-    imageUrl:
-      "https://images.pexels.com/photos/1367179/pexels-photo-1367179.jpeg?auto=compress&cs=tinysrgb&w=1000",
-  },
-  {
-    id: 4,
-    title: "kolkata",
-    imageUrl:
-      "https://images.pexels.com/photos/1367105/pexels-photo-1367105.jpeg?auto=compress&cs=tinysrgb&w=1000",
-  },
-  {
-    id: 5,
-    title: "Mumbai",
-    imageUrl:
-      "https://images.pexels.com/photos/1292115/pexels-photo-1292115.jpeg?auto=compress&cs=tinysrgb&w=1000",
-  },
-  {
-    id: 6,
-    title: "Delhi",
-    imageUrl:
-      "https://images.pexels.com/photos/794079/pexels-photo-794079.jpeg?auto=compress&cs=tinysrgb&w=1000",
-  },
-];
+import DestinationClientContext from "../../../Contexts/Destinations/DestinationClientContext";
+
 export default function TravelDestinations() {
   const navigate = useNavigate();
+  const { destinations, fetchDestinations } = useContext(
+    DestinationClientContext,
+  );
+
+  useEffect(() => {
+    // Fetch destinations when the component mounts
+    fetchDestinations();
+  }, []);
+
+  // Display only the top 6 destinations
+  const topDestinations = destinations.slice(0, 6);
+
+  // If there are more destinations, pass them to SubTravelDestinations
+  const remainingDestinations = destinations.slice(6);
+
+  const getDefaultImage = () => {
+    // Replace with the default image URL if imageURL is not found or empty
+    return "https://1.img-dpreview.com/files/p/TS560x560~forums/62803172/ae5fffae14814b88b8eb7551ef16ea84";
+  };
+
   return (
     <>
       <h1 className="text-center font-CooperHevitt text-4xl font-thin uppercase max-md:text-xl">
         FEATURED DESTINATIONS
       </h1>
       <div className="mt-10 block w-full columns-3 break-inside-avoid gap-0 px-10 max-lg:columns-2 max-md:mt-3 max-md:columns-2 max-md:px-0">
-        {travelDestinationsData.map((destination) => (
+        {topDestinations.map((destination, index) => (
           <div
-            key={destination.id}
+            key={index}
             className="relative overflow-hidden"
             onClick={() =>
               navigate(
-                `/destination/${destination.title.toLowerCase().replace(/\s+/g, "-")}`,
+                `/destination/${destination.location.toLowerCase().replace(/\s+/g, "-")}`,
               )
             }
           >
@@ -62,11 +46,11 @@ export default function TravelDestinations() {
                 <img
                   loading="lazy"
                   className="h-[300px] w-full scale-95 object-cover object-center transition-all duration-500 ease-in-out group-hover:opacity-80"
-                  src={destination.imageUrl}
+                  src={destination.imageURL || getDefaultImage()}
                 />
                 <div className="absolute m-0 flex h-auto w-full flex-wrap items-center justify-center p-5 text-white">
                   <span className="bg-[#00000082] px-10 py-5 font-Oswald text-xl font-bold uppercase tracking-wider transition-all duration-500 ease-out  max-sm:text-sm">
-                    {destination.title}
+                    {destination.location}
                   </span>
                 </div>
               </div>
@@ -74,7 +58,10 @@ export default function TravelDestinations() {
           </div>
         ))}
       </div>
-      <SubTravelDestinations />
+      {/* Display SubTravelDestinations only if there are more destinations */}
+      {remainingDestinations.length > 0 && (
+        <SubTravelDestinations destinations={remainingDestinations} />
+      )}{" "}
     </>
   );
 }

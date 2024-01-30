@@ -86,7 +86,7 @@ export default function PhotoModal({
               }}
             />
             <span
-              className="absolute right-0 top-0 -translate-y-10 cursor-pointer bg-gray-600 p-2 text-xl text-white transition-all duration-500 ease-in-out hover:scale-95 group-hover:translate-y-0 max-md:translate-y-0 max-md:text-lg"
+              className="absolute right-0 top-0 -translate-y-12 cursor-pointer bg-gray-600 p-2 text-xl text-white transition-all duration-500 ease-in-out hover:scale-95 group-hover:translate-y-0 max-md:translate-y-0 max-md:text-lg"
               onClick={closeImage}
             >
               <FaTimes />
