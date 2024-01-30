@@ -33,7 +33,7 @@ const BlogClientState = (props) => {
   const fetchBlogs = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/client/blogs/getBlogs",
+        "https://kahaani-studio-backend.onrender.com/api/client/blogs/getBlogs",
       );
       dispatch({ type: "SET_BLOGS", payload: response.data });
     } catch (error) {
@@ -44,7 +44,7 @@ const BlogClientState = (props) => {
   const fetchBlogsByDestination = async (location) => {
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/client/blogs/fetchBlogsByDestination/${location}`,
+        `https://kahaani-studio-backend.onrender.com/api/client/blogs/fetchBlogsByDestination/${location}`,
       );
       dispatch({ type: "SET_BLOGS", payload: response.data });
     } catch (error) {
@@ -56,7 +56,7 @@ const BlogClientState = (props) => {
   const fetchBlogsWithContent = async (blogId) => {
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/client/blogs/getBlogsWithContent/${blogId}`,
+        `https://kahaani-studio-backend.onrender.com/api/client/blogs/getBlogsWithContent/${blogId}`,
       );
       dispatch({ type: "SET_BLOGS_WITH_CONTENT", payload: response.data });
       console.log("Blog with content fetched:", response.data);

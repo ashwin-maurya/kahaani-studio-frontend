@@ -27,7 +27,7 @@ const GalleryClientState = (props) => {
   const fetchImages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/client/gallery/all",
+        "https://kahaani-studio-backend.onrender.com/api/client/gallery/all",
       );
       dispatch({ type: "SET_IMAGES", payload: response.data });
       console.log(response.data);

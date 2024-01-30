@@ -27,7 +27,7 @@ const DestinationClientState = (props) => {
   const fetchDestinations = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/client/destination/getDestinations",
+        "https://kahaani-studio-backend.onrender.com/api/client/destination/getDestinations",
       );
       dispatch({ type: "SET_DESTINATIONS", payload: response.data });
       console.log(response.data);
