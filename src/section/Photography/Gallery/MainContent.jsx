@@ -37,7 +37,7 @@ export default function MainContent() {
       <h1 className="text-center font-CooperHevitt text-4xl font-thin uppercase">
         Photo Gallery
       </h1>
-      <div className="mt-10 block w-screen columns-3 break-inside-avoid gap-0 px-10 max-lg:columns-2 max-md:columns-2 max-md:px-0">
+      <div className="mt-10 block w-full columns-3 break-inside-avoid gap-0 px-10 max-lg:columns-2 max-md:columns-2 max-md:px-0">
         {images.map((image, index) => (
           <div
             className="group relative m-2 my-4 cursor-pointer overflow-hidden bg-gray-200 max-md:m-1 max-md:my-2 "

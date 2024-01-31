@@ -15,7 +15,7 @@ const ShareWeb = ({ title }) => {
         }}
         sites={["facebook", "twitter", "linkedin", "whatsapp"]}
       >
-        <FaShare />
+        <FaShare className="text-2xl" />
       </RWebShare>
     </>
   );

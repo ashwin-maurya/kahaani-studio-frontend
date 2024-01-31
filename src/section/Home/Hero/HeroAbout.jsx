@@ -43,15 +43,6 @@ export default function HeroAbout() {
                 topographies, folk tales, legends, mythology and more
               </p>
             </div>
-            <div className="relative cursor-pointer rounded-md">
-              <img
-                loading="lazy"
-                className="m-2 h-[300px] w-[400px] bg-cover bg-center max-sm:w-[350px]"
-                style={{
-                  backgroundImage: `url(https://content.presspage.com/uploads/2338/1920_selfie-auf-der-reise-copypeopleimages.com-adobestock-493554509.jpeg?10000)`,
-                }}
-              ></img>
-            </div>
           </div>
         </div>
       </div>

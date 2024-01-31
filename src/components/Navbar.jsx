@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { navLinks } from "./constants";
 import SideNav from "./SideNav";
 import { FaBars, FaTimes } from "react-icons/fa";
-import SearchBar from "./SearchBar";
+import SearchBar from "./Search/SearchBar";
 const Navbar = () => {
   const location = useLocation();
   const [showNav, setNav] = useState(false);
   const [isScrolled, setIsScrolled] = useState(true);
+  const navbarRef = useRef(null);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState("up");
 
   useEffect(() => {
     setNav(false);
@@ -30,6 +33,33 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      if (prevScrollPos > currentScrollPos) {
+        setScrollDirection("up");
+      } else {
+        setScrollDirection("down");
+      }
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
+  useEffect(() => {
+    const navbarHeight = navbarRef.current.clientHeight;
+    if (scrollDirection === "up") {
+      navbarRef.current.style.top = "0";
+    } else {
+      navbarRef.current.style.top = `-${navbarHeight + 1}px`;
+    }
+  }, [scrollDirection]);
+
+  useEffect(() => {
     if (showNav) {
       document.body.style.overflow = "hidden";
     } else {
@@ -50,7 +80,8 @@ const Navbar = () => {
       {showNav && <SideNav NavStatus={NavStatus}></SideNav>}
       <section
         id="navbar"
-        className={`${location.pathname.includes("/admin") ? "hidden" : ""} fixed top-0 z-[100] w-full select-none  border-white ${
+        ref={navbarRef}
+        className={`${location.pathname.includes("/admin") ? "hidden" : ""} fixed top-0 z-[100] w-full select-none border-white transition-all duration-300  ease-in-out ${
           isScrolled &&
           (location.pathname === "/" || location.pathname === "/home")
             ? "mix-blen-difference"
@@ -73,11 +104,11 @@ const Navbar = () => {
                 >
                   <Link
                     to={item.href}
-                    className={` rounded-sm px-5 text-black ${
+                    className={` rounded-sm px-5 text-black transition-all duration-150 ease-in-out ${
                       (location.pathname === "/" && item.href === "/home") ||
                       location.pathname.includes(item.href)
                         ? "bg-gray-600 text-white "
-                        : ""
+                        : "hover:bg-[#e1e1e1a5]"
                     }`}
                   >
                     {item.label}

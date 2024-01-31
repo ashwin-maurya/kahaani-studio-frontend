@@ -26,7 +26,7 @@ export default function SingleBlogPageLayout() {
     <>
       <ShareModal title={title} />
       <div className="mx-auto mt-16 flex w-full items-start justify-start px-10 max-md:flex-col max-md:px-5 max-sm:px-0">
-        <div className="min-w-[73vw] max-w-[73vw] border-r border-black pr-10 max-md:max-w-full max-md:border-none max-md:pr-0  2xl:max-w-[70vw]">
+        <article className="min-w-[73vw] max-w-[73vw] border-r border-black pr-10 max-md:max-w-full max-md:border-none max-md:pr-0  2xl:max-w-[70vw]">
           <Hero
             title={title}
             date={date}
@@ -38,7 +38,7 @@ export default function SingleBlogPageLayout() {
           </div>
           <BlogMainContent content={blogContent?.content} />
           <ShareModalHorizonatal title={title} />
-        </div>
+        </article>
         <div className="pl-5">
           <AboutColumn />
         </div>
