@@ -1,19 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import ArticleClientContext from "../../Contexts/Articles/ArticleClientContext";
-export default function ArticlesContentDestination() {
-  const { articles, fetchArticleByDestination } =
-    useContext(ArticleClientContext);
-  const { location } = useParams();
+export default function ArticlesContentDestination({ articles }) {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Fetch blogs when the component mounts
-    fetchArticleByDestination(location);
-  }, [location]);
-
-  console.log(articles);
   return (
     <>
       {articles.map((article, index) => (

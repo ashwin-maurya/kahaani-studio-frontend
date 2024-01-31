@@ -1,17 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import BlogClientContext from "../../Contexts/Blogs/BlogClientContext";
-import { useParams } from "react-router-dom";
 
-export default function BlogsContentDestination() {
-  const { blogs, fetchBlogsByDestination } = useContext(BlogClientContext);
+export default function BlogsContentDestination({ blogs }) {
   const navigate = useNavigate();
-  const { location } = useParams();
-
-  useEffect(() => {
-    // Fetch blogs when the component mounts
-    fetchBlogsByDestination(location);
-  }, []);
 
   return (
     <>
