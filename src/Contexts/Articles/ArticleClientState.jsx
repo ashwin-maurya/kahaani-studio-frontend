@@ -33,7 +33,7 @@ const ArticleClientState = (props) => {
   const fetchArticle = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/client/article/getArticle",
+        "https://kahaani-studio-backend.onrender.com/api/client/article/getArticle",
       );
       console.log("Article fetched:", response.data);
       dispatch({ type: "SET_ARTICLES", payload: response.data });
@@ -45,7 +45,7 @@ const ArticleClientState = (props) => {
   const fetchArticleByDestination = async (location) => {
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/client/article/fetchArticleByDestination/${location}`,
+        `https://kahaani-studio-backend.onrender.com/api/client/article/fetchArticleByDestination/${location}`,
       );
       console.log("Article fetched:", response.data);
       dispatch({ type: "SET_ARTICLES", payload: response.data });
@@ -58,7 +58,7 @@ const ArticleClientState = (props) => {
   const fetchArticlesWithContent = async (articleId) => {
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/client/article/getArticlesWithContent/${articleId}`,
+        `https://kahaani-studio-backend.onrender.com/api/client/article/getArticlesWithContent/${articleId}`,
       );
       dispatch({ type: "SET_ARTICLES_WITH_CONTENT", payload: response.data });
     } catch (error) {
