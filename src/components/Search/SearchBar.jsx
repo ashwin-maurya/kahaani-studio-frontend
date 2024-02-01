@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import SearchDropDown from "./SearchDropDown";
 import ClientSearchContext from "../../Contexts/Search/ClientSearchContext";
 
-const SearchBar = () => {
+const SearchBar = ({ scrollDirection }) => {
   const [expanded, setExpanded] = useState(false);
   const [searchtext, setSearchtext] = useState("");
   const [searchResult, setSearchResult] = useState({});
@@ -19,8 +19,10 @@ const SearchBar = () => {
   }, [searchtext]);
 
   useEffect(() => {
-    setSearchResult(results);
-    setSearchResultExist(true);
+    if (results.length != 0) {
+      setSearchResult(results);
+      setSearchResultExist(true);
+    }
   }, [results]);
 
   const handleInputChange = (event) => {
@@ -44,6 +46,11 @@ const SearchBar = () => {
       setSearchResultExist(true);
     }
   };
+  useEffect(() => {
+    if (scrollDirection != "up") {
+      setSearchResultExist(false);
+    }
+  }, [scrollDirection]);
   return (
     <>
       {searchResultExist && <SearchDropDown searchResult={searchResult} />}

@@ -92,7 +92,7 @@ const Navbar = () => {
           className={`top-0 flex w-full flex-row items-center justify-between px-6 py-3 max-md:flex-row max-md:justify-between max-md:px-4 max-md:py-2`}
         >
           <div className="w-60 max-sm:w-auto">
-            <SearchBar />
+            <SearchBar scrollDirection={scrollDirection} />
           </div>
 
           <div className=" mx-auto flex w-auto items-center justify-center  max-sm:mt-0 2xl:mb-2">

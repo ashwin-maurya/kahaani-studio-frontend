@@ -4,7 +4,7 @@ import GalleryHero from "../section/Photography/Hero/GalleryHero";
 export default function PhotographyLayout() {
   return (
     <>
-      <div className="pt-20">
+      <div className=" pt-[4.5rem]">
         <div>
           <GalleryHero />
         </div>
