@@ -1,23 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SearchDropDown from "./SearchDropDown";
-export default function SearchBar() {
+import ClientSearchContext from "../../Contexts/Search/ClientSearchContext";
+
+const SearchBar = () => {
   const [expanded, setExpanded] = useState(false);
   const [searchtext, setSearchtext] = useState("");
   const [searchResult, setSearchResult] = useState({});
   const [searchResultExist, setSearchResultExist] = useState(false);
+  const { fetchResults, results } = useContext(ClientSearchContext);
 
   useEffect(() => {
-    if (searchtext.trim() != "") {
-      searchForResults();
+    if (searchtext.trim().length > 3) {
+      fetchResults(searchtext);
+    } else {
+      setSearchResult({});
+      setSearchResultExist(false);
     }
   }, [searchtext]);
+
+  useEffect(() => {
+    setSearchResult(results);
+    setSearchResultExist(true);
+  }, [results]);
 
   const handleInputChange = (event) => {
     const { value } = event.target;
     setSearchtext(value);
-    if (value.trim() == "") {
+    if (value.trim() === "") {
       setSearchResultExist(false);
     }
+  };
+  const handleSearchIconClick = () => {
+    setExpanded(!expanded);
+    setSearchResultExist(false);
   };
   const handleInputBlur = () => {
     const blurTimeout = setTimeout(() => {
@@ -29,25 +44,13 @@ export default function SearchBar() {
       setSearchResultExist(true);
     }
   };
-  const searchForResults = async () => {
-    if (searchtext.trim() == "") {
-      setSearchResultExist(false);
-      return;
-    }
-    console.log(searchtext);
-  };
-
-  const handleSearchIconClick = () => {
-    setExpanded(!expanded);
-  };
-
   return (
     <>
       {searchResultExist && <SearchDropDown searchResult={searchResult} />}
       <div
         className={`${
           expanded ? "w-full" : "w-12"
-        } relative flex h-12 items-center overflow-hidden rounded-md bg-gray-200 shadow-sm transition-all duration-300 ease-in-out focus-within:shadow-md max-sm:bg-gray-200`}
+        } relative flex h-12 items-center overflow-hidden rounded-md bg-gray-100 shadow transition-all duration-300 ease-in-out focus-within:shadow-md max-sm:bg-gray-200`}
       >
         <div
           className="grid h-full w-14 cursor-pointer place-items-center text-gray-600"
@@ -84,4 +87,6 @@ export default function SearchBar() {
       </div>
     </>
   );
-}
+};
+
+export default SearchBar;

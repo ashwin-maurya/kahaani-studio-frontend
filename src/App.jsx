@@ -21,6 +21,7 @@ import BlogClientState from "./Contexts/Blogs/BlogClientState";
 import GalleryClientState from "./Contexts/Gallery/GalleryClientState";
 import ArticleClientState from "./Contexts/Articles/ArticleClientState";
 import DestinationClientState from "./Contexts/Destinations/DestinationClientState";
+import ClientSearchState from "./Contexts/Search/CLientSearchState";
 const App = () => {
   return (
     <Router>
@@ -35,23 +36,25 @@ const App = () => {
                   <ArticleClientState>
                     <GalleryClientState>
                       <DestinationClientState>
-                        <ScrollProgress />
-                        <ScrollToTop />
-                        <div className=" container">
-                          <Navbar></Navbar>
-                          <Routes>
-                            <Route
-                              path="/admin/*"
-                              element={<AdminNavigation />}
-                            />
-                            <Route path="/*" element={<ClientRoutes />} />
-                            <Route
-                              path="/authenticate/admin/login"
-                              element={<LoginPage />}
-                            />
-                          </Routes>
-                          <Footer></Footer>
-                        </div>
+                        <ClientSearchState>
+                          <ScrollProgress />
+                          <ScrollToTop />
+                          <div className=" container">
+                            <Navbar></Navbar>
+                            <Routes>
+                              <Route
+                                path="/admin/*"
+                                element={<AdminNavigation />}
+                              />
+                              <Route path="/*" element={<ClientRoutes />} />
+                              <Route
+                                path="/authenticate/admin/login"
+                                element={<LoginPage />}
+                              />
+                            </Routes>
+                            <Footer></Footer>
+                          </div>
+                        </ClientSearchState>
                       </DestinationClientState>
                     </GalleryClientState>
                   </ArticleClientState>

@@ -35,7 +35,7 @@ export default function BrandLogo() {
           <h2 className="mb-8 text-center font-Gamiliademo text-2xl leading-tight tracking-widest text-gray-900">
             Featured in :
           </h2>
-          <div className="flex justify-between text-gray-500 max-md:gap-5 max-md:overflow-x-scroll">
+          <div className="mx-10 flex justify-between text-gray-500 max-md:gap-5 max-md:overflow-x-scroll max-sm:mx-0 2xl:mx-0">
             {featuredLogos.map((logo, index) => (
               <a
                 key={index}

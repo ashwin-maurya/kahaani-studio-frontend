@@ -38,7 +38,7 @@ export default function SubTravelDestinations({ destinations }) {
             </h1>
             {destinations?.map((destination) => (
               <div
-                className="relative flex w-full cursor-pointer flex-col items-start  justify-start bg-cover bg-center text-left"
+                className="relative flex cursor-pointer flex-col items-start  justify-start bg-cover bg-center text-left"
                 key={destination.id}
                 onClick={() =>
                   navigate(

@@ -7,7 +7,7 @@ import Hero from "../section/Travel/Hero/Hero";
 export default function TravelLayout() {
   return (
     <>
-      <div className=" pt-16">
+      <div className=" pt-[4.5rem">
         <div>
           <Hero />
         </div>
