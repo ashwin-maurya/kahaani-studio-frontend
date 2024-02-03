@@ -27,7 +27,7 @@ const DestinationAdminState = (props) => {
   const fetchDestinations = async () => {
     try {
       const response = await axios.get(
-        "https://kahaani-studio-backend.onrender.com/api/admin/destination/getDestinations",
+        "http://localhost:5001/api/admin/destination/getDestinations",
       );
       dispatch({ type: "SET_DESTINATIONS", payload: response.data });
       console.log(response.data);
@@ -43,7 +43,7 @@ const DestinationAdminState = (props) => {
     }
     try {
       const response = await axios.post(
-        `https://kahaani-studio-backend.onrender.com/api/admin/destination/updateImageURL/${destinationId}`,
+        `http://localhost:5001/api/admin/destination/updateImageURL/${destinationId}`,
         { imageURL },
         {
           headers: {

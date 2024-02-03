@@ -41,7 +41,6 @@ const TextEditor = ({ content, onContentChange }) => {
         Blog Content Editor
       </label>
       <Editor
-        apiKey="5ut6u9dgrcqt2984hizk9fjum5vun8f704k2usewa1yf1fqu"
         placeholder="Write your blog here..."
         value={content}
         onEditorChange={handleEditorChange}

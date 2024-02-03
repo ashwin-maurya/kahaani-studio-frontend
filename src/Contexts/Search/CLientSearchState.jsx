@@ -27,7 +27,7 @@ const ClientSearchState = (props) => {
   const fetchResults = async (searchText) => {
     try {
       const response = await axios.get(
-        `https://kahaani-studio-backend.onrender.com/api/client/search/searchresults/${searchText}`,
+        `http://localhost:5001/api/client/search/searchresults/${searchText}`,
       );
       dispatch({ type: "SET_RESULTS", payload: response.data });
     } catch (error) {
